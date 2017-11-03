@@ -1,3 +1,11 @@
+# Pre-requisites:
+
+To compile and run this project you need to install the following dependancies: 
+
+* OpenCV 3.x with ArUco module ([how to compile and install OpenCV with modules](https://github.com/opencv/opencv_contrib#how-to-build-opencv-with-extra-modules))
+
+Also you will need a camera or video files with moving markers and the goods markers (you can find some examples in the [markers](./markers) directory).
+
 # Compilation: 
 
 ## Linux / MacOS: 
