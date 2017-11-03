@@ -178,7 +178,9 @@ int main(int argc, char *argv[]) {
 
         // detect markers and estimate pose
         aruco::detectMarkers(image, dictionary, corners, ids, detectorParams, rejected);
-
+	if(estimatePose && ids.size() > 0)
+	  aruco::estimatePoseSingleMarkers(corners, markerLength, camMatrix, distCoeffs, rvecs,
+					   tvecs);
 
         double currentTime = ((double)getTickCount() - tick) / getTickFrequency();
         totalTime += currentTime;
