@@ -1,10 +1,16 @@
-cmake_minimum_required(VERSION 2.6)
-
-PROJECT(AIVI-Lab1)
+cmake_minimum_required(VERSION 3.2.0)
 
 IF(NOT CMAKE_BUILD_TYPE)
-  SET(CMAKE_BUILD_TYPE "Debug" CACHE STRING "CMAKE_BUILD_TYPE: Choose the type of build, options are: None(CMAKE_CXX_FLAGS or CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel." FORCE)
+  SET(CMAKE_BUILD_TYPE "Release" CACHE STRING "CMAKE_BUILD_TYPE: Choose the type of build, options are: None(CMAKE_CXX_FLAGS or CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel." FORCE)
 ENDIF(NOT CMAKE_BUILD_TYPE)
+
+
+FIND_PACKAGE(OpenCV REQUIRED)
+INCLUDE_DIRECTORIES(${OpenCV_INCLUDE_DIR})
+INCLUDE_DIRECTORIES(${OpenCV_INCLUDE_DIRS})
+
+add_subdirectory(ext/aruco)
+INCLUDE_DIRECTORIES(ext/aruco/src)
 
 SET(TARGET "detect")
 
@@ -12,9 +18,6 @@ SET(SRC detect_markers.cpp)
 
 ADD_DEFINITIONS(-Wall)
 
-FIND_PACKAGE(OpenCV REQUIRED)
-INCLUDE_DIRECTORIES(${OpenCV_INCLUDE_DIR})
-INCLUDE_DIRECTORIES(${OpenCV_INCLUDE_DIRS})
 
 ADD_EXECUTABLE(${TARGET} ${SRC})
-TARGET_LINK_LIBRARIES(${TARGET} ${OpenCV_LIBS})
+TARGET_LINK_LIBRARIES(${TARGET} ${OpenCV_LIBS} aruco)
