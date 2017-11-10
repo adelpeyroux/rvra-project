@@ -12,6 +12,10 @@ INCLUDE_DIRECTORIES(${OpenCV_INCLUDE_DIRS})
 add_subdirectory(ext/aruco)
 INCLUDE_DIRECTORIES(ext/aruco/src)
 
+add_subdirectory(ext/Maximilian)
+INCLUDE_DIRECTORIES(ext/Maximilian)
+
+
 SET(TARGET "detect")
 
 SET(SRC detect_markers.cpp)
@@ -20,4 +24,4 @@ ADD_DEFINITIONS(-Wall)
 
 
 ADD_EXECUTABLE(${TARGET} ${SRC})
-TARGET_LINK_LIBRARIES(${TARGET} ${OpenCV_LIBS} aruco)
+TARGET_LINK_LIBRARIES(${TARGET} aruco maximilian)

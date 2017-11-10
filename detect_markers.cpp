@@ -29,10 +29,18 @@ or implied, of Rafael Muñoz Salinas.
 #include <iostream>
 #include <fstream>
 #include <sstream>
+
+#include <thread>
+
 #include "aruco.h"
 #include "cvdrawingutils.h"
+
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
+
+#include <maximilian.h>
+#include <player.h>
+
 using namespace cv;
 using namespace aruco;
 
@@ -42,6 +50,10 @@ vector< Marker > TheMarkers;
 Mat TheInputImage, TheInputImageCopy;
 CameraParameters TheCameraParameters;
 void cvTackBarEvents(int pos, void *);
+
+float TheMarkerSize;
+
+
 
 pair< double, double > AvrgTime(0, 0); // determines the average time required for detection
  int iThresParam1, iThresParam2;
@@ -56,6 +68,41 @@ cv::Mat resize(const cv::Mat &in,int width){
     cv::resize(in,im2,cv::Size(width,float(in.size().height)*yf));
     return im2;
 
+}
+
+maxiOsc mySine[50];//One oscillator - can be called anything. Can be any of the available waveforms.
+void setup() {//some inits
+    //nothing to go here this time
+}
+
+void play(double *output) {
+    output[0] = 0.;
+
+    if (TheMarkers.size() > 0)
+        for (int i = 0; i < TheMarkers.size(); ++i)
+            output[0] += mySine[i].sinewave(TheMarkers[i].id * 2) / TheMarkers.size();
+
+    output[1]=output[0];
+
+}
+
+void detect_markers() {
+    while (true) {
+        TheVideoCapturer >> TheInputImage;
+        // copy image
+        double tick = (double)getTickCount(); // for checking the speed
+        // Detection of markers in the image passed
+        TheMarkers= MDetector.detect(TheInputImage, TheCameraParameters, TheMarkerSize);
+        // chekc the speed by calculating the mean speed of all iterations
+
+        // print marker info and draw the markers in image
+        TheInputImage.copyTo(TheInputImageCopy);
+
+
+        AvrgTime.first += ((double)getTickCount() - tick) / getTickFrequency();
+        AvrgTime.second++;
+        cout << "\rTime detection=" << 1000 * AvrgTime.first / AvrgTime.second << " milliseconds nmarkers=" << TheMarkers.size() << std::endl;
+    }
 }
 
 /************************************
@@ -79,11 +126,8 @@ int main(int argc, char **argv) {
         string TheInputVideo = argv[1];
         // read camera parameters if passed
         if (cml["-c"] )  TheCameraParameters.readFromXMLFile(cml("-c"));
-        float TheMarkerSize = std::stof(cml("-s","-1"));
+        TheMarkerSize = std::stof(cml("-s","-1"));
         //aruco::Dictionary::DICT_TYPES  TheDictionary= Dictionary::getTypeFromString( cml("-d","ARUCO") );
-
-
-
 
         ///////////  OPEN VIDEO
         // read from camera or from  file
@@ -106,7 +150,7 @@ int main(int argc, char **argv) {
 
         ///// CONFIGURE DATA
         // read first image to get the dimensions
-        TheVideoCapturer >> TheInputImage;
+        TheVideoCapturer.retrieve(TheInputImage);
         if (TheCameraParameters.isValid())
             TheCameraParameters.resize(TheInputImage.size());
 
@@ -119,52 +163,20 @@ int main(int argc, char **argv) {
         iThresParam1 = MDetector.getParams()._thresParam1;
         iThresParam2 = MDetector.getParams()._thresParam2;
         cv::namedWindow("in");
-        cv::createTrackbar("ThresParam1", "in", &iThresParam1, 25, cvTackBarEvents);
-        cv::createTrackbar("ThresParam2", "in", &iThresParam2, 13, cvTackBarEvents);
+
+        // capture until press ESC or until the end of the video
+
 
         //go!
         char key = 0;
         int index = 0;
         // capture until press ESC or until the end of the video
-        do {
 
-            TheVideoCapturer.retrieve(TheInputImage);
-            // copy image
-            double tick = (double)getTickCount(); // for checking the speed
-            // Detection of markers in the image passed
-            TheMarkers= MDetector.detect(TheInputImage, TheCameraParameters, TheMarkerSize);
-            // chekc the speed by calculating the mean speed of all iterations
-            AvrgTime.first += ((double)getTickCount() - tick) / getTickFrequency();
-            AvrgTime.second++;
-            cout << "\rTime detection=" << 1000 * AvrgTime.first / AvrgTime.second << " milliseconds nmarkers=" << TheMarkers.size() << std::endl;
+        std::thread detection_thread (detect_markers);
+        std::thread sound_thread (start_player);
 
-            // print marker info and draw the markers in image
-            TheInputImage.copyTo(TheInputImageCopy);
-
-            for (unsigned int i = 0; i < TheMarkers.size(); i++) {
-                cout << TheMarkers[i]<<endl;
-                TheMarkers[i].draw(TheInputImageCopy, Scalar(0, 0, 255));
-            }
-
-            // draw a 3d cube in each marker if there is 3d info
-            if (TheCameraParameters.isValid() && TheMarkerSize>0)
-                for (unsigned int i = 0; i < TheMarkers.size(); i++) {
-                    CvDrawingUtils::draw3dCube(TheInputImageCopy, TheMarkers[i], TheCameraParameters);
-                    CvDrawingUtils::draw3dAxis(TheInputImageCopy, TheMarkers[i], TheCameraParameters);
-                }
-
-            // DONE! Easy, right?
-            // show input with augmented information and  the thresholded image
-            cv::imshow("in", resize(TheInputImageCopy,1280));
-
-
-	    cv::imshow("thres", resize(MDetector.getThresholdedImage(),1280));
-
-
-            key = cv::waitKey(waitTime); // wait for key to be pressed
-            if(key=='s')  waitTime= waitTime==0?10:0;
-            index++; // number of images captured
-        } while (key != 27 && (TheVideoCapturer.grab() ));
+        detection_thread.join();                // pauses until first finishes
+        sound_thread.join();               // pauses until second finishes
 
     } catch (std::exception &ex)
 
