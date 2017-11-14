@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.3.1, 2017-11-10T13:25:18. -->
+<!-- Written by QtCreator 4.3.1, 2017-11-14T14:11:49. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -214,7 +214,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/home/penguin/workspace/build-rvra-project-Desktop-Release</value>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">detect</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">detect (désactivé)</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.detect</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
@@ -270,7 +270,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/home/penguin/workspace/build-rvra-project-Desktop-Release/ext/aruco/utils</value>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">aruco_print_marker</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">aruco_print_marker (désactivé)</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.aruco_print_marker</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
@@ -326,7 +326,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/home/penguin/workspace/build-rvra-project-Desktop-Release/ext/aruco/utils_calibration</value>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">aruco_calibration_fromimages</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">aruco_calibration_fromimages (désactivé)</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.aruco_calibration_fromimages</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
@@ -382,7 +382,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/home/penguin/workspace/build-rvra-project-Desktop-Release/ext/aruco/utils_calibration</value>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">aruco_calibration</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">aruco_calibration (désactivé)</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.aruco_calibration</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
@@ -550,7 +550,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/home/penguin/workspace/build-rvra-project-Desktop-Release/ext/Maximilian</value>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">maximilian-exec</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">maximilian-exec (désactivé)</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.maximilian-exec</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
@@ -606,7 +606,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/home/penguin/workspace/build-rvra-project-Desktop-Release/ext/aruco/utils</value>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">aruco_print_dictionary</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">aruco_print_dictionary (désactivé)</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.aruco_print_dictionary</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
@@ -662,7 +662,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/home/penguin/workspace/build-rvra-project-Desktop-Release/ext/aruco/utils</value>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">aruco_simple</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">aruco_simple (désactivé)</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.aruco_simple</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
@@ -718,7 +718,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/home/penguin/workspace/build-rvra-project-Desktop-Release/ext/aruco/utils</value>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">aruco_test</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">aruco_test (désactivé)</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.aruco_test</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
@@ -774,7 +774,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/home/penguin/workspace/build-rvra-project-Desktop-Release/ext/aruco/utils</value>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">aruco_tracker</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">aruco_tracker (désactivé)</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.aruco_tracker</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
@@ -830,7 +830,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/home/penguin/workspace/build-rvra-project-Desktop-Release/ext/aruco/utils_markermap</value>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">aruco_simple_markermap</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">aruco_simple_markermap (désactivé)</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.aruco_simple_markermap</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
@@ -886,7 +886,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/home/penguin/workspace/build-rvra-project-Desktop-Release/ext/aruco/utils_markermap</value>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">aruco_test_markermap</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">aruco_test_markermap (désactivé)</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.aruco_test_markermap</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
@@ -942,7 +942,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/home/penguin/workspace/build-rvra-project-Desktop-Release/ext/aruco/utils_markermap</value>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">aruco_create_markermap</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">aruco_create_markermap (désactivé)</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.aruco_create_markermap</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
@@ -998,7 +998,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/home/penguin/workspace/build-rvra-project-Desktop-Release/ext/aruco/utils_markermap</value>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">aruco_markermap_pix2meters</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">aruco_markermap_pix2meters (désactivé)</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.aruco_markermap_pix2meters</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
