@@ -37,3 +37,4 @@
 
 # Build dirs
 **/*build*/*
+**/.idea/*
