@@ -1,0 +1,3 @@
+[submodule "ext/Maximilian"]
+	path = ext/Maximilian
+	url = git@github.com:adelpeyroux/Maximilian.git
