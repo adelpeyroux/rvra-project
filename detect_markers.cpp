@@ -52,7 +52,7 @@ CameraParameters TheCameraParameters;
 void cvTackBarEvents(int pos, void *);
 
 float TheMarkerSize;
-
+char key;
 
 
 pair< double, double > AvrgTime(0, 0); // determines the average time required for detection
@@ -98,6 +98,30 @@ void detect_markers() {
         // print marker info and draw the markers in image
         TheInputImage.copyTo(TheInputImageCopy);
 
+
+        // print marker info and draw the markers in image
+        TheInputImage.copyTo(TheInputImageCopy);
+
+        for (unsigned int i = 0; i < TheMarkers.size(); i++) {
+            cout << TheMarkers[i]<<endl;
+            TheMarkers[i].draw(TheInputImageCopy, Scalar(0, 0, 255));
+        }
+
+        // draw a 3d cube in each marker if there is 3d info
+        if (TheCameraParameters.isValid() && TheMarkerSize>0)
+            for (unsigned int i = 0; i < TheMarkers.size(); i++) {
+                CvDrawingUtils::draw3dCube(TheInputImageCopy, TheMarkers[i], TheCameraParameters);
+                CvDrawingUtils::draw3dAxis(TheInputImageCopy, TheMarkers[i], TheCameraParameters);
+            }
+
+        // DONE! Easy, right?
+        // show input with augmented information and  the thresholded image
+        cv::imshow("in", resize(TheInputImageCopy,1280));
+        cv::imshow("thres", resize(MDetector.getThresholdedImage(),1280));
+
+
+        key = cv::waitKey(waitTime); // wait for key to be pressed
+        if(key=='s')  waitTime= waitTime==0?10:0;
 
         AvrgTime.first += ((double)getTickCount() - tick) / getTickFrequency();
         AvrgTime.second++;
@@ -154,7 +178,7 @@ int main(int argc, char **argv) {
         if (TheCameraParameters.isValid())
             TheCameraParameters.resize(TheInputImage.size());
 
-        MDetector.setDictionary(cml("-d","ARUCO_MIP_36h12"));//sets the dictionary to be employed (ARUCO,APRILTAGS,ARTOOLKIT,etc)
+        MDetector.setDictionary(cml("-d","ARUCO"));//sets the dictionary to be employed (ARUCO,APRILTAGS,ARTOOLKIT,etc)
         MDetector.setThresholdParams(7, 7);
         MDetector.setThresholdParamRange(2, 0);
        //  MDetector.setCornerRefinementMethod(aruco::MarkerDetector::SUBPIX);
