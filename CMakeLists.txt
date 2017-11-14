@@ -18,7 +18,12 @@ INCLUDE_DIRECTORIES(ext/Maximilian)
 
 SET(TARGET "detect")
 
-SET(SRC detect_markers.cpp)
+SET(SRC
+		Interfaces.hpp
+
+		detect_markers.cpp
+		Interfaces.cpp
+		)
 
 ADD_DEFINITIONS(-Wall)
 
