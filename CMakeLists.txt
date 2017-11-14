@@ -15,15 +15,22 @@ INCLUDE_DIRECTORIES(ext/aruco/src)
 add_subdirectory(ext/Maximilian)
 INCLUDE_DIRECTORIES(ext/Maximilian)
 
+INCLUDE_DIRECTORIES(include)
 
 SET(TARGET "detect")
 
-SET(SRC
-		Interfaces.hpp
+SET(SRC detect_markers.cpp)
 
-		detect_markers.cpp
-		Interfaces.cpp
-		)
+SET(SRC src/detect_markers.cpp
+        src/AudioGraph.cpp
+        src/AudioNode.cpp
+        src/Interfaces.cpp
+
+        include/AudioGraph.hpp
+        include/AudioNode.hpp
+        include/Interfaces.hpp
+
+        )
 
 ADD_DEFINITIONS(-Wall)
 
