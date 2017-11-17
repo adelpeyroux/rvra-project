@@ -19,21 +19,28 @@ INCLUDE_DIRECTORIES(include)
 
 SET(TARGET "detect")
 
-SET(SRC detect_markers.cpp)
+SET(SRC
+		include/AudioGraph.hpp
+		include/AudioNode.hpp
+		include/Interfaces.hpp
 
-SET(SRC src/detect_markers.cpp
-        src/AudioGraph.cpp
-        src/AudioNode.cpp
-        src/Interfaces.cpp
+		src/detect_markers.cpp
+		src/AudioGraph.cpp
+		src/AudioNode.cpp
+		src/Interfaces.cpp include/MiscConsts.hpp)
 
-        include/AudioGraph.hpp
-        include/AudioNode.hpp
-        include/Interfaces.hpp
+SET(SRC_INTERFACE_TEST
+		include/Interfaces.hpp
 
-        )
+		src/Interfaces.cpp
+		src/Interfaces_Tests.cpp)
 
 ADD_DEFINITIONS(-Wall)
 
 
 ADD_EXECUTABLE(${TARGET} ${SRC})
 TARGET_LINK_LIBRARIES(${TARGET} aruco maximilian)
+
+
+ADD_EXECUTABLE(Interface_Test ${SRC_INTERFACE_TEST})
+TARGET_LINK_LIBRARIES(Interface_Test ${OpenCV_LIBS})
