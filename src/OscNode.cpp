@@ -11,4 +11,6 @@ OscNode::OscNode(double freq)
 }
 
 double * OscNode::play(double *input) {
+	double * Res = new double[1];
+	return Res;
 }

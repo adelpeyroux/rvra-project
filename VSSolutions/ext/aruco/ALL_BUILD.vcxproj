@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9E65309C-E5C3-3D15-AB0E-CF9207EBD387}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Programmes\Libs\OpenCV\build;D:\Programmes\Libs\OpenCV\sources\include;D:\Programmes\Libs\OpenCV\sources\include\opencv;D:\Programmes\Libs\OpenCV\sources\modules\core\include;D:\Programmes\Libs\OpenCV\sources\modules\flann\include;D:\Programmes\Libs\OpenCV\sources\modules\imgproc\include;D:\Programmes\Libs\OpenCV\sources\modules\ml\include;D:\Programmes\Libs\OpenCV\sources\modules\objdetect\include;D:\Programmes\Libs\OpenCV\sources\modules\photo\include;D:\Programmes\Libs\OpenCV\sources\modules\video\include;D:\Programmes\Libs\OpenCV\sources\modules\dnn\include;D:\Programmes\Libs\OpenCV\sources\modules\imgcodecs\include;D:\Programmes\Libs\OpenCV\sources\modules\shape\include;D:\Programmes\Libs\OpenCV\sources\modules\videoio\include;D:\Programmes\Libs\OpenCV\sources\modules\highgui\include;D:\Programmes\Libs\OpenCV\sources\modules\superres\include;D:\Programmes\Libs\OpenCV\sources\modules\ts\include;D:\Programmes\Libs\OpenCV\sources\modules\features2d\include;D:\Programmes\Libs\OpenCV\sources\modules\calib3d\include;D:\Programmes\Libs\OpenCV\sources\modules\stitching\include;D:\Programmes\Libs\OpenCV\sources\modules\videostab\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Programmes\Libs\OpenCV\build;D:\Programmes\Libs\OpenCV\sources\include;D:\Programmes\Libs\OpenCV\sources\include\opencv;D:\Programmes\Libs\OpenCV\sources\modules\core\include;D:\Programmes\Libs\OpenCV\sources\modules\flann\include;D:\Programmes\Libs\OpenCV\sources\modules\imgproc\include;D:\Programmes\Libs\OpenCV\sources\modules\ml\include;D:\Programmes\Libs\OpenCV\sources\modules\objdetect\include;D:\Programmes\Libs\OpenCV\sources\modules\photo\include;D:\Programmes\Libs\OpenCV\sources\modules\video\include;D:\Programmes\Libs\OpenCV\sources\modules\dnn\include;D:\Programmes\Libs\OpenCV\sources\modules\imgcodecs\include;D:\Programmes\Libs\OpenCV\sources\modules\shape\include;D:\Programmes\Libs\OpenCV\sources\modules\videoio\include;D:\Programmes\Libs\OpenCV\sources\modules\highgui\include;D:\Programmes\Libs\OpenCV\sources\modules\superres\include;D:\Programmes\Libs\OpenCV\sources\modules\ts\include;D:\Programmes\Libs\OpenCV\sources\modules\features2d\include;D:\Programmes\Libs\OpenCV\sources\modules\calib3d\include;D:\Programmes\Libs\OpenCV\sources\modules\stitching\include;D:\Programmes\Libs\OpenCV\sources\modules\videostab\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Programmes\Libs\OpenCV\build;D:\Programmes\Libs\OpenCV\sources\include;D:\Programmes\Libs\OpenCV\sources\include\opencv;D:\Programmes\Libs\OpenCV\sources\modules\core\include;D:\Programmes\Libs\OpenCV\sources\modules\flann\include;D:\Programmes\Libs\OpenCV\sources\modules\imgproc\include;D:\Programmes\Libs\OpenCV\sources\modules\ml\include;D:\Programmes\Libs\OpenCV\sources\modules\objdetect\include;D:\Programmes\Libs\OpenCV\sources\modules\photo\include;D:\Programmes\Libs\OpenCV\sources\modules\video\include;D:\Programmes\Libs\OpenCV\sources\modules\dnn\include;D:\Programmes\Libs\OpenCV\sources\modules\imgcodecs\include;D:\Programmes\Libs\OpenCV\sources\modules\shape\include;D:\Programmes\Libs\OpenCV\sources\modules\videoio\include;D:\Programmes\Libs\OpenCV\sources\modules\highgui\include;D:\Programmes\Libs\OpenCV\sources\modules\superres\include;D:\Programmes\Libs\OpenCV\sources\modules\ts\include;D:\Programmes\Libs\OpenCV\sources\modules\features2d\include;D:\Programmes\Libs\OpenCV\sources\modules\calib3d\include;D:\Programmes\Libs\OpenCV\sources\modules\stitching\include;D:\Programmes\Libs\OpenCV\sources\modules\videostab\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Programmes\Libs\OpenCV\build;D:\Programmes\Libs\OpenCV\sources\include;D:\Programmes\Libs\OpenCV\sources\include\opencv;D:\Programmes\Libs\OpenCV\sources\modules\core\include;D:\Programmes\Libs\OpenCV\sources\modules\flann\include;D:\Programmes\Libs\OpenCV\sources\modules\imgproc\include;D:\Programmes\Libs\OpenCV\sources\modules\ml\include;D:\Programmes\Libs\OpenCV\sources\modules\objdetect\include;D:\Programmes\Libs\OpenCV\sources\modules\photo\include;D:\Programmes\Libs\OpenCV\sources\modules\video\include;D:\Programmes\Libs\OpenCV\sources\modules\dnn\include;D:\Programmes\Libs\OpenCV\sources\modules\imgcodecs\include;D:\Programmes\Libs\OpenCV\sources\modules\shape\include;D:\Programmes\Libs\OpenCV\sources\modules\videoio\include;D:\Programmes\Libs\OpenCV\sources\modules\highgui\include;D:\Programmes\Libs\OpenCV\sources\modules\superres\include;D:\Programmes\Libs\OpenCV\sources\modules\ts\include;D:\Programmes\Libs\OpenCV\sources\modules\features2d\include;D:\Programmes\Libs\OpenCV\sources\modules\calib3d\include;D:\Programmes\Libs\OpenCV\sources\modules\stitching\include;D:\Programmes\Libs\OpenCV\sources\modules\videostab\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\SourceTree\rvra-project\ext\aruco\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/SourceTree/rvra-project/ext/aruco/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+D:\Programmes\CMake\bin\cmake.exe -HD:/SourceTree/rvra-project -BD:/SourceTree/rvra-project/VSSolutions --check-stamp-file D:/SourceTree/rvra-project/VSSolutions/ext/aruco/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/SourceTree/rvra-project/ext/aruco/CMakeLists.txt;D:\SourceTree\rvra-project\ext\aruco\CMakeLists.txt;D:\Programmes\Libs\OpenCV\build\OpenCVConfig-version.cmake;D:\Programmes\Libs\OpenCV\build\OpenCVConfig.cmake;D:\Programmes\CMake\share\cmake-3.9\Modules\FindPackageHandleStandardArgs.cmake;D:\Programmes\CMake\share\cmake-3.9\Modules\FindPackageMessage.cmake;D:\SourceTree\rvra-project\ext\aruco\cmake_uninstall.cmake.in;D:\SourceTree\rvra-project\ext\aruco\config.cmake.in;D:\SourceTree\rvra-project\ext\aruco\aruco.pc.in;D:\SourceTree\rvra-project\ext\aruco\aruco-uninstalled.pc.in;D:\SourceTree\rvra-project\ext\aruco\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\SourceTree\rvra-project\VSSolutions\ext\aruco\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/SourceTree/rvra-project/ext/aruco/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+D:\Programmes\CMake\bin\cmake.exe -HD:/SourceTree/rvra-project -BD:/SourceTree/rvra-project/VSSolutions --check-stamp-file D:/SourceTree/rvra-project/VSSolutions/ext/aruco/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/SourceTree/rvra-project/ext/aruco/CMakeLists.txt;D:\SourceTree\rvra-project\ext\aruco\CMakeLists.txt;D:\Programmes\Libs\OpenCV\build\OpenCVConfig-version.cmake;D:\Programmes\Libs\OpenCV\build\OpenCVConfig.cmake;D:\Programmes\CMake\share\cmake-3.9\Modules\FindPackageHandleStandardArgs.cmake;D:\Programmes\CMake\share\cmake-3.9\Modules\FindPackageMessage.cmake;D:\SourceTree\rvra-project\ext\aruco\cmake_uninstall.cmake.in;D:\SourceTree\rvra-project\ext\aruco\config.cmake.in;D:\SourceTree\rvra-project\ext\aruco\aruco.pc.in;D:\SourceTree\rvra-project\ext\aruco\aruco-uninstalled.pc.in;D:\SourceTree\rvra-project\ext\aruco\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\SourceTree\rvra-project\VSSolutions\ext\aruco\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/SourceTree/rvra-project/ext/aruco/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+D:\Programmes\CMake\bin\cmake.exe -HD:/SourceTree/rvra-project -BD:/SourceTree/rvra-project/VSSolutions --check-stamp-file D:/SourceTree/rvra-project/VSSolutions/ext/aruco/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:/SourceTree/rvra-project/ext/aruco/CMakeLists.txt;D:\SourceTree\rvra-project\ext\aruco\CMakeLists.txt;D:\Programmes\Libs\OpenCV\build\OpenCVConfig-version.cmake;D:\Programmes\Libs\OpenCV\build\OpenCVConfig.cmake;D:\Programmes\CMake\share\cmake-3.9\Modules\FindPackageHandleStandardArgs.cmake;D:\Programmes\CMake\share\cmake-3.9\Modules\FindPackageMessage.cmake;D:\SourceTree\rvra-project\ext\aruco\cmake_uninstall.cmake.in;D:\SourceTree\rvra-project\ext\aruco\config.cmake.in;D:\SourceTree\rvra-project\ext\aruco\aruco.pc.in;D:\SourceTree\rvra-project\ext\aruco\aruco-uninstalled.pc.in;D:\SourceTree\rvra-project\ext\aruco\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\SourceTree\rvra-project\VSSolutions\ext\aruco\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/SourceTree/rvra-project/ext/aruco/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+D:\Programmes\CMake\bin\cmake.exe -HD:/SourceTree/rvra-project -BD:/SourceTree/rvra-project/VSSolutions --check-stamp-file D:/SourceTree/rvra-project/VSSolutions/ext/aruco/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:/SourceTree/rvra-project/ext/aruco/CMakeLists.txt;D:\SourceTree\rvra-project\ext\aruco\CMakeLists.txt;D:\Programmes\Libs\OpenCV\build\OpenCVConfig-version.cmake;D:\Programmes\Libs\OpenCV\build\OpenCVConfig.cmake;D:\Programmes\CMake\share\cmake-3.9\Modules\FindPackageHandleStandardArgs.cmake;D:\Programmes\CMake\share\cmake-3.9\Modules\FindPackageMessage.cmake;D:\SourceTree\rvra-project\ext\aruco\cmake_uninstall.cmake.in;D:\SourceTree\rvra-project\ext\aruco\config.cmake.in;D:\SourceTree\rvra-project\ext\aruco\aruco.pc.in;D:\SourceTree\rvra-project\ext\aruco\aruco-uninstalled.pc.in;D:\SourceTree\rvra-project\ext\aruco\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\SourceTree\rvra-project\VSSolutions\ext\aruco\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\SourceTree\rvra-project\VSSolutions\ZERO_CHECK.vcxproj">
+      <Project>{126DCE62-5252-345A-8E38-7B9988A04B2F}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\SourceTree\rvra-project\VSSolutions\ext\aruco\src\aruco.vcxproj">
+      <Project>{86EC4A9E-EB84-36B2-A9B9-4F97C3F4EEFB}</Project>
+      <Name>aruco</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\SourceTree\rvra-project\VSSolutions\ext\aruco\utils_calibration\aruco_calibration.vcxproj">
+      <Project>{FBA73A7D-BE0C-31E8-A27A-41C99BE806A9}</Project>
+      <Name>aruco_calibration</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\SourceTree\rvra-project\VSSolutions\ext\aruco\utils_calibration\aruco_calibration_fromimages.vcxproj">
+      <Project>{C3CC21DF-8E62-35D0-BDFE-F7C2C2D26824}</Project>
+      <Name>aruco_calibration_fromimages</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\SourceTree\rvra-project\VSSolutions\ext\aruco\utils_markermap\aruco_create_markermap.vcxproj">
+      <Project>{B9F00921-9A5C-3BFF-ADF9-7D315843A91A}</Project>
+      <Name>aruco_create_markermap</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\SourceTree\rvra-project\VSSolutions\ext\aruco\utils_markermap\aruco_markermap_pix2meters.vcxproj">
+      <Project>{719455D4-7B99-3BA4-AEEC-517A34D1A54D}</Project>
+      <Name>aruco_markermap_pix2meters</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\SourceTree\rvra-project\VSSolutions\ext\aruco\utils\aruco_print_dictionary.vcxproj">
+      <Project>{E8EA6567-32BA-3ED8-A1D4-0C48A8CBB2F4}</Project>
+      <Name>aruco_print_dictionary</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\SourceTree\rvra-project\VSSolutions\ext\aruco\utils\aruco_print_marker.vcxproj">
+      <Project>{AEB45074-FBBF-3C30-BE4C-2A58E253CA1F}</Project>
+      <Name>aruco_print_marker</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\SourceTree\rvra-project\VSSolutions\ext\aruco\utils\aruco_simple.vcxproj">
+      <Project>{85A0C9A2-BF94-3674-B779-A8BA666B629D}</Project>
+      <Name>aruco_simple</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\SourceTree\rvra-project\VSSolutions\ext\aruco\utils_markermap\aruco_simple_markermap.vcxproj">
+      <Project>{DEB0ACC4-545D-3D9F-A83A-A92759DCE88F}</Project>
+      <Name>aruco_simple_markermap</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\SourceTree\rvra-project\VSSolutions\ext\aruco\utils\aruco_test.vcxproj">
+      <Project>{C027891A-513C-3BDB-B4CC-2A7140969AFC}</Project>
+      <Name>aruco_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\SourceTree\rvra-project\VSSolutions\ext\aruco\utils_markermap\aruco_test_markermap.vcxproj">
+      <Project>{AC83D847-F084-393C-A86D-3FE392D2364B}</Project>
+      <Name>aruco_test_markermap</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\SourceTree\rvra-project\VSSolutions\ext\aruco\utils\aruco_tracker.vcxproj">
+      <Project>{1F41B7B4-C285-33E7-A317-5AC7E9572EB7}</Project>
+      <Name>aruco_tracker</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\SourceTree\rvra-project\VSSolutions\CMakeFiles\5a6a3d54f954f040136938bc14c943f2\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{1F662624-CB5D-3BDD-8CAD-CC9FB36147F9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

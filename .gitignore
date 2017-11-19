@@ -37,4 +37,24 @@
 
 # Build dirs
 **/*build*/*
-**/.idea/*
+
+# Fichiers Caches
+oct_*
+**/.idea/**
+**/.vs*/**
+**/cmake-build-*/*
+**/VS-*/*
+**/*.dir/*
+**/CMakeFiles/*
+Thumbs.db
+
+# Fichiers compilés
+*.class
+*.o
+*.exe
+*.out
+*.VC.db
+**/Release/**
+**/Debug/**
+
+**/datas/*

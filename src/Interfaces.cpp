@@ -1,6 +1,12 @@
 #include <iostream>
 
+#include <opencv2/imgproc.hpp>
+
 #include "Interfaces.hpp"
+
+#ifdef _WIN32
+#include <corecrt_math_defines.h>
+#endif
 
 using namespace cv;
 using namespace std;

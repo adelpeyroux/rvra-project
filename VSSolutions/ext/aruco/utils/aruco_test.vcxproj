@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C027891A-513C-3BDB-B4CC-2A7140969AFC}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>aruco_test</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\SourceTree\rvra-project\VSSolutions\ext\aruco\bin\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">aruco_test.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">aruco_test</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\SourceTree\rvra-project\VSSolutions\ext\aruco\bin\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">aruco_test.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">aruco_test</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\SourceTree\rvra-project\VSSolutions\ext\aruco\bin\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">aruco_test.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">aruco_test</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\SourceTree\rvra-project\VSSolutions\ext\aruco\bin\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">aruco_test.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">aruco_test</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Programmes\Libs\OpenCV\build;D:\Programmes\Libs\OpenCV\sources\include;D:\Programmes\Libs\OpenCV\sources\include\opencv;D:\Programmes\Libs\OpenCV\sources\modules\core\include;D:\Programmes\Libs\OpenCV\sources\modules\flann\include;D:\Programmes\Libs\OpenCV\sources\modules\imgproc\include;D:\Programmes\Libs\OpenCV\sources\modules\ml\include;D:\Programmes\Libs\OpenCV\sources\modules\objdetect\include;D:\Programmes\Libs\OpenCV\sources\modules\photo\include;D:\Programmes\Libs\OpenCV\sources\modules\video\include;D:\Programmes\Libs\OpenCV\sources\modules\dnn\include;D:\Programmes\Libs\OpenCV\sources\modules\imgcodecs\include;D:\Programmes\Libs\OpenCV\sources\modules\shape\include;D:\Programmes\Libs\OpenCV\sources\modules\videoio\include;D:\Programmes\Libs\OpenCV\sources\modules\highgui\include;D:\Programmes\Libs\OpenCV\sources\modules\superres\include;D:\Programmes\Libs\OpenCV\sources\modules\ts\include;D:\Programmes\Libs\OpenCV\sources\modules\features2d\include;D:\Programmes\Libs\OpenCV\sources\modules\calib3d\include;D:\Programmes\Libs\OpenCV\sources\modules\stitching\include;D:\Programmes\Libs\OpenCV\sources\modules\videostab\include;D:\SourceTree\rvra-project\ext\aruco\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Programmes\Libs\OpenCV\build;D:\Programmes\Libs\OpenCV\sources\include;D:\Programmes\Libs\OpenCV\sources\include\opencv;D:\Programmes\Libs\OpenCV\sources\modules\core\include;D:\Programmes\Libs\OpenCV\sources\modules\flann\include;D:\Programmes\Libs\OpenCV\sources\modules\imgproc\include;D:\Programmes\Libs\OpenCV\sources\modules\ml\include;D:\Programmes\Libs\OpenCV\sources\modules\objdetect\include;D:\Programmes\Libs\OpenCV\sources\modules\photo\include;D:\Programmes\Libs\OpenCV\sources\modules\video\include;D:\Programmes\Libs\OpenCV\sources\modules\dnn\include;D:\Programmes\Libs\OpenCV\sources\modules\imgcodecs\include;D:\Programmes\Libs\OpenCV\sources\modules\shape\include;D:\Programmes\Libs\OpenCV\sources\modules\videoio\include;D:\Programmes\Libs\OpenCV\sources\modules\highgui\include;D:\Programmes\Libs\OpenCV\sources\modules\superres\include;D:\Programmes\Libs\OpenCV\sources\modules\ts\include;D:\Programmes\Libs\OpenCV\sources\modules\features2d\include;D:\Programmes\Libs\OpenCV\sources\modules\calib3d\include;D:\Programmes\Libs\OpenCV\sources\modules\stitching\include;D:\Programmes\Libs\OpenCV\sources\modules\videostab\include;D:\SourceTree\rvra-project\ext\aruco\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Programmes\Libs\OpenCV\build;D:\Programmes\Libs\OpenCV\sources\include;D:\Programmes\Libs\OpenCV\sources\include\opencv;D:\Programmes\Libs\OpenCV\sources\modules\core\include;D:\Programmes\Libs\OpenCV\sources\modules\flann\include;D:\Programmes\Libs\OpenCV\sources\modules\imgproc\include;D:\Programmes\Libs\OpenCV\sources\modules\ml\include;D:\Programmes\Libs\OpenCV\sources\modules\objdetect\include;D:\Programmes\Libs\OpenCV\sources\modules\photo\include;D:\Programmes\Libs\OpenCV\sources\modules\video\include;D:\Programmes\Libs\OpenCV\sources\modules\dnn\include;D:\Programmes\Libs\OpenCV\sources\modules\imgcodecs\include;D:\Programmes\Libs\OpenCV\sources\modules\shape\include;D:\Programmes\Libs\OpenCV\sources\modules\videoio\include;D:\Programmes\Libs\OpenCV\sources\modules\highgui\include;D:\Programmes\Libs\OpenCV\sources\modules\superres\include;D:\Programmes\Libs\OpenCV\sources\modules\ts\include;D:\Programmes\Libs\OpenCV\sources\modules\features2d\include;D:\Programmes\Libs\OpenCV\sources\modules\calib3d\include;D:\Programmes\Libs\OpenCV\sources\modules\stitching\include;D:\Programmes\Libs\OpenCV\sources\modules\videostab\include;D:\SourceTree\rvra-project\ext\aruco\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\bin\Debug\aruco201.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_dnn331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_ml331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_objdetect331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_shape331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_stitching331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_superres331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_videostab331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_calib3d331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_features2d331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_flann331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_highgui331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_photo331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_video331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_videoio331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_imgcodecs331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_imgproc331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_core331d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/Debug/aruco_test.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/Debug/aruco_test.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Programmes\Libs\OpenCV\build;D:\Programmes\Libs\OpenCV\sources\include;D:\Programmes\Libs\OpenCV\sources\include\opencv;D:\Programmes\Libs\OpenCV\sources\modules\core\include;D:\Programmes\Libs\OpenCV\sources\modules\flann\include;D:\Programmes\Libs\OpenCV\sources\modules\imgproc\include;D:\Programmes\Libs\OpenCV\sources\modules\ml\include;D:\Programmes\Libs\OpenCV\sources\modules\objdetect\include;D:\Programmes\Libs\OpenCV\sources\modules\photo\include;D:\Programmes\Libs\OpenCV\sources\modules\video\include;D:\Programmes\Libs\OpenCV\sources\modules\dnn\include;D:\Programmes\Libs\OpenCV\sources\modules\imgcodecs\include;D:\Programmes\Libs\OpenCV\sources\modules\shape\include;D:\Programmes\Libs\OpenCV\sources\modules\videoio\include;D:\Programmes\Libs\OpenCV\sources\modules\highgui\include;D:\Programmes\Libs\OpenCV\sources\modules\superres\include;D:\Programmes\Libs\OpenCV\sources\modules\ts\include;D:\Programmes\Libs\OpenCV\sources\modules\features2d\include;D:\Programmes\Libs\OpenCV\sources\modules\calib3d\include;D:\Programmes\Libs\OpenCV\sources\modules\stitching\include;D:\Programmes\Libs\OpenCV\sources\modules\videostab\include;D:\SourceTree\rvra-project\ext\aruco\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Programmes\Libs\OpenCV\build;D:\Programmes\Libs\OpenCV\sources\include;D:\Programmes\Libs\OpenCV\sources\include\opencv;D:\Programmes\Libs\OpenCV\sources\modules\core\include;D:\Programmes\Libs\OpenCV\sources\modules\flann\include;D:\Programmes\Libs\OpenCV\sources\modules\imgproc\include;D:\Programmes\Libs\OpenCV\sources\modules\ml\include;D:\Programmes\Libs\OpenCV\sources\modules\objdetect\include;D:\Programmes\Libs\OpenCV\sources\modules\photo\include;D:\Programmes\Libs\OpenCV\sources\modules\video\include;D:\Programmes\Libs\OpenCV\sources\modules\dnn\include;D:\Programmes\Libs\OpenCV\sources\modules\imgcodecs\include;D:\Programmes\Libs\OpenCV\sources\modules\shape\include;D:\Programmes\Libs\OpenCV\sources\modules\videoio\include;D:\Programmes\Libs\OpenCV\sources\modules\highgui\include;D:\Programmes\Libs\OpenCV\sources\modules\superres\include;D:\Programmes\Libs\OpenCV\sources\modules\ts\include;D:\Programmes\Libs\OpenCV\sources\modules\features2d\include;D:\Programmes\Libs\OpenCV\sources\modules\calib3d\include;D:\Programmes\Libs\OpenCV\sources\modules\stitching\include;D:\Programmes\Libs\OpenCV\sources\modules\videostab\include;D:\SourceTree\rvra-project\ext\aruco\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Programmes\Libs\OpenCV\build;D:\Programmes\Libs\OpenCV\sources\include;D:\Programmes\Libs\OpenCV\sources\include\opencv;D:\Programmes\Libs\OpenCV\sources\modules\core\include;D:\Programmes\Libs\OpenCV\sources\modules\flann\include;D:\Programmes\Libs\OpenCV\sources\modules\imgproc\include;D:\Programmes\Libs\OpenCV\sources\modules\ml\include;D:\Programmes\Libs\OpenCV\sources\modules\objdetect\include;D:\Programmes\Libs\OpenCV\sources\modules\photo\include;D:\Programmes\Libs\OpenCV\sources\modules\video\include;D:\Programmes\Libs\OpenCV\sources\modules\dnn\include;D:\Programmes\Libs\OpenCV\sources\modules\imgcodecs\include;D:\Programmes\Libs\OpenCV\sources\modules\shape\include;D:\Programmes\Libs\OpenCV\sources\modules\videoio\include;D:\Programmes\Libs\OpenCV\sources\modules\highgui\include;D:\Programmes\Libs\OpenCV\sources\modules\superres\include;D:\Programmes\Libs\OpenCV\sources\modules\ts\include;D:\Programmes\Libs\OpenCV\sources\modules\features2d\include;D:\Programmes\Libs\OpenCV\sources\modules\calib3d\include;D:\Programmes\Libs\OpenCV\sources\modules\stitching\include;D:\Programmes\Libs\OpenCV\sources\modules\videostab\include;D:\SourceTree\rvra-project\ext\aruco\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\bin\Release\aruco201.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_dnn331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_ml331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_objdetect331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_shape331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_stitching331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_superres331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videostab331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_calib3d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_features2d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_flann331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_highgui331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_photo331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_video331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videoio331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgcodecs331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgproc331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_core331.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/Release/aruco_test.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/Release/aruco_test.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Programmes\Libs\OpenCV\build;D:\Programmes\Libs\OpenCV\sources\include;D:\Programmes\Libs\OpenCV\sources\include\opencv;D:\Programmes\Libs\OpenCV\sources\modules\core\include;D:\Programmes\Libs\OpenCV\sources\modules\flann\include;D:\Programmes\Libs\OpenCV\sources\modules\imgproc\include;D:\Programmes\Libs\OpenCV\sources\modules\ml\include;D:\Programmes\Libs\OpenCV\sources\modules\objdetect\include;D:\Programmes\Libs\OpenCV\sources\modules\photo\include;D:\Programmes\Libs\OpenCV\sources\modules\video\include;D:\Programmes\Libs\OpenCV\sources\modules\dnn\include;D:\Programmes\Libs\OpenCV\sources\modules\imgcodecs\include;D:\Programmes\Libs\OpenCV\sources\modules\shape\include;D:\Programmes\Libs\OpenCV\sources\modules\videoio\include;D:\Programmes\Libs\OpenCV\sources\modules\highgui\include;D:\Programmes\Libs\OpenCV\sources\modules\superres\include;D:\Programmes\Libs\OpenCV\sources\modules\ts\include;D:\Programmes\Libs\OpenCV\sources\modules\features2d\include;D:\Programmes\Libs\OpenCV\sources\modules\calib3d\include;D:\Programmes\Libs\OpenCV\sources\modules\stitching\include;D:\Programmes\Libs\OpenCV\sources\modules\videostab\include;D:\SourceTree\rvra-project\ext\aruco\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Programmes\Libs\OpenCV\build;D:\Programmes\Libs\OpenCV\sources\include;D:\Programmes\Libs\OpenCV\sources\include\opencv;D:\Programmes\Libs\OpenCV\sources\modules\core\include;D:\Programmes\Libs\OpenCV\sources\modules\flann\include;D:\Programmes\Libs\OpenCV\sources\modules\imgproc\include;D:\Programmes\Libs\OpenCV\sources\modules\ml\include;D:\Programmes\Libs\OpenCV\sources\modules\objdetect\include;D:\Programmes\Libs\OpenCV\sources\modules\photo\include;D:\Programmes\Libs\OpenCV\sources\modules\video\include;D:\Programmes\Libs\OpenCV\sources\modules\dnn\include;D:\Programmes\Libs\OpenCV\sources\modules\imgcodecs\include;D:\Programmes\Libs\OpenCV\sources\modules\shape\include;D:\Programmes\Libs\OpenCV\sources\modules\videoio\include;D:\Programmes\Libs\OpenCV\sources\modules\highgui\include;D:\Programmes\Libs\OpenCV\sources\modules\superres\include;D:\Programmes\Libs\OpenCV\sources\modules\ts\include;D:\Programmes\Libs\OpenCV\sources\modules\features2d\include;D:\Programmes\Libs\OpenCV\sources\modules\calib3d\include;D:\Programmes\Libs\OpenCV\sources\modules\stitching\include;D:\Programmes\Libs\OpenCV\sources\modules\videostab\include;D:\SourceTree\rvra-project\ext\aruco\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Programmes\Libs\OpenCV\build;D:\Programmes\Libs\OpenCV\sources\include;D:\Programmes\Libs\OpenCV\sources\include\opencv;D:\Programmes\Libs\OpenCV\sources\modules\core\include;D:\Programmes\Libs\OpenCV\sources\modules\flann\include;D:\Programmes\Libs\OpenCV\sources\modules\imgproc\include;D:\Programmes\Libs\OpenCV\sources\modules\ml\include;D:\Programmes\Libs\OpenCV\sources\modules\objdetect\include;D:\Programmes\Libs\OpenCV\sources\modules\photo\include;D:\Programmes\Libs\OpenCV\sources\modules\video\include;D:\Programmes\Libs\OpenCV\sources\modules\dnn\include;D:\Programmes\Libs\OpenCV\sources\modules\imgcodecs\include;D:\Programmes\Libs\OpenCV\sources\modules\shape\include;D:\Programmes\Libs\OpenCV\sources\modules\videoio\include;D:\Programmes\Libs\OpenCV\sources\modules\highgui\include;D:\Programmes\Libs\OpenCV\sources\modules\superres\include;D:\Programmes\Libs\OpenCV\sources\modules\ts\include;D:\Programmes\Libs\OpenCV\sources\modules\features2d\include;D:\Programmes\Libs\OpenCV\sources\modules\calib3d\include;D:\Programmes\Libs\OpenCV\sources\modules\stitching\include;D:\Programmes\Libs\OpenCV\sources\modules\videostab\include;D:\SourceTree\rvra-project\ext\aruco\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\bin\MinSizeRel\aruco201.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_dnn331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_ml331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_objdetect331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_shape331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_stitching331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_superres331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videostab331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_calib3d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_features2d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_flann331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_highgui331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_photo331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_video331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videoio331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgcodecs331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgproc331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_core331.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/MinSizeRel/aruco_test.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/MinSizeRel/aruco_test.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Programmes\Libs\OpenCV\build;D:\Programmes\Libs\OpenCV\sources\include;D:\Programmes\Libs\OpenCV\sources\include\opencv;D:\Programmes\Libs\OpenCV\sources\modules\core\include;D:\Programmes\Libs\OpenCV\sources\modules\flann\include;D:\Programmes\Libs\OpenCV\sources\modules\imgproc\include;D:\Programmes\Libs\OpenCV\sources\modules\ml\include;D:\Programmes\Libs\OpenCV\sources\modules\objdetect\include;D:\Programmes\Libs\OpenCV\sources\modules\photo\include;D:\Programmes\Libs\OpenCV\sources\modules\video\include;D:\Programmes\Libs\OpenCV\sources\modules\dnn\include;D:\Programmes\Libs\OpenCV\sources\modules\imgcodecs\include;D:\Programmes\Libs\OpenCV\sources\modules\shape\include;D:\Programmes\Libs\OpenCV\sources\modules\videoio\include;D:\Programmes\Libs\OpenCV\sources\modules\highgui\include;D:\Programmes\Libs\OpenCV\sources\modules\superres\include;D:\Programmes\Libs\OpenCV\sources\modules\ts\include;D:\Programmes\Libs\OpenCV\sources\modules\features2d\include;D:\Programmes\Libs\OpenCV\sources\modules\calib3d\include;D:\Programmes\Libs\OpenCV\sources\modules\stitching\include;D:\Programmes\Libs\OpenCV\sources\modules\videostab\include;D:\SourceTree\rvra-project\ext\aruco\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Programmes\Libs\OpenCV\build;D:\Programmes\Libs\OpenCV\sources\include;D:\Programmes\Libs\OpenCV\sources\include\opencv;D:\Programmes\Libs\OpenCV\sources\modules\core\include;D:\Programmes\Libs\OpenCV\sources\modules\flann\include;D:\Programmes\Libs\OpenCV\sources\modules\imgproc\include;D:\Programmes\Libs\OpenCV\sources\modules\ml\include;D:\Programmes\Libs\OpenCV\sources\modules\objdetect\include;D:\Programmes\Libs\OpenCV\sources\modules\photo\include;D:\Programmes\Libs\OpenCV\sources\modules\video\include;D:\Programmes\Libs\OpenCV\sources\modules\dnn\include;D:\Programmes\Libs\OpenCV\sources\modules\imgcodecs\include;D:\Programmes\Libs\OpenCV\sources\modules\shape\include;D:\Programmes\Libs\OpenCV\sources\modules\videoio\include;D:\Programmes\Libs\OpenCV\sources\modules\highgui\include;D:\Programmes\Libs\OpenCV\sources\modules\superres\include;D:\Programmes\Libs\OpenCV\sources\modules\ts\include;D:\Programmes\Libs\OpenCV\sources\modules\features2d\include;D:\Programmes\Libs\OpenCV\sources\modules\calib3d\include;D:\Programmes\Libs\OpenCV\sources\modules\stitching\include;D:\Programmes\Libs\OpenCV\sources\modules\videostab\include;D:\SourceTree\rvra-project\ext\aruco\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Programmes\Libs\OpenCV\build;D:\Programmes\Libs\OpenCV\sources\include;D:\Programmes\Libs\OpenCV\sources\include\opencv;D:\Programmes\Libs\OpenCV\sources\modules\core\include;D:\Programmes\Libs\OpenCV\sources\modules\flann\include;D:\Programmes\Libs\OpenCV\sources\modules\imgproc\include;D:\Programmes\Libs\OpenCV\sources\modules\ml\include;D:\Programmes\Libs\OpenCV\sources\modules\objdetect\include;D:\Programmes\Libs\OpenCV\sources\modules\photo\include;D:\Programmes\Libs\OpenCV\sources\modules\video\include;D:\Programmes\Libs\OpenCV\sources\modules\dnn\include;D:\Programmes\Libs\OpenCV\sources\modules\imgcodecs\include;D:\Programmes\Libs\OpenCV\sources\modules\shape\include;D:\Programmes\Libs\OpenCV\sources\modules\videoio\include;D:\Programmes\Libs\OpenCV\sources\modules\highgui\include;D:\Programmes\Libs\OpenCV\sources\modules\superres\include;D:\Programmes\Libs\OpenCV\sources\modules\ts\include;D:\Programmes\Libs\OpenCV\sources\modules\features2d\include;D:\Programmes\Libs\OpenCV\sources\modules\calib3d\include;D:\Programmes\Libs\OpenCV\sources\modules\stitching\include;D:\Programmes\Libs\OpenCV\sources\modules\videostab\include;D:\SourceTree\rvra-project\ext\aruco\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\bin\RelWithDebInfo\aruco201.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_dnn331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_ml331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_objdetect331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_shape331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_stitching331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_superres331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videostab331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_calib3d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_features2d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_flann331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_highgui331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_photo331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_video331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videoio331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgcodecs331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgproc331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_core331.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/RelWithDebInfo/aruco_test.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/RelWithDebInfo/aruco_test.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\SourceTree\rvra-project\ext\aruco\utils\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/SourceTree/rvra-project/ext/aruco/utils/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+D:\Programmes\CMake\bin\cmake.exe -HD:/SourceTree/rvra-project -BD:/SourceTree/rvra-project/VSSolutions --check-stamp-file D:/SourceTree/rvra-project/VSSolutions/ext/aruco/utils/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/SourceTree/rvra-project/ext/aruco/utils/CMakeLists.txt;D:\SourceTree\rvra-project\ext\aruco\utils\CMakeLists.txt;D:\SourceTree\rvra-project\ext\aruco\utils\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\SourceTree\rvra-project\VSSolutions\ext\aruco\utils\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/SourceTree/rvra-project/ext/aruco/utils/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+D:\Programmes\CMake\bin\cmake.exe -HD:/SourceTree/rvra-project -BD:/SourceTree/rvra-project/VSSolutions --check-stamp-file D:/SourceTree/rvra-project/VSSolutions/ext/aruco/utils/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/SourceTree/rvra-project/ext/aruco/utils/CMakeLists.txt;D:\SourceTree\rvra-project\ext\aruco\utils\CMakeLists.txt;D:\SourceTree\rvra-project\ext\aruco\utils\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\SourceTree\rvra-project\VSSolutions\ext\aruco\utils\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/SourceTree/rvra-project/ext/aruco/utils/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+D:\Programmes\CMake\bin\cmake.exe -HD:/SourceTree/rvra-project -BD:/SourceTree/rvra-project/VSSolutions --check-stamp-file D:/SourceTree/rvra-project/VSSolutions/ext/aruco/utils/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:/SourceTree/rvra-project/ext/aruco/utils/CMakeLists.txt;D:\SourceTree\rvra-project\ext\aruco\utils\CMakeLists.txt;D:\SourceTree\rvra-project\ext\aruco\utils\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\SourceTree\rvra-project\VSSolutions\ext\aruco\utils\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/SourceTree/rvra-project/ext/aruco/utils/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+D:\Programmes\CMake\bin\cmake.exe -HD:/SourceTree/rvra-project -BD:/SourceTree/rvra-project/VSSolutions --check-stamp-file D:/SourceTree/rvra-project/VSSolutions/ext/aruco/utils/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:/SourceTree/rvra-project/ext/aruco/utils/CMakeLists.txt;D:\SourceTree\rvra-project\ext\aruco\utils\CMakeLists.txt;D:\SourceTree\rvra-project\ext\aruco\utils\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\SourceTree\rvra-project\VSSolutions\ext\aruco\utils\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\SourceTree\rvra-project\ext\aruco\utils\aruco_test.cpp"  />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\SourceTree\rvra-project\VSSolutions\ZERO_CHECK.vcxproj">
+      <Project>{126DCE62-5252-345A-8E38-7B9988A04B2F}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\SourceTree\rvra-project\VSSolutions\ext\aruco\src\aruco.vcxproj">
+      <Project>{86EC4A9E-EB84-36B2-A9B9-4F97C3F4EEFB}</Project>
+      <Name>aruco</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -9,6 +9,7 @@
 #include <opencv2/imgproc/imgproc.hpp>
 
 #include "Interfaces.hpp"
+#include <marker.h>
 
 using namespace cv;
 using namespace std;
@@ -19,8 +20,13 @@ int main(int argc, char **argv) {
 	Mat Im = Mat::zeros(H, W, CV_8UC3);
 	Interfaces Inter;
 	Inter.SetInterfaceSize(H,W);
-	Inter.DrawInterfaces(Im);
 
+	vector<aruco::Marker> MarkerVec;
+	vector<pair<int, int>> EdgeVec;
+
+
+
+	Inter.DrawInterfaces(Im);
 	imshow("Im", Im);
 	waitKey(0);
 }

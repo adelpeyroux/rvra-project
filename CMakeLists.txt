@@ -21,26 +21,26 @@ SET(TARGET "detect")
 
 SET(SRC
 		include/AudioGraph.hpp
-                include/MarkerGraph.hpp
+		include/MarkerGraph.hpp
 		include/AudioNode.hpp
-                include/OscNode.hpp
-                include/DestinationNode.hpp
+		include/OscNode.hpp
+		include/DestinationNode.hpp
+		include/xMarker.hpp
 		include/Interfaces.hpp
-                include/xMarker.hpp
-                include/MiscConsts.hpp
+		include/MiscConsts.hpp
 
 		src/detect_markers.cpp
 		src/AudioGraph.cpp
-                src/MarkerGraph.cpp
+		src/MarkerGraph.cpp
 		src/AudioNode.cpp
-                src/DestinationNode.cpp
-                src/OscNode.cpp
-                src/Interfaces.cpp
-                src/xMarker.cpp)
-
+		src/DestinationNode.cpp
+		src/OscNode.cpp
+		src/xMarker.cpp
+		src/Interfaces.cpp)
 
 SET(SRC_INTERFACE_TEST
 		include/Interfaces.hpp
+		include/MiscConsts.hpp
 
 		src/Interfaces.cpp
 		src/Interfaces_Tests.cpp)
