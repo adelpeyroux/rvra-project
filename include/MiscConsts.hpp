@@ -14,8 +14,10 @@
 //***********************************
 //********** Trigonométrie **********
 //***********************************
-#define TWO_PI 6.28318530718
-#define SQRT_2 1.414213562
+#define TWO_PI		 6.28318530717958647693
+#define RAD2DEG		57.29577951308232087680
+#define M_PI_180	 0.01745329251994329577
+#define SQRT_2		 1.41421356237309504880
 
 //******************************
 //********** Couleurs **********
@@ -48,4 +50,19 @@ enum MY_COLORS {
 			MY_COLOR_BLOOD = 15,
 			MY_COLOR_GRASS = 16,
 			MY_COLOR_DEEP = 17,
+};
+
+enum MARKER_TYPE
+{
+	// Oscillateurs
+	TYPE_OSCILL_SINUS = 0,
+	TYPE_OSCILL_SQARE = 1,
+	TYPE_OSCILL_SAW = 2,
+	TYPE_OSILLC_IMPULSE = 3,
+
+	// Effets
+	TYPE_EFFECT_NOISE = 10,
+
+	// Filtres
+	TYPE_FILTER_COLOR = 20,
 };

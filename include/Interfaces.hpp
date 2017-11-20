@@ -5,14 +5,24 @@
 #include "MiscConsts.hpp"
 #include <marker.h>
 
-class Interfaces {
+struct MarkerInfos
+{
+	cv::Point _Center;
+	double _Size;
+	double _Angle;
+	MARKER_TYPE _Type;
+};
+
+class Interfaces
+{
 public:
 	int _RadiusCenter;
 	bool _Segmentation;
 	cv::Scalar _Color;
 
 	//***** Constructeurs / Destructeurs ****
-	Interfaces(int radiusCenter = 5, int nbsegments = 4, bool segmentation = true, cv::Scalar Color = COLORS[MY_COLOR_WHITE]);
+	Interfaces(int radiusCenter = 5, int nbsegments = 4, bool segmentation = true,
+	           cv::Scalar Color = COLORS[MY_COLOR_WHITE]);
 	virtual ~Interfaces();
 
 	//***** Getters / Setters ****
@@ -21,7 +31,7 @@ public:
 	void SetInterfaceSize(int h, int w);
 
 	//***** Draws ****
-	void DrawInterfaces(cv::Mat &Im/*, graphe*/);
+	void DrawInterfaces(cv::Mat& Im/*, graphe*/) const;
 
 private:
 	int _nbSegments;
@@ -30,14 +40,16 @@ private:
 	cv::Point _Center;
 
 	//***** Draws ****
-	void drawCenter(cv::Mat &Im);
-	void drawSegmentation(cv::Mat &Im);
-	void drawLinks(cv::Mat &Im);
-	void drawLink(cv::Mat &Im);
-	void drawMarkers(cv::Mat &Im);
-	void drawMarker(cv::Mat &Im);
-	void drawMarkerCircle(cv::Mat &Im);
+	void drawCenter(cv::Mat& Im) const;
+	void drawSegmentation(cv::Mat& Im) const;
+	void drawLinks(cv::Mat& Im, std::vector<MarkerInfos> &Mis, std::vector<std::pair<int,int>> &Edges) const;
+	void drawMarkers(cv::Mat& Im, vector<MarkerInfos>& Mis) const;
+	void drawMarker(cv::Mat& Im, MarkerInfos &Mi) const;
+	void drawMarkerCircle(cv::Mat& Im, MarkerInfos & Mi) const;
 
-	//Marker Type
-	void drawSquareMarker(cv::Mat &Im);
+	//Marker Type (pour l'instant un seul)
+	void drawSquareMarker(cv::Mat& Im, MarkerInfos & Mi) const;
+
+	//Misc
+	static cv::Scalar Type2Color(MARKER_TYPE T);
 };
