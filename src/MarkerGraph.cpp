@@ -1,6 +1,6 @@
 #include "MarkerGraph.hpp"
 
-MarkerGraph::MarkerGraph()
+MarkerGraph::MarkerGraph(std::vector<aruco::Marker> &markers, cv::Size s)
 {
     _markers = std::vector<aruco::Marker>();
     _edges = std::vector<std::pair<int,int>>();

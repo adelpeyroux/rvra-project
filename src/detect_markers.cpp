@@ -40,6 +40,7 @@ or implied, of Rafael Muñoz Salinas.
 
 #include <maximilian.h>
 #include <player.h>
+#include "MarkerGraph.hpp"
 
 using namespace cv;
 using namespace aruco;
@@ -94,6 +95,7 @@ void detect_markers() {
         // Detection of markers in the image passed
         TheMarkers= MDetector.detect(TheInputImage, TheCameraParameters, TheMarkerSize);
         // chekc the speed by calculating the mean speed of all iterations
+        MarkerGraph g(TheMarkers, TheInputImage.size());
 
         // print marker info and draw the markers in image
         TheInputImage.copyTo(TheInputImageCopy);

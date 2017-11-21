@@ -48,6 +48,34 @@ static cv::Scalar BGR2RGB(const cv::Scalar &color)
 	return cv::Scalar(color[3],color[2],color[1]);
 }
 
+static MARKER_TYPE id2type(int id)
+{
+    switch (id) {
+    case 107:
+        return TYPE_OSCILL_SINUS;
+    case 232:
+        return TYPE_OSCILL_SQUARE;
+    case 494:
+        return TYPE_OSCILL_TRIANGLE;
+    case 553:
+        return TYPE_OSCILL_SAW;
+    case 619:
+        return TYPE_OSCILL_IMPULSE;
+    case 824:
+        return TYPE_EFFECT_NOISE;
+    case 827:
+        return TYPE_FILTER_COLOR;
+    default:
+        return TYPE_OSCILL_SINUS;
+        break;
+    }
+}
+
+static bool isSource(MARKER_TYPE m)
+{
+    return m < 10;
+}
+
 //*****************************
 //********** Markers **********
 //*****************************
