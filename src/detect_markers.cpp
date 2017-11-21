@@ -115,7 +115,7 @@ void detect_markers() {
         // DONE! Easy, right?
         // show input with augmented information and  the thresholded image
         cv::imshow("in", resize(InputImageCopy,1280));
-        cv::imshow("thres", resize(MDetector.getThresholdedImage(),1280));
+        //cv::imshow("thres", resize(MDetector.getThresholdedImage(),1280));
 
 
         key = cv::waitKey(waitTime); // wait for key to be pressed
@@ -123,7 +123,7 @@ void detect_markers() {
 
         AvrgTime.first += ((double)getTickCount() - tick) / getTickFrequency();
         AvrgTime.second++;
-        cout << "\rTime detection=" << 1000 * AvrgTime.first / AvrgTime.second << " milliseconds nmarkers=" << Markers.size() << std::endl;
+        //cout << "\rTime detection=" << 1000 * AvrgTime.first / AvrgTime.second << " milliseconds nmarkers=" << Markers.size() << std::endl;
     }
 }
 

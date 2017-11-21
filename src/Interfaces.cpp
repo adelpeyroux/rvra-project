@@ -107,7 +107,7 @@ void Interfaces::drawLinks(Mat& Im, const vector<xMarker>& Mi, const vector<pair
 	for (int i = 0; i < Edges.size(); ++i) {
         Point P1 = Edges[i].first == -1 ? _Center : Mi[Edges[i].first].GetCenter(),
             P2 = Edges[i].second == -1 ? _Center : Mi[Edges[i].second].GetCenter();
-		line(Im, P1, P2, _Color);
+        line(Im, P1, P2, _Color, 2);
 	}
 }
 

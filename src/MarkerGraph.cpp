@@ -31,7 +31,7 @@ MarkerGraph::MarkerGraph(std::vector<aruco::Marker> &markers, cv::Size s)
                 addEdge(current.GetMarkerIndex(), tmp.GetMarkerIndex());
                 tmp.AddInput(current);
                 current = tmp;
-
+                find = false;
             }
         }while(find);
         addEdge(current.GetMarkerIndex(), _root.GetMarkerIndex());
