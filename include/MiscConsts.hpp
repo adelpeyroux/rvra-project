@@ -1,14 +1,5 @@
 #pragma once
 
-/**
-* \file MiscServices.hpp
-* \brief Fichier contenant diverses fonctions utiles de conversion de type, gestion de fichiers...
-* \author Thibaut Monseigne
-* \version 0.1
-* \date 01 Septembre 2017
-*/
-#pragma once
-
 #include <opencv2/core/core.hpp>
 
 //***********************************
@@ -52,13 +43,22 @@ enum MY_COLORS {
 			MY_COLOR_DEEP = 17,
 };
 
+static cv::Scalar BGR2RGB(const cv::Scalar &color)
+{
+	return cv::Scalar(color[3],color[2],color[1]);
+}
+
+//*****************************
+//********** Markers **********
+//*****************************
 enum MARKER_TYPE
 {
 	// Oscillateurs
 	TYPE_OSCILL_SINUS = 0,
-	TYPE_OSCILL_SQARE = 1,
-	TYPE_OSCILL_SAW = 2,
-	TYPE_OSILLC_IMPULSE = 3,
+	TYPE_OSCILL_SQUARE = 1,
+	TYPE_OSCILL_TRIANGLE = 2,
+	TYPE_OSCILL_SAW = 3,
+	TYPE_OSCILL_IMPULSE = 4,
 
 	// Effets
 	TYPE_EFFECT_NOISE = 10,

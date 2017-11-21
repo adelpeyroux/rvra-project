@@ -17,11 +17,12 @@ class Interfaces
 {
 public:
 	int _RadiusCenter;
+	int _RadiusButton;
 	bool _Segmentation;
 	cv::Scalar _Color;
 
 	//***** Constructeurs / Destructeurs ****
-	Interfaces(int radiusCenter = 5, int nbsegments = 4, bool segmentation = true,
+	Interfaces(int radiusCenter = 10, int radiusButton = 5, int nbsegments = 4, bool segmentation = false,
 	           cv::Scalar Color = COLORS[MY_COLOR_WHITE]);
 	virtual ~Interfaces();
 

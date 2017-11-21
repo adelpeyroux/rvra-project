@@ -13,8 +13,8 @@ using namespace std;
 //***************************************
 //***** Constructeurs / Destructeurs ****
 //***************************************
-Interfaces::Interfaces(int radiusCenter, int nbsegments, bool segmentation, Scalar Color)
-	: _RadiusCenter(radiusCenter), _Segmentation(segmentation), _Color(Color)
+Interfaces::Interfaces(int radiusCenter, int radiusButton, int nbsegments, bool segmentation, Scalar Color)
+	: _RadiusCenter(radiusCenter), _RadiusButton(radiusButton), _Segmentation(segmentation), _Color(Color)
 {
 	SetNbSegments(nbsegments);
 }
@@ -65,15 +65,15 @@ void Interfaces::DrawInterfaces(Mat& Im) const
 
 	vector<MarkerInfos> Mi(10);
 	Mi[0] = {Point(50, 50), 50, 180, TYPE_OSCILL_SINUS};
-	Mi[1] = {Point(150, 125), 75, 90, TYPE_OSCILL_SQARE};
+	Mi[1] = {Point(150, 125), 75, 90, TYPE_OSCILL_SQUARE};
 	Mi[2] = {Point(300, 50), 60, 45, TYPE_OSCILL_SAW};
-	Mi[3] = {Point(125, 250), 80, -180, TYPE_OSILLC_IMPULSE};
+	Mi[3] = {Point(125, 250), 80, -180, TYPE_OSCILL_IMPULSE};
 	Mi[4] = {Point(300, 250), 100, 60, TYPE_EFFECT_NOISE};
 	Mi[5] = {Point(1000, 50), 65, -60, TYPE_FILTER_COLOR};
 	Mi[6] = {Point(1200, 50), 70, -30, TYPE_OSCILL_SINUS};
-	Mi[7] = {Point(900, 150), 75, -45, TYPE_OSCILL_SQARE};
+	Mi[7] = {Point(900, 150), 75, -45, TYPE_OSCILL_SQUARE};
 	Mi[8] = {Point(1000, 300), 90, 0, TYPE_OSCILL_SAW};
-	Mi[9] = {Point(700, 150), 95, -90, TYPE_OSILLC_IMPULSE};
+	Mi[9] = {Point(700, 150), 95, -90, TYPE_OSCILL_TRIANGLE};
 
 	drawCenter(Im);
 	drawSegmentation(Im);
@@ -134,8 +134,8 @@ void Interfaces::drawMarkerCircle(Mat& Im, MarkerInfos& Mi) const
 
 	circle(Im, Mi._Center, radius, _Color, 1);
 	ellipse(Im, Mi._Center, Size(radius, radius), -90, 0, Mi._Angle, Color, 3);
-	circle(Im, P1, _RadiusCenter, _Color, -1);
-	circle(Im, P2, _RadiusCenter, Color, -1);
+	circle(Im, P1, _RadiusButton, _Color, -1);
+	circle(Im, P2, _RadiusButton, Color, -1);
 }
 
 //***** Markers Type ****
@@ -154,11 +154,13 @@ Scalar Interfaces::Type2Color(MARKER_TYPE T)
 {
 	switch (T) {
 	case TYPE_OSCILL_SINUS:		return COLORS[3];
-	case TYPE_OSCILL_SQARE:		return COLORS[4];
-	case TYPE_OSCILL_SAW:		return COLORS[5];
-	case TYPE_OSILLC_IMPULSE:	return COLORS[6];
-	case TYPE_EFFECT_NOISE:		return COLORS[7];
-	case TYPE_FILTER_COLOR:		return COLORS[8];
+	case TYPE_OSCILL_SQUARE:	return COLORS[4];
+	case TYPE_OSCILL_TRIANGLE:	return COLORS[5];
+	case TYPE_OSCILL_SAW:		return COLORS[6];
+	case TYPE_OSCILL_IMPULSE:	return COLORS[7];
+	case TYPE_EFFECT_NOISE:		return COLORS[8];
+	case TYPE_FILTER_COLOR:		return COLORS[9];
 	default:					return COLORS[2];
 	}
 }
+
