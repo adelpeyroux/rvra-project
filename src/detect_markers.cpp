@@ -41,18 +41,20 @@ or implied, of Rafael Muñoz Salinas.
 #include <maximilian.h>
 #include <player.h>
 #include "MarkerGraph.hpp"
+#include "MiscConsts.hpp"
+#include "Interfaces.hpp"
 
 using namespace cv;
 using namespace aruco;
 
+Interfaces Inter;
+MarkerGraph graph;
 MarkerDetector MDetector;
-VideoCapture TheVideoCapturer;
-vector< Marker > TheMarkers;
-Mat TheInputImage, TheInputImageCopy;
-CameraParameters TheCameraParameters;
+VideoCapture VideoCapturer;
+vector< Marker > Markers;
+Mat InputImage, InputImageCopy;
 void cvTackBarEvents(int pos, void *);
 
-float TheMarkerSize;
 char key;
 
 
@@ -79,9 +81,9 @@ void setup() {//some inits
 void play(double *output) {
     output[0] = 0.;
 
-    if (TheMarkers.size() > 0)
-        for (int i = 0; i < TheMarkers.size(); ++i)
-            output[0] += mySine[i].sinewave(TheMarkers[i].id * 2) / TheMarkers.size();
+    if (Markers.size() > 0)
+        for (int i = 0; i < Markers.size(); ++i)
+            output[0] += mySine[i].sinewave(Markers[i].id * 2) / Markers.size();
 
     output[1]=output[0];
 
@@ -89,36 +91,30 @@ void play(double *output) {
 
 void detect_markers() {
     while (true) {
-        TheVideoCapturer >> TheInputImage;
+        VideoCapturer >> InputImage;
         // copy image
         double tick = (double)getTickCount(); // for checking the speed
         // Detection of markers in the image passed
-        TheMarkers= MDetector.detect(TheInputImage, TheCameraParameters, TheMarkerSize);
+        Markers= MDetector.detect(InputImage, CameraParams, MarkerSize);
         // chekc the speed by calculating the mean speed of all iterations
-        MarkerGraph g(TheMarkers, TheInputImage.size());
+        cv::Size SizeIm = InputImage.size();
+        graph = MarkerGraph(Markers, SizeIm);
+        // print marker info and draw the markers in image
+        InputImage.copyTo(InputImageCopy);
+
 
         // print marker info and draw the markers in image
-        TheInputImage.copyTo(TheInputImageCopy);
+        InputImage.copyTo(InputImageCopy);
 
-
-        // print marker info and draw the markers in image
-        TheInputImage.copyTo(TheInputImageCopy);
-
-        for (unsigned int i = 0; i < TheMarkers.size(); i++) {
-            cout << TheMarkers[i]<<endl;
-            TheMarkers[i].draw(TheInputImageCopy, Scalar(0, 0, 255));
+        for (unsigned int i = 0; i < Markers.size(); i++) {
+            cout << Markers[i]<<endl;
+            Markers[i].draw(InputImageCopy, Scalar(0, 0, 255));
         }
 
-        // draw a 3d cube in each marker if there is 3d info
-        if (TheCameraParameters.isValid() && TheMarkerSize>0)
-            for (unsigned int i = 0; i < TheMarkers.size(); i++) {
-                CvDrawingUtils::draw3dCube(TheInputImageCopy, TheMarkers[i], TheCameraParameters);
-                CvDrawingUtils::draw3dAxis(TheInputImageCopy, TheMarkers[i], TheCameraParameters);
-            }
-
+        Inter.DrawInterfaces(InputImageCopy, graph.getMarkers(), graph.getEdges());
         // DONE! Easy, right?
         // show input with augmented information and  the thresholded image
-        cv::imshow("in", resize(TheInputImageCopy,1280));
+        cv::imshow("in", resize(InputImageCopy,1280));
         cv::imshow("thres", resize(MDetector.getThresholdedImage(),1280));
 
 
@@ -127,7 +123,7 @@ void detect_markers() {
 
         AvrgTime.first += ((double)getTickCount() - tick) / getTickFrequency();
         AvrgTime.second++;
-        cout << "\rTime detection=" << 1000 * AvrgTime.first / AvrgTime.second << " milliseconds nmarkers=" << TheMarkers.size() << std::endl;
+        cout << "\rTime detection=" << 1000 * AvrgTime.first / AvrgTime.second << " milliseconds nmarkers=" << Markers.size() << std::endl;
     }
 }
 
@@ -149,36 +145,36 @@ int main(int argc, char **argv) {
         }
 
         ///////////  PARSE ARGUMENTS
-        string TheInputVideo = argv[1];
+        string InputVideo = argv[1];
         // read camera parameters if passed
-        if (cml["-c"] )  TheCameraParameters.readFromXMLFile(cml("-c"));
-        TheMarkerSize = std::stof(cml("-s","-1"));
+        if (cml["-c"] )  CameraParams.readFromXMLFile(cml("-c"));
+        MarkerSize = std::stof(cml("-s","-1"));
         //aruco::Dictionary::DICT_TYPES  TheDictionary= Dictionary::getTypeFromString( cml("-d","ARUCO") );
 
         ///////////  OPEN VIDEO
         // read from camera or from  file
-        if (TheInputVideo.find("live") != string::npos) {
+        if (InputVideo.find("live") != string::npos) {
             int vIdx = 0;
             // check if the :idx is here
             char cad[100];
-            if (TheInputVideo.find(":") != string::npos) {
-                std::replace(TheInputVideo.begin(), TheInputVideo.end(), ':', ' ');
-                sscanf(TheInputVideo.c_str(), "%s %d", cad, &vIdx);
+            if (InputVideo.find(":") != string::npos) {
+                std::replace(InputVideo.begin(), InputVideo.end(), ':', ' ');
+                sscanf(InputVideo.c_str(), "%s %d", cad, &vIdx);
             }
             cout << "Opening camera index " << vIdx << endl;
-            TheVideoCapturer.open(vIdx);
+            VideoCapturer.open(vIdx);
             waitTime = 10;
         }
-        else TheVideoCapturer.open(TheInputVideo);
+        else VideoCapturer.open(InputVideo);
         // check video is open
-        if (!TheVideoCapturer.isOpened())  throw std::runtime_error("Could not open video");
+        if (!VideoCapturer.isOpened())  throw std::runtime_error("Could not open video");
 
 
         ///// CONFIGURE DATA
         // read first image to get the dimensions
-        TheVideoCapturer.retrieve(TheInputImage);
-        if (TheCameraParameters.isValid())
-            TheCameraParameters.resize(TheInputImage.size());
+        VideoCapturer.retrieve(InputImage);
+        if (CameraParams.isValid())
+            CameraParams.resize(InputImage.size());
 
         MDetector.setDictionary(cml("-d","ARUCO"));//sets the dictionary to be employed (ARUCO,APRILTAGS,ARTOOLKIT,etc)
         MDetector.setThresholdParams(7, 7);
@@ -191,6 +187,8 @@ int main(int argc, char **argv) {
         cv::namedWindow("in");
 
         // capture until press ESC or until the end of the video
+        cv::Size SizeIm = InputImage.size();
+        Inter.SetInterfaceSize(SizeIm.height, SizeIm.width);
 
 
         //go!
@@ -224,16 +222,16 @@ void cvTackBarEvents(int pos, void *) {
     if (iThresParam1 < 1)  iThresParam1 = 1;
     MDetector.setThresholdParams(iThresParam1, iThresParam2);
     // recompute
-    MDetector.detect(TheInputImage, TheMarkers, TheCameraParameters);
-    TheInputImage.copyTo(TheInputImageCopy);
-    for (unsigned int i = 0; i < TheMarkers.size(); i++)
-        TheMarkers[i].draw(TheInputImageCopy, Scalar(0, 0, 255));
+    MDetector.detect(InputImage, Markers, CameraParams);
+    InputImage.copyTo(InputImageCopy);
+    for (unsigned int i = 0; i < Markers.size(); i++)
+        Markers[i].draw(InputImageCopy, Scalar(0, 0, 255));
 
     // draw a 3d cube in each marker if there is 3d info
-    if (TheCameraParameters.isValid())
-        for (unsigned int i = 0; i < TheMarkers.size(); i++)
-            CvDrawingUtils::draw3dCube(TheInputImageCopy, TheMarkers[i], TheCameraParameters);
+    if (CameraParams.isValid())
+        for (unsigned int i = 0; i < Markers.size(); i++)
+            CvDrawingUtils::draw3dCube(InputImageCopy, Markers[i], CameraParams);
 
-    cv::imshow("in", resize(TheInputImageCopy,1280));
+    cv::imshow("in", resize(InputImageCopy,1280));
     cv::imshow("thres", resize(MDetector.getThresholdedImage(),1280));
 }

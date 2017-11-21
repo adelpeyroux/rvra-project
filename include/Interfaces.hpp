@@ -3,7 +3,7 @@
 #include <opencv2/core/core.hpp>
 
 #include "MiscConsts.hpp"
-#include <marker.h>
+#include "xMarker.hpp"
 
 struct MarkerInfos
 {
@@ -32,7 +32,7 @@ public:
 	void SetInterfaceSize(int h, int w);
 
 	//***** Draws ****
-	void DrawInterfaces(cv::Mat& Im/*, graphe*/) const;
+    void DrawInterfaces(cv::Mat& Im, const std::vector<xMarker> &Mis, const std::vector<std::pair<int,int>> &Edges) const;
 
 private:
 	int _nbSegments;
@@ -43,13 +43,13 @@ private:
 	//***** Draws ****
 	void drawCenter(cv::Mat& Im) const;
 	void drawSegmentation(cv::Mat& Im) const;
-	void drawLinks(cv::Mat& Im, std::vector<MarkerInfos> &Mis, std::vector<std::pair<int,int>> &Edges) const;
-	void drawMarkers(cv::Mat& Im, vector<MarkerInfos>& Mis) const;
-	void drawMarker(cv::Mat& Im, MarkerInfos &Mi) const;
-	void drawMarkerCircle(cv::Mat& Im, MarkerInfos & Mi) const;
+    void drawLinks(cv::Mat& Im, const std::vector<xMarker> &Mis, const std::vector<std::pair<int,int>> &Edges) const;
+    void drawMarkers(cv::Mat& Im, const vector<xMarker>& Mis) const;
+    void drawMarker(cv::Mat& Im, const xMarker &Mi) const;
+    void drawMarkerCircle(cv::Mat& Im, const xMarker & Mi) const;
 
 	//Marker Type (pour l'instant un seul)
-	void drawSquareMarker(cv::Mat& Im, MarkerInfos & Mi) const;
+    void drawSquareMarker(cv::Mat& Im, const xMarker & Mi) const;
 
 	//Misc
 	static cv::Scalar Type2Color(MARKER_TYPE T);

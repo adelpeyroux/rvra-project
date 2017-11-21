@@ -1,6 +1,8 @@
 #pragma once
 
 #include <opencv2/core/core.hpp>
+#include "aruco.h"
+
 
 //***********************************
 //********** Trigonométrie **********
@@ -9,6 +11,12 @@
 #define RAD2DEG		57.29577951308232087680
 #define M_PI_180	 0.01745329251994329577
 #define SQRT_2		 1.41421356237309504880
+#define PROXIMITY   50
+
+
+static float MarkerSize;
+static aruco::CameraParameters CameraParams;
+
 
 //******************************
 //********** Couleurs **********
@@ -48,6 +56,30 @@ static cv::Scalar BGR2RGB(const cv::Scalar &color)
 	return cv::Scalar(color[3],color[2],color[1]);
 }
 
+
+//*****************************
+//********** Markers **********
+//*****************************
+enum MARKER_TYPE
+{
+	// Oscillateurs
+	TYPE_OSCILL_SINUS = 0,
+	TYPE_OSCILL_SQUARE = 1,
+	TYPE_OSCILL_TRIANGLE = 2,
+	TYPE_OSCILL_SAW = 3,
+	TYPE_OSCILL_IMPULSE = 4,
+
+	// Effets
+	TYPE_EFFECT_NOISE = 10,
+
+    // Filtres
+    TYPE_FILTER_COLOR = 20,
+
+    // Root
+    TYPE_END = 99,
+};
+
+
 static MARKER_TYPE id2type(int id)
 {
     switch (id) {
@@ -75,22 +107,3 @@ static bool isSource(MARKER_TYPE m)
 {
     return m < 10;
 }
-
-//*****************************
-//********** Markers **********
-//*****************************
-enum MARKER_TYPE
-{
-	// Oscillateurs
-	TYPE_OSCILL_SINUS = 0,
-	TYPE_OSCILL_SQUARE = 1,
-	TYPE_OSCILL_TRIANGLE = 2,
-	TYPE_OSCILL_SAW = 3,
-	TYPE_OSCILL_IMPULSE = 4,
-
-	// Effets
-	TYPE_EFFECT_NOISE = 10,
-
-	// Filtres
-	TYPE_FILTER_COLOR = 20,
-};

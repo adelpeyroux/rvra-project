@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
 
 
 
-	Inter.DrawInterfaces(Im);
+//	Inter.DrawInterfaces(Im);
 	imshow("Im", Im);
 	waitKey(0);
 }

@@ -1,7 +1,0 @@
-#include "xMarker.hpp"
-
-xMarker::xMarker(aruco::Marker m)
-{
-    
-
-}

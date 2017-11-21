@@ -2,8 +2,62 @@
 
 MarkerGraph::MarkerGraph(std::vector<aruco::Marker> &markers, cv::Size s)
 {
-    _markers = std::vector<aruco::Marker>();
-    _edges = std::vector<std::pair<int,int>>();
+    _root = MarkerGraph::Node(xMarker(s.height, s.width), -1);
+    _size = s;
+    _markers.reserve(markers.size());
+    vector<int> sources;
+    vector<MarkerGraph::Node> effects;
+    int index = 0;
+    for (aruco::Marker m : markers) {
+        xMarker tmp (m);
+        if (tmp.IsSource()){
+            sources.push_back(index);
+        }else
+        {
+            effects.push_back(Node(tmp, index));
+        }
+        _markers.push_back(tmp);
+        index ++;
+    }
+   // _edges = std::vector<std::pair<int,int>>();
+
+    for (int id : sources){
+        MarkerGraph::Node current(_markers[id], id);
+        MarkerGraph::Node tmp;
+        bool find = false;
+        do{
+            find = FindProximity(current, effects, tmp);
+            if (find){
+                addEdge(current.GetMarkerIndex(), tmp.GetMarkerIndex());
+                tmp.AddInput(current);
+                current = tmp;
+
+            }
+        }while(find);
+        addEdge(current.GetMarkerIndex(), _root.GetMarkerIndex());
+
+        _root.AddInput(current);
+    }
+}
+
+bool MarkerGraph::FindProximity(MarkerGraph::Node& current, vector<MarkerGraph::Node>& effects, MarkerGraph::Node& tmp){
+    cv::Point p = _markers[current.GetMarkerIndex()].GetCenter() - cv::Point(_size.width/2, _size.height/2 );
+    float distance = std::min(p.dot(p), PROXIMITY*PROXIMITY);
+
+    Node minNode = current;
+    bool find = false;
+    for (Node e : effects){
+        cv::Point tmp = _markers[minNode.GetMarkerIndex()].GetCenter() - _markers[e.GetMarkerIndex()].GetCenter();
+        float d = tmp.dot(tmp);
+        if ( d < distance){
+            minNode = e;
+            find = true;
+            distance = d;
+        }
+    }
+    if (find)
+        tmp = minNode;
+    return find;
 }
 
 void MarkerGraph::addEdge (int from, int to){
@@ -27,33 +81,12 @@ void MarkerGraph::clear(){
     _edges.clear();
 }
 
-const std::vector<aruco::Marker> & MarkerGraph::getMarkers() const {
+const std::vector<xMarker> & MarkerGraph::getMarkers() const {
     return _markers;
 }
 
 const std::vector<std::pair<int, int>> & MarkerGraph::getEdges() const {
+
     return _edges;
 }
 
-int MarkerGraph::findMarker(const aruco::Marker& marker) const {
-    int index = 0;
-
-    for (index = 0; index < _markers.size(); ++index){
-        if (_markers[index] == marker) {
-            return index;
-        }
-    }
-}
-
-const std::vector<aruco::Marker>& MarkerGraph::getAccessibleMarkersFrom (const aruco::Marker& marker) const {
-    int index = findMarker(marker);
-
-    std::vector<aruco::Marker> result = std::vector<aruco::Marker>();
-
-    for (std::pair<int, int> p : _edges) {
-        if (p.first == index) {
-            result.push_back(_markers[p.second]);
-        }
-    }
-    return result;
-}

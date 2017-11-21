@@ -48,8 +48,9 @@ void Interfaces::SetInterfaceSize(int h, int w)
 //****************
 //***** Draws ****
 //****************
-void Interfaces::DrawInterfaces(Mat& Im) const
+void Interfaces::DrawInterfaces(Mat& Im, const std::vector<xMarker> &Mi, const std::vector<std::pair<int, int>> &edges) const
 {
+    /*
 	vector<pair<int, int>> edges(10);
 	edges[0] = make_pair(0, 1);
 	edges[1] = make_pair(1, 2);
@@ -74,6 +75,7 @@ void Interfaces::DrawInterfaces(Mat& Im) const
 	Mi[7] = {Point(900, 150), 75, -45, TYPE_OSCILL_SQUARE};
 	Mi[8] = {Point(1000, 300), 90, 0, TYPE_OSCILL_SAW};
 	Mi[9] = {Point(700, 150), 95, -90, TYPE_OSCILL_TRIANGLE};
+    //*/
 
 	drawCenter(Im);
 	drawSegmentation(Im);
@@ -100,49 +102,49 @@ void Interfaces::drawSegmentation(Mat& Im) const
 	}
 }
 
-void Interfaces::drawLinks(Mat& Im, vector<MarkerInfos>& Mi, vector<pair<int, int>>& Edges) const
+void Interfaces::drawLinks(Mat& Im, const vector<xMarker>& Mi, const vector<pair<int, int>>& Edges) const
 {
 	for (int i = 0; i < Edges.size(); ++i) {
-		Point P1 = Edges[i].first == -1 ? _Center : Mi[Edges[i].first]._Center,
-			P2 = Edges[i].second == -1 ? _Center : Mi[Edges[i].second]._Center;
+        Point P1 = Edges[i].first == -1 ? _Center : Mi[Edges[i].first].GetCenter(),
+            P2 = Edges[i].second == -1 ? _Center : Mi[Edges[i].second].GetCenter();
 		line(Im, P1, P2, _Color);
 	}
 }
 
-void Interfaces::drawMarkers(Mat& Im, vector<MarkerInfos>& Mis) const
+void Interfaces::drawMarkers(Mat& Im, const vector<xMarker>& Mis) const
 {
 	for (int i = 0; i < Mis.size(); ++i) drawMarker(Im, Mis[i]);
 }
 
-void Interfaces::drawMarker(Mat& Im, MarkerInfos& Mi) const
+void Interfaces::drawMarker(Mat& Im, const xMarker& Mi) const
 {
 	//switch draw en fonction du type de marker
 	drawSquareMarker(Im, Mi);
 	drawMarkerCircle(Im, Mi);
 }
 
-void Interfaces::drawMarkerCircle(Mat& Im, MarkerInfos& Mi) const
+void Interfaces::drawMarkerCircle(Mat& Im, const xMarker& Mi) const
 {
-	const Scalar Color = Type2Color(Mi._Type);
-	const double radius = Mi._Size * SQRT_2 / 2;
-	const double new_angle = (Mi._Angle - 90) * M_PI_180;
-	const Point P1(Mi._Center.x, Mi._Center.y - int(round(radius)));
+    const Scalar Color = Type2Color(Mi.GetType());
+    const double radius = Mi.GetSize() * SQRT_2 / 2;
+    const double new_angle = (Mi.GetAngle() - 90) * M_PI_180;
+    const Point P1(Mi.GetCenter().x, Mi.GetCenter().y - int(round(radius)));
 
 	Point P2;
-	P2.x = int(round(Mi._Center.x + radius * cos(new_angle)));
-	P2.y = int(round(Mi._Center.y + radius * sin(new_angle)));
+    P2.x = int(round(Mi.GetCenter().x + radius * cos(new_angle)));
+    P2.y = int(round(Mi.GetCenter().y + radius * sin(new_angle)));
 
-	circle(Im, Mi._Center, radius, _Color, 1);
-	ellipse(Im, Mi._Center, Size(radius, radius), -90, 0, Mi._Angle, Color, 3);
+    circle(Im, Mi.GetCenter(), radius, _Color, 1);
+    ellipse(Im, Mi.GetCenter(), Size(radius, radius), -90, 0, Mi.GetAngle(), Color, 3);
 	circle(Im, P1, _RadiusButton, _Color, -1);
 	circle(Im, P2, _RadiusButton, Color, -1);
 }
 
 //***** Markers Type ****
-void Interfaces::drawSquareMarker(Mat& Im, MarkerInfos& Mi) const
+void Interfaces::drawSquareMarker(Mat& Im, const xMarker& Mi) const
 {
-	const Scalar Color = Type2Color(Mi._Type);
-	RotatedRect rotatedRectangle(Mi._Center, Size2f(Mi._Size, Mi._Size), Mi._Angle);
+    const Scalar Color = Type2Color(Mi.GetType());
+    RotatedRect rotatedRectangle(Mi.GetCenter(), Size2f(Mi.GetSize(), Mi.GetSize()), Mi.GetAngle());
 	Point2f vertices2f[4];
 	rotatedRectangle.points(vertices2f);
 	Point vertices[4];

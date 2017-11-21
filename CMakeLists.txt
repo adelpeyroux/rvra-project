@@ -53,4 +53,4 @@ TARGET_LINK_LIBRARIES(${TARGET} aruco maximilian)
 
 
 ADD_EXECUTABLE(Interface_Test ${SRC_INTERFACE_TEST})
-TARGET_LINK_LIBRARIES(Interface_Test ${OpenCV_LIBS})
+TARGET_LINK_LIBRARIES(Interface_Test aruco ${OpenCV_LIBS})

@@ -6,7 +6,33 @@
 class xMarker
 {
 public:
+    xMarker(){}
     xMarker(aruco::Marker m);
+    xMarker(int h, int w);
+
+    MARKER_TYPE GetType() const{
+        return _type;
+    }
+
+    bool IsSource() const{
+        return isSource(_type);
+    }
+
+    cv::Point GetCenter() const{
+        return _center;
+    }
+
+    double GetSize() const{
+        return _size;
+    }
+
+    double GetAngle() const{
+        return _angle;
+    }
+
+    aruco::Marker GetMarker() const{
+        return _marker;
+    }
 
 private:
     MARKER_TYPE _type;
