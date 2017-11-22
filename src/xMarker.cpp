@@ -13,12 +13,13 @@ xMarker::xMarker(int h, int w)
 xMarker::xMarker(aruco::Marker m)
 {
     _type = id2type(m.id);
+
     _center = m.getCenter();
     //m.calculateExtrinsics(MarkerSize, CameraParams);
 
-    cv::Vec2f rVec = m[1] - m[2];
+    cv::Vec2f rVec = m[1] - m[0];
 
-    _angle = - RAD2DEG * std::acos(rVec.dot(cv::Vec2f(0,1)) / sqrt(rVec[0] * rVec[0] + rVec[1] * rVec[1]));
+    _angle = sgn(rVec[1]) * ( RAD2DEG * std::acos(rVec.dot(cv::Vec2f(1,0)) / sqrt(rVec[0] * rVec[0] + rVec[1] * rVec[1])));
     std::cout << _angle << std::endl;
     _size = m.getPerimeter() / 4.;
     _marker = m;

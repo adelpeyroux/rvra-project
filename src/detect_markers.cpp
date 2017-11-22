@@ -107,7 +107,7 @@ void detect_markers() {
         InputImage.copyTo(InputImageCopy);
 
         for (unsigned int i = 0; i < Markers.size(); i++) {
-            cout << Markers[i]<<endl;
+            //cout << Markers[i]<<endl;
             Markers[i].draw(InputImageCopy, Scalar(0, 0, 255));
         }
 
