@@ -172,7 +172,7 @@ int main(int argc, char **argv) {
 
         ///// CONFIGURE DATA
         // read first image to get the dimensions
-        VideoCapturer.retrieve(InputImage);
+        VideoCapturer >> InputImage;
         if (CameraParams.isValid())
             CameraParams.resize(InputImage.size());
 
@@ -188,6 +188,8 @@ int main(int argc, char **argv) {
 
         // capture until press ESC or until the end of the video
         cv::Size SizeIm = InputImage.size();
+        std::cout << SizeIm << "/" << SizeIm.width << std::endl;
+
         Inter.SetInterfaceSize(SizeIm.height, SizeIm.width);
 
 
