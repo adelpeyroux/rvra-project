@@ -12,9 +12,10 @@ private:
     maxiOsc _osc;
     double _freq;
     double _initTime;
+    double _phi0;
 
 public:
-    OscNode(double freq, double time);
+    OscNode(int id, double freq, double time);
 
     double play (double input, double time);
 

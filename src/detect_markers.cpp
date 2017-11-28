@@ -50,9 +50,9 @@ using namespace aruco;
 
 Interfaces Inter;
 
-MarkerGraph * tmpGraph = NULL;
-MarkerGraph * graph = NULL;
-MarkerGraph * toDelete = NULL;
+//MarkerGraph * tmpGraph = NULL;
+MarkerGraph graph;
+//MarkerGraph * toDelete = NULL;
 
 
 MarkerDetector MDetector;
@@ -65,7 +65,7 @@ char key;
 double CurrentTime;
 
 pair< double, double > AvrgTime(0, 0); // determines the average time required for detection
- int iThresParam1, iThresParam2;
+int iThresParam1, iThresParam2;
 int waitTime = 0;
 class CmdLineParser{int argc; char **argv; public: CmdLineParser(int _argc,char **_argv):argc(_argc),argv(_argv){}  bool operator[] ( string param ) {int idx=-1;  for ( int i=0; i<argc && idx==-1; i++ ) if ( string ( argv[i] ) ==param ) idx=i;    return ( idx!=-1 ) ;    } string operator()(string param,string defvalue="-1"){int idx=-1;    for ( int i=0; i<argc && idx==-1; i++ ) if ( string ( argv[i] ) ==param ) idx=i; if ( idx==-1 ) return defvalue;   else  return ( argv[  idx+1] ); }};
 
@@ -87,13 +87,12 @@ void setup() {//some inits
 void play(double *output, int size, double time) {
     maxiOsc osc;
 
-    if (tmpGraph != NULL){
-        for (int i = 0; i < size; ++i) {
-            //output[i] = osc.sinewave(440);
-            output[i] = tmpGraph->play(output[i],0);
-        }
+    for (int i = 0; i < size; ++i) {
+        //output[i] = osc.sinewave(440);
+        output[i] = graph.play(output[i],0);
     }
 }
+
 
 void detect_markers() {
     while (true) {
@@ -112,14 +111,9 @@ void detect_markers() {
         InputImage.copyTo(InputImageCopy);
 
         cv::Size SizeIm = InputImage.size();
-        graph = new MarkerGraph(Markers, SizeIm, 0.0);
+        graph = MarkerGraph(Markers, SizeIm, 0.0);
 
-        toDelete = tmpGraph;
-        tmpGraph = graph;
-        delete toDelete;
-
-        if (graph != NULL)
-            Inter.DrawInterfaces(InputImageCopy, graph->getMarkers(), graph->getEdges());
+        Inter.DrawInterfaces(InputImageCopy, graph.getMarkers(), graph.getEdges());
         // DONE! Easy, right?
         // show input with augmented information and  the thresholded image
         cv::imshow("in", resize(InputImageCopy,1280));
@@ -143,6 +137,8 @@ void detect_markers() {
  *
  ************************************/
 int main(int argc, char **argv) {
+    init_phi();
+
     try {
         CmdLineParser cml(argc,argv);
         if (argc < 2  || cml["-h"]) {
@@ -188,7 +184,7 @@ int main(int argc, char **argv) {
         MDetector.setDictionary(cml("-d","ARUCO"));//sets the dictionary to be employed (ARUCO,APRILTAGS,ARTOOLKIT,etc)
         MDetector.setThresholdParams(7, 7);
         MDetector.setThresholdParamRange(2, 0);
-       //  MDetector.setCornerRefinementMethod(aruco::MarkerDetector::SUBPIX);
+        //  MDetector.setCornerRefinementMethod(aruco::MarkerDetector::SUBPIX);
 
         //gui requirements : the trackbars to change this parameters
         iThresParam1 = MDetector.getParams()._thresParam1;

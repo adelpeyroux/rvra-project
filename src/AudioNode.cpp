@@ -1,6 +1,7 @@
 #include "AudioNode.hpp"
 
-AudioNode::AudioNode(double time)
+AudioNode::AudioNode(int id, double time):
+    _id(id)
 {
 
 }

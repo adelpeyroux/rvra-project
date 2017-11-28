@@ -14,12 +14,14 @@ private :
     public :
         Node(){
             _markerIndex = -2;
+            _inputs = std::vector<Node>();
         }
 
         Node (const xMarker& marker, int index, double time)
         {
+            _inputs = std::vector<Node>();
             _markerIndex = index;
-            _audio = getAudioNode(marker.GetType(), marker.GetAngle(), time);
+            _audio = getAudioNode( marker.GetType(), marker.GetAngle(), time, marker.GetMarker().id);
         }
         void AddInput(Node &node){
             _inputs.push_back(node);
@@ -32,14 +34,20 @@ private :
         double play_rec (double sample, double time) {
             double input = 0.f;
             if (_inputs.size() > 0) {
-                for (Node n : _inputs) {
-                    input += n.play_rec(sample, time);
+                for (int i = 0; i < _inputs.size(); ++i) {
+
+                    input += _inputs[i].play_rec(sample, time);
                 }
+
 
                 input /= float(_inputs.size());
             }
 
             return _audio->play(input, time);
+        }
+
+        void save_phi(){
+
         }
 
     private :

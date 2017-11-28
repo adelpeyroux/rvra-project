@@ -5,9 +5,9 @@ class AudioNode
 {    
 protected:
     double _phi;
-
+    int _id;
 public:
-    AudioNode(double time);
+    AudioNode(int id, double time);
 
     virtual double play (double input, double time) = 0;
 };

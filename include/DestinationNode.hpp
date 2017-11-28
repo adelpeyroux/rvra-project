@@ -6,7 +6,7 @@
 class DestinationNode : public AudioNode
 {
 public:
-    DestinationNode(double time);
+    DestinationNode(int id, double time);
 
     double play (double input, double time) { return input; }
 };

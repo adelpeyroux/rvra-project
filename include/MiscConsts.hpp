@@ -105,12 +105,12 @@ static MARKER_TYPE id2type(int id)
     }
 }
 
-static AudioNode* getAudioNode(MARKER_TYPE type, float param, double time) {
+static AudioNode* getAudioNode(MARKER_TYPE type, float param, double time, int id) {
     switch (type) {
     case TYPE_END :
-        return new DestinationNode(time);
+        return new DestinationNode(id, time);
     default :
-        return new OscNode(fabs(param * 2), time);
+        return new OscNode(id, fabs(param * 2), time);
     }
 }
 
@@ -121,4 +121,13 @@ static bool isSource(MARKER_TYPE m)
 
 template <typename T> int sgn(T val) {
     return (T(0) < val) - (val < T(0));
+}
+
+const int NB_MARKERS = 1024;
+static double PHI[NB_MARKERS];
+
+static void init_phi(){
+    for (int i = 0; i < NB_MARKERS; ++i) {
+        PHI[i] = 0.0;
+    }
 }
