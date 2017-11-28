@@ -13,8 +13,8 @@ using namespace std;
 //***************************************
 //***** Constructeurs / Destructeurs ****
 //***************************************
-Interfaces::Interfaces(int radiusCenter, int radiusButton, int nbsegments, bool segmentation, Scalar Color)
-	: _RadiusCenter(radiusCenter), _RadiusButton(radiusButton), _Segmentation(segmentation), _Color(Color)
+Interfaces::Interfaces(int radiusCenter, int radiusButton, int nbsegments, bool segmentation, Scalar Color, double alpha)
+	: _RadiusCenter(radiusCenter), _RadiusButton(radiusButton), _Segmentation(segmentation), _Color(Color), _Alpha(alpha)
 {
 	SetNbSegments(nbsegments);
 }
@@ -50,37 +50,12 @@ void Interfaces::SetInterfaceSize(int h, int w)
 //****************
 void Interfaces::DrawInterfaces(Mat& Im, const std::vector<xMarker> &Mi, const std::vector<std::pair<int, int>> &edges) const
 {
-    /*
-	vector<pair<int, int>> edges(10);
-	edges[0] = make_pair(0, 1);
-	edges[1] = make_pair(1, 2);
-	edges[2] = make_pair(2, 3);
-	edges[3] = make_pair(3, 4);
-	edges[4] = make_pair(-1, 4);
-
-	edges[5] = make_pair(5, 6);
-	edges[6] = make_pair(6, 7);
-	edges[7] = make_pair(7, 8);
-	edges[8] = make_pair(8, 9);
-	edges[9] = make_pair(-1, 9);
-
-	vector<MarkerInfos> Mi(10);
-	Mi[0] = {Point(50, 50), 50, 180, TYPE_OSCILL_SINUS};
-	Mi[1] = {Point(150, 125), 75, 90, TYPE_OSCILL_SQUARE};
-	Mi[2] = {Point(300, 50), 60, 45, TYPE_OSCILL_SAW};
-	Mi[3] = {Point(125, 250), 80, -180, TYPE_OSCILL_IMPULSE};
-	Mi[4] = {Point(300, 250), 100, 60, TYPE_EFFECT_NOISE};
-	Mi[5] = {Point(1000, 50), 65, -60, TYPE_FILTER_COLOR};
-	Mi[6] = {Point(1200, 50), 70, -30, TYPE_OSCILL_SINUS};
-	Mi[7] = {Point(900, 150), 75, -45, TYPE_OSCILL_SQUARE};
-	Mi[8] = {Point(1000, 300), 90, 0, TYPE_OSCILL_SAW};
-	Mi[9] = {Point(700, 150), 95, -90, TYPE_OSCILL_TRIANGLE};
-    //*/
-
-	drawCenter(Im);
-	drawSegmentation(Im);
-	drawLinks(Im, Mi, edges);
-	drawMarkers(Im, Mi);
+	Mat Im2 = Mat::zeros(Im.size(), Im.type());
+	drawCenter(Im2);
+	drawSegmentation(Im2);
+	drawLinks(Im2, Mi, edges);
+	drawMarkers(Im2, Mi);
+	addWeighted(Im2, _Alpha, Im, 1 - _Alpha, 0, Im);
 }
 
 void Interfaces::drawCenter(Mat& Im) const
@@ -91,7 +66,6 @@ void Interfaces::drawCenter(Mat& Im) const
 void Interfaces::drawSegmentation(Mat& Im) const
 {
 	if (_Segmentation) {
-		cout << "Yolo" << endl;
 		for (int i = 0; i < _nbSegments; ++i) {
 			Point P2;
 			double angle = _pasSegments * i;

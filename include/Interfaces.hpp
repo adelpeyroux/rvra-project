@@ -20,10 +20,11 @@ public:
 	int _RadiusButton;
 	bool _Segmentation;
 	cv::Scalar _Color;
+	double _Alpha;
 
 	//***** Constructeurs / Destructeurs ****
 	Interfaces(int radiusCenter = 10, int radiusButton = 5, int nbsegments = 4, bool segmentation = false,
-	           cv::Scalar Color = COLORS[MY_COLOR_WHITE]);
+	           cv::Scalar Color = COLORS[MY_COLOR_WHITE], double alpha = 0.5);
 	virtual ~Interfaces();
 
 	//***** Getters / Setters ****
