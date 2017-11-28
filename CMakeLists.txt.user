@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.3.1, 2017-11-22T11:03:57. -->
+<!-- Written by QtCreator 4.3.1, 2017-11-25T10:31:12. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -550,7 +550,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/home/penguin/workspace/build-rvra-project-Desktop-Release/ext/Maximilian</value>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">maximilian-exec</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">maximilian-exec (désactivé)</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.maximilian-exec</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
@@ -604,7 +604,7 @@
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.Arguments"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory"></value>
     <value type="QString" key="CMakeProjectManager.CMakeRunConfiguration.UserWorkingDirectory.default">/home/penguin/workspace/build-rvra-project-Desktop-Release</value>
-    <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
+    <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Interface_Test</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>

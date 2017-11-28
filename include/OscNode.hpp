@@ -11,11 +11,12 @@ class OscNode : public AudioNode
 private:
     maxiOsc _osc;
     double _freq;
+    double _initTime;
 
 public:
-    OscNode(double freq);
+    OscNode(double freq, double time);
 
-    double* play (double * input);
+    double play (double input, double time);
 
     void operator<<(const cv::FileNode& n);
 };

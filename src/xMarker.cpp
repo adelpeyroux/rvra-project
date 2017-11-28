@@ -20,7 +20,6 @@ xMarker::xMarker(aruco::Marker m)
     cv::Vec2f rVec = m[1] - m[0];
 
     _angle = sgn(rVec[1]) * ( RAD2DEG * std::acos(rVec.dot(cv::Vec2f(1,0)) / sqrt(rVec[0] * rVec[0] + rVec[1] * rVec[1])));
-    std::cout << _angle << std::endl;
     _size = m.getPerimeter() / 4.;
     _marker = m;
 }

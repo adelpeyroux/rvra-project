@@ -1,6 +1,7 @@
 #include "DestinationNode.hpp"
 
-DestinationNode::DestinationNode()
+DestinationNode::DestinationNode(double time)
+  : AudioNode(time)
 {
 
 }

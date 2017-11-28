@@ -6,9 +6,9 @@
 class DestinationNode : public AudioNode
 {
 public:
-    DestinationNode();
+    DestinationNode(double time);
 
-    double * play (double * input) { return input; }
+    double play (double input, double time) { return input; }
 };
 
 #endif // DESTINATIONNODE_HPP

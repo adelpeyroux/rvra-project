@@ -3,8 +3,11 @@
 
 class AudioNode
 {    
-public:
-    AudioNode();
+protected:
+    double _phi;
 
-    virtual double* play (double * input) = 0;
+public:
+    AudioNode(double time);
+
+    virtual double play (double input, double time) = 0;
 };

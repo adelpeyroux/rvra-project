@@ -28,7 +28,7 @@ bool stop_all = false;
 
 void setup();//use this to do any initialisation if you want.
 
-void play(double *output);//run dac! Very very often. Too often in fact. er...
+void play(double *output, int size, double time);//run dac! Very very often. Too often in fact. er...
 
 #ifdef MAXIMILIAN_PORTAUDIO
 int routing(const void *inputBuffer,
@@ -50,17 +50,16 @@ int routing(const void *inputBuffer,
     double *buffer = (double *) outputBuffer;
 #endif
     double *lastValues = (double *) userData;
-    //	double currentTime = (double) streamTime; Might come in handy for control
+    double currentTime = (double) timeInfo->currentTime;
     if ( status )
       std::cout << "Stream underflow detected!" << std::endl;
-    for ( i=0; i<nBufferFrames; i++ ) {
-    }
+
     // Write interleaved audio data.
+    double playBuffer[nBufferFrames];
+    play(playBuffer, nBufferFrames, currentTime);
+
     for ( i=0; i<nBufferFrames; i++ ) {
-      play(lastValues);			
-      for ( j=0; j<maxiSettings::channels; j++ ) {
-        *buffer++=lastValues[j];
-      }
+        *buffer++=playBuffer[i];
     }
     return 0;
   }

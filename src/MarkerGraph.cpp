@@ -1,8 +1,8 @@
 #include "MarkerGraph.hpp"
 
-MarkerGraph::MarkerGraph(std::vector<aruco::Marker> &markers, cv::Size s)
+MarkerGraph::MarkerGraph(std::vector<aruco::Marker> &markers, cv::Size s, double time)
 {
-    _root = MarkerGraph::Node(xMarker(s.height, s.width), -1);
+    _root = MarkerGraph::Node(xMarker(s.height, s.width), -1, time);
     _size = s;
     _markers.reserve(markers.size());
     vector<int> sources;
@@ -14,7 +14,7 @@ MarkerGraph::MarkerGraph(std::vector<aruco::Marker> &markers, cv::Size s)
             sources.push_back(index);
         }else
         {
-            effects.push_back(Node(tmp, index));
+            effects.push_back(Node(tmp, index, time));
         }
         _markers.push_back(tmp);
         index ++;
@@ -22,7 +22,7 @@ MarkerGraph::MarkerGraph(std::vector<aruco::Marker> &markers, cv::Size s)
    // _edges = std::vector<std::pair<int,int>>();
 
     for (int id : sources){
-        MarkerGraph::Node current(_markers[id], id);
+        MarkerGraph::Node current(_markers[id], id, time);
         MarkerGraph::Node tmp;
         bool find = false;
         do{
@@ -79,6 +79,10 @@ void MarkerGraph::addMarkers (std::vector<aruco::Marker>& markers){
 void MarkerGraph::clear(){
     _markers.clear();
     _edges.clear();
+}
+
+double MarkerGraph::play(double input, double time) {
+    return _root.play_rec(input, time);
 }
 
 const std::vector<xMarker> & MarkerGraph::getMarkers() const {

@@ -5,9 +5,6 @@ IF(NOT CMAKE_BUILD_TYPE)
 ENDIF(NOT CMAKE_BUILD_TYPE)
 
 SET(TARGET "maximilian")
-
-SET(EXTARGET "maximilian-exec")
-
 SET(SRC
   RtAudio.cpp
   player.cpp
@@ -27,6 +24,3 @@ ADD_DEFINITIONS(-Wall -D__LINUX_ALSA__)
 
 ADD_LIBRARY(${TARGET} ${SRC})
 TARGET_LINK_LIBRARIES(${TARGET} "-lsndfile -lpthread -lasound" portaudio)
-
-ADD_EXECUTABLE(${EXTARGET} "main.cpp" ${SRC})
-TARGET_LINK_LIBRARIES(${EXTARGET} "-lsndfile -lpthread -lasound" portaudio)

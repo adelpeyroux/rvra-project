@@ -22,6 +22,7 @@ SET(TARGET "detect")
 SET(SRC
 		include/AudioGraph.hpp
 		include/MarkerGraph.hpp
+                include/Nodes.hpp
 		include/AudioNode.hpp
 		include/OscNode.hpp
 		include/DestinationNode.hpp
@@ -36,7 +37,7 @@ SET(SRC
 		src/DestinationNode.cpp
 		src/OscNode.cpp
 		src/xMarker.cpp
-		src/Interfaces.cpp)
+                src/Interfaces.cpp)
 
 SET(SRC_INTERFACE_TEST
 		include/Interfaces.hpp
@@ -45,7 +46,7 @@ SET(SRC_INTERFACE_TEST
 		src/Interfaces.cpp
 		src/Interfaces_Tests.cpp)
 
-ADD_DEFINITIONS(-Wall)
+ADD_DEFINITIONS(-Wall -g -pg)
 
 
 ADD_EXECUTABLE(${TARGET} ${SRC})

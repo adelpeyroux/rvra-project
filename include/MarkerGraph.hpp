@@ -12,19 +12,35 @@ class MarkerGraph
 private :
     class Node {
     public :
-        Node(){}
+        Node(){
+            _markerIndex = -2;
+        }
 
-        Node (const xMarker& marker, int index)
+        Node (const xMarker& marker, int index, double time)
         {
             _markerIndex = index;
+            _audio = getAudioNode(marker.GetType(), marker.GetAngle(), time);
         }
         void AddInput(Node &node){
             _inputs.push_back(node);
         }
 
-    int GetMarkerIndex(){
-        return _markerIndex;
-    }
+        int GetMarkerIndex(){
+            return _markerIndex;
+        }
+
+        double play_rec (double sample, double time) {
+            double input = 0.f;
+            if (_inputs.size() > 0) {
+                for (Node n : _inputs) {
+                    input += n.play_rec(sample, time);
+                }
+
+                input /= float(_inputs.size());
+            }
+
+            return _audio->play(input, time);
+        }
 
     private :
         std::vector<Node> _inputs;
@@ -41,7 +57,7 @@ private :
     int findMarker(const xMarker & marker) const;
 public:
     MarkerGraph(){}
-    MarkerGraph(std::vector<aruco::Marker> &markers, cv::Size s);
+    MarkerGraph(std::vector<aruco::Marker> &markers, cv::Size s, double time);
 
     void addEdge (int from, int to);
     void addMarker (aruco::Marker& marker);
@@ -49,6 +65,8 @@ public:
     void addEdges (std::vector<std::pair<int, int>>& edges);
     void addMarkers (std::vector<aruco::Marker>& markers);
     void clear();
+
+    double play(double, double);
 
     const std::vector<xMarker> & getMarkers() const;
     const std::vector<std::pair<int, int>> & getEdges() const;

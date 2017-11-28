@@ -3,6 +3,8 @@
 #include <opencv2/core/core.hpp>
 #include "aruco.h"
 
+#include "Nodes.hpp"
+
 
 //***********************************
 //********** Trigonométrie **********
@@ -100,6 +102,15 @@ static MARKER_TYPE id2type(int id)
     default:
         return TYPE_OSCILL_SINUS;
         break;
+    }
+}
+
+static AudioNode* getAudioNode(MARKER_TYPE type, float param, double time) {
+    switch (type) {
+    case TYPE_END :
+        return new DestinationNode(time);
+    default :
+        return new OscNode(fabs(param * 2), time);
     }
 }
 

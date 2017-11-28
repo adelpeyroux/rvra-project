@@ -1,6 +1,6 @@
 #include "AudioNode.hpp"
 
-AudioNode::AudioNode()
+AudioNode::AudioNode(double time)
 {
 
 }

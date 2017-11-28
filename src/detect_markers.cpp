@@ -29,6 +29,7 @@ or implied, of Rafael Muñoz Salinas.
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <sys/time.h>
 
 #include <thread>
 
@@ -48,7 +49,12 @@ using namespace cv;
 using namespace aruco;
 
 Interfaces Inter;
-MarkerGraph graph;
+
+MarkerGraph * tmpGraph = NULL;
+MarkerGraph * graph = NULL;
+MarkerGraph * toDelete = NULL;
+
+
 MarkerDetector MDetector;
 VideoCapture VideoCapturer;
 vector< Marker > Markers;
@@ -56,7 +62,7 @@ Mat InputImage, InputImageCopy;
 void cvTackBarEvents(int pos, void *);
 
 char key;
-
+double CurrentTime;
 
 pair< double, double > AvrgTime(0, 0); // determines the average time required for detection
  int iThresParam1, iThresParam2;
@@ -78,40 +84,42 @@ void setup() {//some inits
     //nothing to go here this time
 }
 
-void play(double *output) {
-    output[0] = 0.;
+void play(double *output, int size, double time) {
+    maxiOsc osc;
 
-    if (Markers.size() > 0)
-        for (int i = 0; i < Markers.size(); ++i)
-            output[0] += mySine[i].sinewave(Markers[i].id * 2) / Markers.size();
-
-    output[1]=output[0];
-
+    if (tmpGraph != NULL){
+        for (int i = 0; i < size; ++i) {
+            //output[i] = osc.sinewave(440);
+            output[i] = tmpGraph->play(output[i],0);
+        }
+    }
 }
 
 void detect_markers() {
     while (true) {
+        double tick = (double)getTickCount(); // for checking the speed
         VideoCapturer >> InputImage;
         // copy image
-        double tick = (double)getTickCount(); // for checking the speed
         // Detection of markers in the image passed
         Markers= MDetector.detect(InputImage, CameraParams, MarkerSize);
         // chekc the speed by calculating the mean speed of all iterations
+
+        // print marker info and draw the markers in image
+        InputImage.copyTo(InputImageCopy);
+
+
+        // print marker info and draw the markers in image
+        InputImage.copyTo(InputImageCopy);
+
         cv::Size SizeIm = InputImage.size();
-        graph = MarkerGraph(Markers, SizeIm);
-        // print marker info and draw the markers in image
-        InputImage.copyTo(InputImageCopy);
+        graph = new MarkerGraph(Markers, SizeIm, 0.0);
 
+        toDelete = tmpGraph;
+        tmpGraph = graph;
+        delete toDelete;
 
-        // print marker info and draw the markers in image
-        InputImage.copyTo(InputImageCopy);
-
-        for (unsigned int i = 0; i < Markers.size(); i++) {
-            //cout << Markers[i]<<endl;
-            Markers[i].draw(InputImageCopy, Scalar(0, 0, 255));
-        }
-
-        Inter.DrawInterfaces(InputImageCopy, graph.getMarkers(), graph.getEdges());
+        if (graph != NULL)
+            Inter.DrawInterfaces(InputImageCopy, graph->getMarkers(), graph->getEdges());
         // DONE! Easy, right?
         // show input with augmented information and  the thresholded image
         cv::imshow("in", resize(InputImageCopy,1280));
@@ -124,6 +132,7 @@ void detect_markers() {
         AvrgTime.first += ((double)getTickCount() - tick) / getTickFrequency();
         AvrgTime.second++;
         //cout << "\rTime detection=" << 1000 * AvrgTime.first / AvrgTime.second << " milliseconds nmarkers=" << Markers.size() << std::endl;
+
     }
 }
 
@@ -198,11 +207,12 @@ int main(int argc, char **argv) {
         int index = 0;
         // capture until press ESC or until the end of the video
 
-        std::thread detection_thread (detect_markers);
-        std::thread sound_thread (start_player);
+        CurrentTime = 0.0f;
 
-        detection_thread.join();                // pauses until first finishes
-        sound_thread.join();               // pauses until second finishes
+        std::thread detection_thread(detect_markers);
+        std::thread sound_thread(start_player);
+
+        detection_thread.join();
 
     } catch (std::exception &ex)
 
