@@ -112,7 +112,7 @@ static MARKER_TYPE id2type(int id)
     case 827:
     case 942:
     default:
-        return TYPE_OSCILL_SINUS;
+        return TYPE_SOURCE_SINUS;
         break;
     }
 }
