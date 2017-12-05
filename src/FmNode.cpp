@@ -27,7 +27,7 @@ double FmNode::play(AudioParams input, double time) {
         inVal /= nbVal;
 
     if (nbC > 0)
-        c /= nbC;
+        c /= nbC * 32;
 
     double value = sin (PHI[_id] + c * inVal);
     PHI[_id] += TWO_PI * _freq / double(maxiSettings::sampleRate);

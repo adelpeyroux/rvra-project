@@ -115,11 +115,11 @@ static string Type2Letter(MARKER_TYPE T)
 {
 	switch (T) {
 		case TYPE_SOURCE_SINUS:		return "S";
-        case TYPE_SOURCE_NOISE:		return "No";
-        case TYPE_SOURCE_NUMERICAL:	return "Nu";
+        case TYPE_SOURCE_NOISE:		return "R";
+        case TYPE_SOURCE_NUMERICAL:	return "N";
 		case TYPE_EFFECT_AM:		return "A";
 		case TYPE_EFFECT_FM:		return "F";
-		case TYPE_EFFECT_ADD:		return "A";
+        case TYPE_EFFECT_ADD:		return "+";
 		case TYPE_FILTER_COLOR:		return "C";
 		default:					return "";
 	}
@@ -128,17 +128,17 @@ static string Type2Letter(MARKER_TYPE T)
 static std::shared_ptr<AudioNode> getAudioNode(MARKER_TYPE type, float param, double time, int id) {
     switch (type) {
     case TYPE_EFFECT_AM :
-        return std::shared_ptr<AudioNode>(new AmNode(id, fabs(param * 2), time));
+        return std::shared_ptr<AudioNode>(new AmNode(id, fabs(param * 880 / 180), time));
     case TYPE_EFFECT_FM :
-        return std::shared_ptr<AudioNode>(new FmNode(id, fabs(param * 2), time));
+        return std::shared_ptr<AudioNode>(new FmNode(id, fabs(param * 880 / 180), time));
     case TYPE_SOURCE_SINUS :
-        return std::shared_ptr<AudioNode>(new OscNode(id, fabs(param * 2), time));
+        return std::shared_ptr<AudioNode>(new OscNode(id, fabs(param * 880 / 180), time));
     case TYPE_SOURCE_NOISE :
-        std::shared_ptr<AudioNode>(new NoiseNode(id, fabs(param * 32 / 180.), time));
+        return std::shared_ptr<AudioNode>(new NoiseNode(id, fabs(param * 32 / 180.), time));
     case TYPE_SOURCE_NUMERICAL :
-        std::shared_ptr<AudioNode>(new NumericalNode(id, fabs(param * 32 / 180.), time));
+        return std::shared_ptr<AudioNode>(new NumericalNode(id, fabs(param * 32 / 180.), time));
     case TYPE_EFFECT_ADD :
-        std::shared_ptr<AudioNode>(new DestinationNode(id, time));
+        return std::shared_ptr<AudioNode>(new DestinationNode(id, time));
     case TYPE_FILTER_COLOR:
     case TYPE_END :
         return std::shared_ptr<AudioNode>(new DestinationNode(id, time));
