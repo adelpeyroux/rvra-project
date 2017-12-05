@@ -19,12 +19,13 @@ public:
 	int _RadiusCenter;
 	int _RadiusButton;
 	bool _Segmentation;
+	bool _Text;
 	cv::Scalar _Color;
 	double _Alpha;
 
 	//***** Constructeurs / Destructeurs ****
 	Interfaces(int radiusCenter = 10, int radiusButton = 5, int nbsegments = 4, bool segmentation = false,
-	           cv::Scalar Color = COLORS[MY_COLOR_WHITE], double alpha = 0.5);
+			   bool text = true, cv::Scalar Color = COLORS[MY_COLOR_WHITE], double alpha = 0.5);
 	virtual ~Interfaces();
 
 	//***** Getters / Setters ****
@@ -55,4 +56,6 @@ private:
 
 	//Misc
 	static cv::Scalar Type2Color(MARKER_TYPE T);
+	static string Type2Str(MARKER_TYPE T);
+
 };

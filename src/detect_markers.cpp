@@ -50,9 +50,9 @@ using namespace aruco;
 
 Interfaces Inter;
 
-//MarkerGraph * tmpGraph = NULL;
-MarkerGraph graph;
-//MarkerGraph * toDelete = NULL;
+MarkerGraph * tmpGraph = NULL;
+MarkerGraph * graph = NULL;
+MarkerGraph * toDelete = NULL;
 
 
 MarkerDetector MDetector;
@@ -85,11 +85,16 @@ void setup() {//some inits
 }
 
 void play(double *output, int size, double time) {
-    maxiOsc osc;
+
+    tmpGraph = graph;
 
     for (int i = 0; i < size; ++i) {
         //output[i] = osc.sinewave(440);
-        output[i] = graph.play(output[i],0);
+        output[i] = tmpGraph->play(output[i],0);
+    }
+
+    if (tmpGraph != graph) {
+        delete tmpGraph;
     }
 }
 
@@ -111,9 +116,9 @@ void detect_markers() {
         InputImage.copyTo(InputImageCopy);
 
         cv::Size SizeIm = InputImage.size();
-        graph = MarkerGraph(Markers, SizeIm, 0.0);
+        graph = new MarkerGraph(Markers, SizeIm, 0.0);
 
-        Inter.DrawInterfaces(InputImageCopy, graph.getMarkers(), graph.getEdges());
+        Inter.DrawInterfaces(InputImageCopy, graph->getMarkers(), graph->getEdges());
         // DONE! Easy, right?
         // show input with augmented information and  the thresholded image
         cv::imshow("in", resize(InputImageCopy,1280));

@@ -85,35 +85,14 @@ enum MARKER_TYPE {
 static MARKER_TYPE id2type(int id)
 {
     switch (id) {
-    case 31:
-    case 105:
-    case 107:
-    case 179:
-        return TYPE_SOURCE_SINUS;
-    case 232:
-    case 258:
-        return TYPE_SOURCE_NOISE;
-    case 388:
-    case 459:
-    case 466:
-    case 494:
-        return TYPE_SOURCE_NUMERICAL;
-    case 504:
-    case 520:
-        return TYPE_EFFECT_AM;
-    case 552:
-    case 553:
-        return TYPE_EFFECT_FM;
-    case 555:
-    case 592:
-        return TYPE_EFFECT_ADD;
-    case 619:
-    case 824:
-    case 827:
-    case 942:
-    default:
-        return TYPE_SOURCE_SINUS;
-        break;
+    case 1 ... 200:		return TYPE_SOURCE_SINUS;
+    case 201 ... 300:	return TYPE_SOURCE_NOISE;
+    case 301 ... 500:	return TYPE_SOURCE_NUMERICAL;
+    case 501 ... 550:	return TYPE_EFFECT_AM;
+    case 551 ... 553:	return TYPE_EFFECT_FM;
+    case 555 ... 600:	return TYPE_EFFECT_ADD;
+    case 601 ... 999:
+    default:	return TYPE_SOURCE_SINUS;
     }
 }
 
