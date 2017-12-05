@@ -119,25 +119,21 @@ static MARKER_TYPE id2type(int id)
 
 static AudioNode* getAudioNode(MARKER_TYPE type, float param, double time, int id) {
     switch (type) {
-    case TYPE_END :
-        return new DestinationNode(id, time);
     case TYPE_EFFECT_AM :
         return new AmNode(id, fabs(param * 2), time);
     case TYPE_EFFECT_FM :
         return new FmNode(id, fabs(param * 2), time);
-    default :
+    case TYPE_SOURCE_SINUS :
         return new OscNode(id, fabs(param * 2), time);
+    case TYPE_SOURCE_NOISE :
+    case TYPE_SOURCE_NUMERICAL :
+    case TYPE_EFFECT_ADD :
+    case TYPE_FILTER_COLOR:
+    case TYPE_END :
+        return new DestinationNode(id, time);
+    default :
+        return new DestinationNode(id, time);
     }
-}
-
-static AudioNode *getAudioNode(MARKER_TYPE type, float param, double time, int id)
-{
-	switch (type) {
-		case TYPE_END :
-			return new DestinationNode(id, time);
-		default :
-			return new OscNode(id, fabs(param * 2), time);
-	}
 }
 
 static bool isSource(MARKER_TYPE m)
