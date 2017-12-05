@@ -30,8 +30,9 @@ SET(SRC
 		include/Interfaces.hpp
 		include/MiscConsts.hpp
                 include/AmNode.hpp
+                include/NoiseNode.hpp
+                include/NumericalNode.hpp
                 include/FmNode.hpp
-                include/AudioParams.hpp
 
 		src/detect_markers.cpp
 		src/AudioGraph.cpp
@@ -43,7 +44,8 @@ SET(SRC
                 src/Interfaces.cpp
                 src/AmNode.cpp
                 src/FmNode.cpp
-                src/AudioParams.cpp)
+                src/NoiseNode.cpp
+                src/NumericalNode.cpp)
 
 SET(SRC_INTERFACE_TEST
 		include/Interfaces.hpp

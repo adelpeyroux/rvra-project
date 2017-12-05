@@ -1,10 +1,6 @@
 #include "OscNode.hpp"
 #include "MiscConsts.hpp"
 
-void OscNode::operator<<(const cv::FileNode& n) {
-    n["frequency"] >> _freq;
-}
-
 OscNode::OscNode(int id, double freq, double time)
     : AudioNode(id, time), _freq(freq), _initTime(time)
 {

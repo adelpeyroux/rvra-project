@@ -14,6 +14,7 @@ private :
 
 public:
     FmNode(int id, double freq, double time);
+    virtual ~FmNode() = default;
 
     double play (AudioParams input, double time);
 };

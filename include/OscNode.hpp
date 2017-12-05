@@ -16,10 +16,9 @@ private:
 
 public:
     OscNode(int id, double freq, double time);
+    virtual ~OscNode() = default;
 
     double play (AudioParams input, double time);
-
-    void operator<<(const cv::FileNode& n);
 };
 
 #endif // OSCNODE_HPP

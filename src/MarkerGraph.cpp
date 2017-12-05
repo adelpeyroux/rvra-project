@@ -19,7 +19,7 @@ MarkerGraph::MarkerGraph(std::vector<aruco::Marker> &markers, cv::Size s, double
         _markers.push_back(tmp);
         index ++;
     }
-   // _edges = std::vector<std::pair<int,int>>();
+    // _edges = std::vector<std::pair<int,int>>();
 
     for (int id : sources){
         MarkerGraph::Node current(_markers[id], id, time);
@@ -38,6 +38,21 @@ MarkerGraph::MarkerGraph(std::vector<aruco::Marker> &markers, cv::Size s, double
 
         _root.AddInput(current);
     }
+}
+
+void MarkerGraph::delete_rec(Node& current){
+    if (current.get_audio_node() != nullptr){
+        if (current.get_input().size() > 0) {
+            for (int i = 0; i < current.get_input().size(); ++i) {
+                delete_rec(current.get_input()[i]);
+            }
+        }
+
+        current.remove();
+    }
+}
+MarkerGraph::~MarkerGraph(){
+    delete_rec(_root);
 }
 
 bool MarkerGraph::FindProximity(MarkerGraph::Node& current, vector<MarkerGraph::Node>& effects, MarkerGraph::Node& tmp){
@@ -82,7 +97,10 @@ void MarkerGraph::clear(){
 }
 
 double MarkerGraph::play(double input, double time) {
-    return _root.play_rec(input, time);
+
+    AudioParam root = _root.play_rec(AudioParams(), time);
+
+    return root.value;
 }
 
 const std::vector<xMarker> & MarkerGraph::getMarkers() const {

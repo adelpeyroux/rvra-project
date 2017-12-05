@@ -41,8 +41,9 @@ or implied, of Rafael Muñoz Salinas.
 
 #include <maximilian.h>
 #include <player.h>
-#include "MarkerGraph.hpp"
+
 #include "MiscConsts.hpp"
+#include "MarkerGraph.hpp"
 #include "Interfaces.hpp"
 
 using namespace cv;
@@ -50,9 +51,9 @@ using namespace aruco;
 
 Interfaces Inter;
 
-MarkerGraph * tmpGraph = NULL;
-MarkerGraph * graph = NULL;
-MarkerGraph * toDelete = NULL;
+std::shared_ptr<MarkerGraph> tmpGraph = NULL;
+std::shared_ptr<MarkerGraph> graph = NULL;
+std::shared_ptr<MarkerGraph> toDelete = NULL;
 
 
 MarkerDetector MDetector;
@@ -112,7 +113,7 @@ void detect_markers() {
         InputImage.copyTo(InputImageCopy);
 
         cv::Size SizeIm = InputImage.size();
-        graph = new MarkerGraph(Markers, SizeIm, 0.0);
+        graph = std::shared_ptr<MarkerGraph>(new MarkerGraph(Markers, SizeIm, 0.0));
 
         Inter.DrawInterfaces(InputImageCopy, graph->getMarkers(), graph->getEdges());
         // DONE! Easy, right?
@@ -123,6 +124,7 @@ void detect_markers() {
 
         key = cv::waitKey(waitTime); // wait for key to be pressed
         if(key=='s')  waitTime= waitTime==0?10:0;
+        if(key=='q')  break;
 
         AvrgTime.first += ((double)getTickCount() - tick) / getTickFrequency();
         AvrgTime.second++;
@@ -206,6 +208,7 @@ int main(int argc, char **argv) {
         CurrentTime = 0.0f;
 
         std::thread detection_thread(detect_markers);
+        sleep(1);
         std::thread sound_thread(start_player);
 
         detection_thread.join();

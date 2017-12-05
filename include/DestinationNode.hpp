@@ -4,12 +4,12 @@
 #include <stdlib.h>
 
 #include "AudioNode.hpp"
-#include "AudioParams.hpp"
 
 class DestinationNode : public AudioNode
 {
 public:
     DestinationNode(int id, double time);
+    virtual ~DestinationNode() = default;
 
     double play (AudioParams input, double time);
 };

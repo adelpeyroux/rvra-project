@@ -2,7 +2,6 @@
 #define AMNODE_HPP
 
 #include "AudioNode.hpp"
-#include "AudioParams.hpp"
 #include "maximilian.h"
 
 class AmNode : public AudioNode
@@ -15,6 +14,7 @@ private :
 
 public:
     AmNode(int id, double freq, double time);
+    virtual ~AmNode() = default;
 
     double play (AudioParams input, double time);
 };

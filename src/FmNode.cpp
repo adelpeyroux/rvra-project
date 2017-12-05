@@ -14,17 +14,20 @@ double FmNode::play(AudioParams input, double time) {
     int nbC = 0;
 
     for (auto pair : input.GetParams()) {
-        if (pair.first != TYPE_SOURCE_NUMERICAL) {
-            inVal += pair.second;
+        if (pair.type != TYPE_SOURCE_NUMERICAL) {
+            inVal += pair.value;
             nbVal ++;
         } else {
-            c += pair.second;
+            c += pair.value;
             nbC ++;
         }
     }
 
-    inVal /= nbVal;
-    inC /= nbC;
+    if (nbVal > 0)
+        inVal /= nbVal;
+
+    if (nbC > 0)
+        c /= nbC;
 
     double value = sin (PHI[_id] + c * inVal);
     PHI[_id] += TWO_PI * _freq / double(maxiSettings::sampleRate);

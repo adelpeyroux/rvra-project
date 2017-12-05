@@ -53,7 +53,8 @@ int routing(const void *inputBuffer,
     double currentTime = (double) timeInfo->currentTime;
     if ( status )
       std::cout << "Stream underflow detected!" << std::endl;
-
+    for ( i=0; i<nBufferFrames; i++ ) {
+    }
     // Write interleaved audio data.
     double playBuffer[nBufferFrames];
     play(playBuffer, nBufferFrames, currentTime);
