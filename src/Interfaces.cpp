@@ -140,3 +140,8 @@ Scalar Interfaces::Type2Color(MARKER_TYPE T)
 	}
 }
 
+void Interfaces::drawSinMarker(cv::Mat &Im, const xMarker &Mi) const
+{
+
+}
+
