@@ -16,6 +16,7 @@ private:
 
 public:
     OscNode(int id, double freq, double time);
+    virtual ~OscNode() = default;
 
     double play (double input, double time);
 

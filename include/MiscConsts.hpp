@@ -4,7 +4,7 @@
 #include "aruco.h"
 
 #include "Nodes.hpp"
-
+#include <memory>
 
 //***********************************
 //********** Trigonométrie **********
@@ -124,22 +124,22 @@ static string Type2Letter(MARKER_TYPE T)
 	}
 }
 
-static AudioNode* getAudioNode(MARKER_TYPE type, float param, double time, int id) {
+static std::shared_ptr<AudioNode> getAudioNode(MARKER_TYPE type, float param, double time, int id) {
     switch (type) {
     case TYPE_EFFECT_AM :
-        return new AmNode(id, fabs(param * 2), time);
+        return std::shared_ptr<AudioNode>(new AmNode(id, fabs(param * 2), time));
     case TYPE_EFFECT_FM :
-        return new FmNode(id, fabs(param * 2), time);
+        return std::shared_ptr<AudioNode>(new FmNode(id, fabs(param * 2), time));
     case TYPE_SOURCE_SINUS :
-        return new OscNode(id, fabs(param * 2), time);
+        return std::shared_ptr<AudioNode>(new OscNode(id, fabs(param * 2), time));
     case TYPE_SOURCE_NOISE :
     case TYPE_SOURCE_NUMERICAL :
     case TYPE_EFFECT_ADD :
     case TYPE_FILTER_COLOR:
     case TYPE_END :
-        return new DestinationNode(id, time);
+        return std::shared_ptr<AudioNode>(new DestinationNode(id, time));
     default :
-        return new DestinationNode(id, time);
+        return std::shared_ptr<AudioNode>(new DestinationNode(id, time));
     }
 }
 

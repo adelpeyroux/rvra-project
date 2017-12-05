@@ -7,6 +7,7 @@ class DestinationNode : public AudioNode
 {
 public:
     DestinationNode(int id, double time);
+    virtual ~DestinationNode() = default;
 
     double play (double input, double time) { return input; }
 };

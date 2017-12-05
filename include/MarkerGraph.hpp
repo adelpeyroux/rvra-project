@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include "xMarker.hpp"
 #include "AudioNode.hpp"
-
+#include <memory>
 class MarkerGraph
 {
 
@@ -15,6 +15,7 @@ private :
         Node(){
             _markerIndex = -2;
             _inputs = std::vector<Node>();
+            _audio = nullptr;
         }
 
         Node (const xMarker& marker, int index, double time)
@@ -44,15 +45,25 @@ private :
 
             return _audio->play(input, time);
         }
+        std::vector<Node>& get_input(){
+            return _inputs;
+        }
+        std::shared_ptr<AudioNode> get_audio_node(){
+            return _audio;
+        }
+        void set_audio_node(std::shared_ptr<AudioNode> a){
+            _audio = a;
+        }
 
-        void save_phi(){
 
+        void remove(){
+            _audio = nullptr;
         }
 
     private :
         std::vector<Node> _inputs;
 
-        AudioNode* _audio;
+        std::shared_ptr<AudioNode> _audio;
         int _markerIndex;
 
     };
@@ -65,6 +76,8 @@ private :
 public:
     MarkerGraph(){}
     MarkerGraph(std::vector<aruco::Marker> &markers, cv::Size s, double time);
+    ~MarkerGraph();
+    void delete_rec(Node& current);
 
     void addEdge (int from, int to);
     void addMarker (aruco::Marker& marker);

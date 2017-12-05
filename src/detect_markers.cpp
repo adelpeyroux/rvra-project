@@ -50,9 +50,9 @@ using namespace aruco;
 
 Interfaces Inter;
 
-MarkerGraph * tmpGraph = NULL;
-MarkerGraph * graph = NULL;
-MarkerGraph * toDelete = NULL;
+std::shared_ptr<MarkerGraph> tmpGraph = NULL;
+std::shared_ptr<MarkerGraph> graph = NULL;
+std::shared_ptr<MarkerGraph> toDelete = NULL;
 
 
 MarkerDetector MDetector;
@@ -93,9 +93,6 @@ void play(double *output, int size, double time) {
         output[i] = tmpGraph->play(output[i],0);
     }
 
-    if (tmpGraph != graph) {
-        delete tmpGraph;
-    }
 }
 
 
@@ -116,7 +113,7 @@ void detect_markers() {
         InputImage.copyTo(InputImageCopy);
 
         cv::Size SizeIm = InputImage.size();
-        graph = new MarkerGraph(Markers, SizeIm, 0.0);
+        graph = std::shared_ptr<MarkerGraph>(new MarkerGraph(Markers, SizeIm, 0.0));
 
         Inter.DrawInterfaces(InputImageCopy, graph->getMarkers(), graph->getEdges());
         // DONE! Easy, right?
@@ -127,6 +124,7 @@ void detect_markers() {
 
         key = cv::waitKey(waitTime); // wait for key to be pressed
         if(key=='s')  waitTime= waitTime==0?10:0;
+        if(key=='q')  break;
 
         AvrgTime.first += ((double)getTickCount() - tick) / getTickFrequency();
         AvrgTime.second++;

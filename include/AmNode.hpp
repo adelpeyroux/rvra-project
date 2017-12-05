@@ -14,6 +14,7 @@ private :
 
 public:
     AmNode(int id, double freq, double time);
+    virtual ~AmNode() = default;
 
     double play (double input, double time);
 };
