@@ -12,7 +12,7 @@ xMarker::xMarker(int h, int w)
 
 xMarker::xMarker(aruco::Marker m)
 {
-    _type = id2type(m.id);
+    _type = Id2Type(m.id);
 
     _center = m.getCenter();
     //m.calculateExtrinsics(MarkerSize, CameraParams);

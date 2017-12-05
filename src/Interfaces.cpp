@@ -130,8 +130,8 @@ void Interfaces::drawSquareMarker(Mat& Im, const xMarker& Mi) const
 	for (int i = 0; i < 4; ++i) vertices[i] = vertices2f[i];
 	fillConvexPoly(Im, vertices, 4, Color);
 
-	if (_Text){
-		const string text = Type2Str(Mi.GetType());
+	if (_Text) {
+		const string text = Type2Letter(Mi.GetType());
 		const int fontFace = CV_FONT_HERSHEY_SIMPLEX;
 		double fontScale = 2;
 		const int thickness = 2;
@@ -145,33 +145,6 @@ void Interfaces::drawSquareMarker(Mat& Im, const xMarker& Mi) const
 	}
 }
 
-Scalar Interfaces::Type2Color(MARKER_TYPE T)
-{
-	switch (T) {
-	case TYPE_SOURCE_SINUS:		return COLORS[3];
-	case TYPE_SOURCE_NOISE:		return COLORS[4];
-	case TYPE_SOURCE_NUMERICAL:	return COLORS[5];
-	case TYPE_EFFECT_AM:		return COLORS[6];
-	case TYPE_EFFECT_FM:		return COLORS[7];
-	case TYPE_EFFECT_ADD:		return COLORS[8];
-	case TYPE_FILTER_COLOR:		return COLORS[9];
-	default:					return COLORS[2];
-	}
-}
-
-string Interfaces::Type2Str(MARKER_TYPE T)
-{
-	switch (T) {
-		case TYPE_SOURCE_SINUS:		return "S";
-		case TYPE_SOURCE_NOISE:		return "N";
-		case TYPE_SOURCE_NUMERICAL:	return "N";
-		case TYPE_EFFECT_AM:		return "AM";
-		case TYPE_EFFECT_FM:		return "FM";
-		case TYPE_EFFECT_ADD:		return "ADD";
-		case TYPE_FILTER_COLOR:		return "C";
-		default:					return "";
-	}
-}
 
 
 void Interfaces::drawSinMarker(cv::Mat &Im, const xMarker &Mi) const

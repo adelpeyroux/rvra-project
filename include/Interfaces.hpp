@@ -54,8 +54,4 @@ private:
 	void drawSquareMarker(cv::Mat& Im, const xMarker & Mi) const;
 	void drawSinMarker(cv::Mat& Im, const xMarker & Mi) const;
 
-	//Misc
-	static cv::Scalar Type2Color(MARKER_TYPE T);
-	static string Type2Str(MARKER_TYPE T);
-
 };
