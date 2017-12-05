@@ -65,14 +65,14 @@ static cv::Scalar BGR2RGB(const cv::Scalar &color)
 enum MARKER_TYPE
 {
 	// Oscillateurs
-	TYPE_OSCILL_SINUS = 0,
-	TYPE_OSCILL_SQUARE = 1,
-	TYPE_OSCILL_TRIANGLE = 2,
-	TYPE_OSCILL_SAW = 3,
-	TYPE_OSCILL_IMPULSE = 4,
+    TYPE_SOURCE_SINUS = 0,
+    TYPE_SOURCE_NOISE = 1,
+    TYPE_SOURCE_NUMERICAL = 2,
 
-	// Effets
-	TYPE_EFFECT_NOISE = 10,
+    // Effets
+    TYPE_EFFECT_AM = 10,
+    TYPE_EFFECT_FM = 11,
+    TYPE_EFFECT_ADD = 12,
 
     // Filtres
     TYPE_FILTER_COLOR = 20,
@@ -85,20 +85,32 @@ enum MARKER_TYPE
 static MARKER_TYPE id2type(int id)
 {
     switch (id) {
+    case 31:
+    case 105:
     case 107:
-        return TYPE_OSCILL_SINUS;
+    case 179:
+        return TYPE_SOURCE_SINUS;
     case 232:
-        return TYPE_OSCILL_SQUARE;
+    case 258:
+        return TYPE_SOURCE_NOISE;
+    case 388:
+    case 459:
+    case 466:
     case 494:
-        return TYPE_OSCILL_TRIANGLE;
+        return TYPE_SOURCE_NUMERICAL;
+    case 504:
+    case 520:
+        return TYPE_EFFECT_AM;
+    case 552:
     case 553:
-        return TYPE_OSCILL_SAW;
+        return TYPE_EFFECT_FM;
+    case 555:
+    case 592:
+        return TYPE_EFFECT_ADD;
     case 619:
-        return TYPE_OSCILL_IMPULSE;
     case 824:
-        return TYPE_EFFECT_NOISE;
     case 827:
-        return TYPE_FILTER_COLOR;
+    case 942:
     default:
         return TYPE_OSCILL_SINUS;
         break;
@@ -109,6 +121,10 @@ static AudioNode* getAudioNode(MARKER_TYPE type, float param, double time, int i
     switch (type) {
     case TYPE_END :
         return new DestinationNode(id, time);
+    case TYPE_EFFECT_AM :
+        return new AmNode(id, fabs(param * 2), time);
+    case TYPE_EFFECT_FM :
+        return new FmNode(id, fabs(param * 2), time);
     default :
         return new OscNode(id, fabs(param * 2), time);
     }

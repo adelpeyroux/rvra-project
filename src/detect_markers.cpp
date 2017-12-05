@@ -159,7 +159,7 @@ int main(int argc, char **argv) {
         ///////////  OPEN VIDEO
         // read from camera or from  file
         if (InputVideo.find("live") != string::npos) {
-            int vIdx = 0;
+            int vIdx = std::stoi(cml("-i","0"));
             // check if the :idx is here
             char cad[100];
             if (InputVideo.find(":") != string::npos) {

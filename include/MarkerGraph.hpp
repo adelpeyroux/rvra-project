@@ -35,7 +35,6 @@ private :
             double input = 0.f;
             if (_inputs.size() > 0) {
                 for (int i = 0; i < _inputs.size(); ++i) {
-
                     input += _inputs[i].play_rec(sample, time);
                 }
 
