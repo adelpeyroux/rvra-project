@@ -126,7 +126,6 @@ void detect_markers() {
         AvrgTime.first += ((double)getTickCount() - tick) / getTickFrequency();
         AvrgTime.second++;
         //cout << "\rTime detection=" << 1000 * AvrgTime.first / AvrgTime.second << " milliseconds nmarkers=" << Markers.size() << std::endl;
-
     }
 }
 

@@ -9,23 +9,23 @@
 //***********************************
 //********** Trigonométrie **********
 //***********************************
-#define TWO_PI         6.28318530717958647693
-#define RAD2DEG        57.29577951308232087680
-#define M_PI_180     0.01745329251994329577
-#define SQRT_2         1.41421356237309504880
-#define PROXIMITY   250
+#define TWO_PI		6.28318530717958647693
+#define RAD2DEG		57.29577951308232087680
+#define M_PI_180	0.01745329251994329577
+#define SQRT_2		1.41421356237309504880
+#define PROXIMITY	250
 
 
 //******************************
 //********** Couleurs **********
 //******************************
 const std::vector<cv::Scalar> COLORS = {
-		cv::Scalar(0, 0, 0), cv::Scalar(125, 125, 125), cv::Scalar(255, 255, 255),    // Noir		Gris		Blanc
-		cv::Scalar(255, 0, 0), cv::Scalar(0, 255, 0), cv::Scalar(0, 0, 255),        // Rouge	Vert		Bleu
-		cv::Scalar(0, 255, 255), cv::Scalar(255, 0, 255), cv::Scalar(255, 255, 0),    // Cyan		Magenta		Jaune
-		cv::Scalar(255, 125, 0), cv::Scalar(0, 255, 125), cv::Scalar(125, 0, 255),    // Orange	Turquoise	Indigo
-		cv::Scalar(255, 0, 125), cv::Scalar(125, 255, 0), cv::Scalar(0, 125, 255),    // Fushia	Lime		Azur
-		cv::Scalar(125, 0, 0), cv::Scalar(0, 125, 0), cv::Scalar(0, 0, 125)        // Blood	Grass		Deep
+		cv::Scalar(0, 0, 0), cv::Scalar(125, 125, 125), cv::Scalar(255, 255, 255),	// Noir		Gris		Blanc
+		cv::Scalar(255, 0, 0), cv::Scalar(0, 255, 0), cv::Scalar(0, 0, 255),		// Rouge	Vert		Bleu
+		cv::Scalar(0, 255, 255), cv::Scalar(255, 0, 255), cv::Scalar(255, 255, 0),	// Cyan		Magenta		Jaune
+		cv::Scalar(255, 125, 0), cv::Scalar(0, 255, 125), cv::Scalar(125, 0, 255),	// Orange	Turquoise	Indigo
+		cv::Scalar(255, 0, 125), cv::Scalar(125, 255, 0), cv::Scalar(0, 125, 255),	// Fushia	Lime		Azur
+		cv::Scalar(125, 0, 0), cv::Scalar(0, 125, 0), cv::Scalar(0, 0, 125)			// Blood	Grass		Deep
 };
 
 enum MY_COLORS {
@@ -82,7 +82,7 @@ enum MARKER_TYPE {
 };
 
 
-static MARKER_TYPE id2type(int id)
+static MARKER_TYPE Id2Type(int id)
 {
     switch (id) {
     case 1 ... 200:		return TYPE_SOURCE_SINUS;
@@ -95,16 +95,40 @@ static MARKER_TYPE id2type(int id)
     }
 }
 
+static cv::Scalar Type2Color(MARKER_TYPE T)
+{
+	switch (T) {
+		case TYPE_SOURCE_SINUS:		return COLORS[3];
+		case TYPE_SOURCE_NOISE:		return COLORS[4];
+		case TYPE_SOURCE_NUMERICAL:	return COLORS[5];
+		case TYPE_EFFECT_AM:		return COLORS[6];
+		case TYPE_EFFECT_FM:		return COLORS[7];
+		case TYPE_EFFECT_ADD:		return COLORS[8];
+		case TYPE_FILTER_COLOR:		return COLORS[9];
+		default:					return COLORS[2];
+	}
+}
+
+static string Type2Letter(MARKER_TYPE T)
+{
+	switch (T) {
+		case TYPE_SOURCE_SINUS:		return "S";
+		case TYPE_SOURCE_NOISE:		return "N";
+		case TYPE_SOURCE_NUMERICAL:	return "N";
+		case TYPE_EFFECT_AM:		return "A";
+		case TYPE_EFFECT_FM:		return "F";
+		case TYPE_EFFECT_ADD:		return "A";
+		case TYPE_FILTER_COLOR:		return "C";
+		default:					return "";
+	}
+}
+
 static AudioNode* getAudioNode(MARKER_TYPE type, float param, double time, int id) {
     switch (type) {
-    case TYPE_END :
-        return new DestinationNode(id, time);
-    case TYPE_EFFECT_AM :
-        return new AmNode(id, fabs(param * 2), time);
-    case TYPE_EFFECT_FM :
-        return new FmNode(id, fabs(param * 2), time);
-    default :
-        return new OscNode(id, fabs(param * 2), time);
+		case TYPE_END :			return new DestinationNode(id, time);
+		case TYPE_EFFECT_AM :	return new AmNode(id, fabs(param * 2), time);
+		case TYPE_EFFECT_FM :	return new FmNode(id, fabs(param * 2), time);
+		default :				return new OscNode(id, fabs(param * 2), time);
     }
 }
 
@@ -119,9 +143,8 @@ static bool isSource(MARKER_TYPE m)
 //***************************
 static void init_phi()
 {
-	for (int i = 0; i < NB_MARKERS; ++i) {
-		PHI[i] = 0.0;
-	}
+	for (double &i : PHI)
+		i = 0.0;
 }
 
 //**************************
