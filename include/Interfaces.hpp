@@ -50,7 +50,8 @@ private:
     void drawMarkerCircle(cv::Mat& Im, const xMarker & Mi) const;
 
 	//Marker Type (pour l'instant un seul)
-    void drawSquareMarker(cv::Mat& Im, const xMarker & Mi) const;
+	void drawSquareMarker(cv::Mat& Im, const xMarker & Mi) const;
+	void drawSinMarker(cv::Mat& Im, const xMarker & Mi) const;
 
 	//Misc
 	static cv::Scalar Type2Color(MARKER_TYPE T);
