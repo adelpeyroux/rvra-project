@@ -1,6 +1,8 @@
 #ifndef NODES_HPP
 #define NODES_HPP
 
+#include "MiscConsts.hpp"
+
 #include "AudioNode.hpp"
 
 #include "DestinationNode.hpp"

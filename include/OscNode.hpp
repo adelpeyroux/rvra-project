@@ -17,7 +17,7 @@ private:
 public:
     OscNode(int id, double freq, double time);
 
-    double play (double input, double time);
+    double play (AudioParams input, double time);
 
     void operator<<(const cv::FileNode& n);
 };

@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include "xMarker.hpp"
 #include "AudioNode.hpp"
+#include "AudioParams.hpp"
 
 class MarkerGraph
 {
@@ -22,6 +23,7 @@ private :
             _inputs = std::vector<Node>();
             _markerIndex = index;
             _audio = getAudioNode( marker.GetType(), marker.GetAngle(), time, marker.GetMarker().id);
+            _type = marker.GetType();
         }
         void AddInput(Node &node){
             _inputs.push_back(node);
@@ -31,18 +33,23 @@ private :
             return _markerIndex;
         }
 
-        double play_rec (double sample, double time) {
-            double input = 0.f;
+        AudioParams play_rec (AudioParams sample, double time) {
+
+            AudioParams inputParams = AudioParams();
             if (_inputs.size() > 0) {
                 for (int i = 0; i < _inputs.size(); ++i) {
-                    input += _inputs[i].play_rec(sample, time);
+                    AudioParams p = _inputs[i].play_rec(sample, time);
+                    inputParams.AddParams(p);
                 }
-
-
-                input /= float(_inputs.size());
             }
 
-            return _audio->play(input, time);
+            float value =  _audio->play(inputParams, time);
+            MARKER_TYPE type = _type;
+
+            AudioParams result = AudioParams();
+            result.AddParam(type, value);
+
+            return result;
         }
 
         void save_phi(){
@@ -54,7 +61,7 @@ private :
 
         AudioNode* _audio;
         int _markerIndex;
-
+        MARKER_TYPE _type;
     };
 
     std::vector<xMarker> _markers;

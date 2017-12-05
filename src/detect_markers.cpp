@@ -92,10 +92,6 @@ void play(double *output, int size, double time) {
         //output[i] = osc.sinewave(440);
         output[i] = tmpGraph->play(output[i],0);
     }
-
-    if (tmpGraph != graph) {
-        delete tmpGraph;
-    }
 }
 
 

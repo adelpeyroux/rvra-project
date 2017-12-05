@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __MISC_CONSTS_HPP__
+#define __MISC_CONSTS_HPP__
 
 #include <opencv2/core/core.hpp>
 #include "aruco.h"
@@ -114,8 +115,8 @@ static string Type2Letter(MARKER_TYPE T)
 {
 	switch (T) {
 		case TYPE_SOURCE_SINUS:		return "S";
-		case TYPE_SOURCE_NOISE:		return "N";
-		case TYPE_SOURCE_NUMERICAL:	return "N";
+        case TYPE_SOURCE_NOISE:		return "No";
+        case TYPE_SOURCE_NUMERICAL:	return "Nu";
 		case TYPE_EFFECT_AM:		return "A";
 		case TYPE_EFFECT_FM:		return "F";
 		case TYPE_EFFECT_ADD:		return "A";
@@ -166,3 +167,5 @@ int sgn(T val)
 {
 	return (T(0) < val) - (val < T(0));
 }
+
+#endif // __MISC_CONSTS_HPP__

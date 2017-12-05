@@ -15,7 +15,7 @@ private :
 public:
     FmNode(int id, double freq, double time);
 
-    double play (double input, double time);
+    double play (AudioParams input, double time);
 };
 
 #endif // AMNODE_HPP

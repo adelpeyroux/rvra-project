@@ -11,7 +11,7 @@ OscNode::OscNode(int id, double freq, double time)
 
 }
 
-double OscNode::play(double input, double time) {
+double OscNode::play(AudioParams input, double time) {
     double value = sin (PHI[_id]);
     PHI[_id] += TWO_PI * _freq / double(maxiSettings::sampleRate);
     if (PHI[_id] >= TWO_PI)

@@ -1,6 +1,6 @@
 #pragma once
 #include "opencv2/opencv.hpp"
-
+#include "AudioParams.hpp"
 class AudioNode
 {    
 protected:
@@ -9,5 +9,5 @@ protected:
 public:
     AudioNode(int id, double time);
 
-    virtual double play (double input, double time) = 0;
+    virtual double play (AudioParams input, double time) = 0;
 };
