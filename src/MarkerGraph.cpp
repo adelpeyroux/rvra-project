@@ -1,114 +1,136 @@
 #include "MarkerGraph.hpp"
 
-MarkerGraph::MarkerGraph(std::vector<aruco::Marker> &markers, cv::Size s, double time)
+using namespace std;
+using namespace cv;
+
+//****************************************
+//***** Constructeurs / Destructeurs *****
+//****************************************
+MarkerGraph::MarkerGraph(vector<aruco::Marker>& markers, Size s, double time)
 {
-    _root = MarkerGraph::Node(xMarker(s.height, s.width), -1, time);
-    _size = s;
-    _markers.reserve(markers.size());
-    vector<int> sources;
-    vector<MarkerGraph::Node> effects;
-    int index = 0;
-    for (aruco::Marker m : markers) {
-        xMarker tmp (m);
-        if (tmp.IsSource()){
-            sources.push_back(index);
-        }else
-        {
-            effects.push_back(Node(tmp, index, time));
-        }
-        _markers.push_back(tmp);
-        index ++;
-    }
-    // _edges = std::vector<std::pair<int,int>>();
+	_root = Node(xMarker(s.height, s.width), -1, time);
+	_Size = s;
+	_markers.reserve(markers.size());
+	vector<int> sources;
+	vector<Node> effects;
+	int index = 0;
+	for (const aruco::Marker& m : markers) {
+		xMarker tmp(m);
+		if (tmp.isSource()) {
+			sources.push_back(index);
+		} else {
+			effects.push_back(Node(tmp, index, time));
+		}
+		_markers.push_back(tmp);
+		index ++;
+	}
 
-    for (int id : sources){
-        MarkerGraph::Node current(_markers[id], id, time);
-        MarkerGraph::Node tmp;
-        bool find = false;
-        do{
-            find = FindProximity(current, effects, tmp);
-            if (find){
-                addEdge(current.GetMarkerIndex(), tmp.GetMarkerIndex());
-                tmp.AddInput(current);
-                current = tmp;
-                find = false;
-            }
-        }while(find);
-        addEdge(current.GetMarkerIndex(), _root.GetMarkerIndex());
+	for (int id : sources) {
+		Node current(_markers[id], id, time);
+		Node tmp;
+		bool find;
+		do {
+			find = FindProximity(current, effects, tmp);
+			if (find) {
+				AddEdge(current.GetMarkerIndex(), tmp.GetMarkerIndex());
+				tmp.AddInput(current);
+				current = tmp;
+				find = false;
+			}
+		} while (find);
+		AddEdge(current.GetMarkerIndex(), _root.GetMarkerIndex());
 
-        _root.AddInput(current);
-    }
+		_root.AddInput(current);
+	}
 }
 
-void MarkerGraph::delete_rec(Node& current){
-    if (current.get_audio_node() != nullptr){
-        if (current.get_input().size() > 0) {
-            for (uint i = 0; i < current.get_input().size(); ++i) {
-                delete_rec(current.get_input()[i]);
-            }
-        }
+void MarkerGraph::DeleteRec(Node& current)
+{
+	if (current.get_audio_node() != nullptr) {
+		if (current.get_input().size() > 0) {
+			for (uint i = 0; i < current.get_input().size(); ++i) {
+				DeleteRec(current.get_input()[i]);
+			}
+		}
 
-        current.remove();
-    }
-}
-MarkerGraph::~MarkerGraph(){
-    delete_rec(_root);
+		current.remove();
+	}
 }
 
-bool MarkerGraph::FindProximity(MarkerGraph::Node& current, vector<MarkerGraph::Node>& effects, MarkerGraph::Node& tmp){
-    cv::Point p = _markers[current.GetMarkerIndex()].GetCenter() - cv::Point(_size.width/2, _size.height/2 );
-    float distance = std::min(p.dot(p), PROXIMITY*PROXIMITY);
-
-    Node minNode = current;
-    bool find = false;
-    for (Node e : effects){
-        cv::Point tmp = _markers[minNode.GetMarkerIndex()].GetCenter() - _markers[e.GetMarkerIndex()].GetCenter();
-        float d = tmp.dot(tmp);
-        if ( d < distance){
-            minNode = e;
-            find = true;
-            distance = d;
-        }
-    }
-    if (find)
-        tmp = minNode;
-    return find;
+MarkerGraph::~MarkerGraph()
+{
+	DeleteRec(_root);
 }
 
-void MarkerGraph::addEdge (int from, int to){
-    _edges.push_back(std::pair<int,int>(from, to));
+//************************
+//***** Adds / Clear *****
+//************************
+void MarkerGraph::AddEdge(int from, int to)
+{
+	_edges.push_back(pair<int, int>(from, to));
 }
 
-void MarkerGraph::addMarker (aruco::Marker & marker){
-    _markers.push_back(marker);
+void MarkerGraph::AddMarker(aruco::Marker& marker)
+{
+	_markers.push_back(xMarker(marker));
 }
 
-void MarkerGraph::addEdges (std::vector<std::pair<int, int>>& edges){
-    _edges.insert(_edges.end(), edges.begin(), edges.end());
+void MarkerGraph::AddEdges(vector<pair<int, int>>& edges)
+{
+	_edges.insert(_edges.end(), edges.begin(), edges.end());
 }
 
-void MarkerGraph::addMarkers (std::vector<aruco::Marker>& markers){
-    _markers.insert(_markers.end(), markers.begin(), markers.end());
+void MarkerGraph::AddMarkers(vector<aruco::Marker>& markers)
+{
+	_markers.insert(_markers.end(), markers.begin(), markers.end());
 }
 
-void MarkerGraph::clear(){
-    _markers.clear();
-    _edges.clear();
+void MarkerGraph::Clear()
+{
+	_markers.clear();
+	_edges.clear();
 }
 
-double MarkerGraph::play(double input, double time) {
 
-    AudioParam root = _root.play_rec(AudioParams(), time);
 
-    return root.value;
+//******************
+//***** Getter *****
+//******************
+const vector<xMarker>& MarkerGraph::GetMarkers() const
+{
+	return _markers;
 }
 
-const std::vector<xMarker> & MarkerGraph::getMarkers() const {
-    return _markers;
+const vector<pair<int, int>>& MarkerGraph::GetEdges() const
+{
+	return _edges;
 }
 
-const std::vector<std::pair<int, int>> & MarkerGraph::getEdges() const {
-
-    return _edges;
+//****************
+//***** Play *****
+//****************
+double MarkerGraph::Play(double input, double time)
+{
+	const AudioParam root = _root.play_rec(AudioParams(), time);
+	return root.value;
 }
 
+bool MarkerGraph::FindProximity(Node& current, vector<Node>& effects, Node& tmp)
+{
+	Point p = _markers[current.GetMarkerIndex()].GetCenter() - Point(_Size.width / 2, _Size.height / 2);
+	float distance = min(p.dot(p), PROXIMITY*PROXIMITY);
+
+	Node minNode = current;
+	bool find = false;
+	for (Node e : effects) {
+		Point tmp_p = _markers[minNode.GetMarkerIndex()].GetCenter() - _markers[e.GetMarkerIndex()].GetCenter();
+		const float d = tmp_p.dot(tmp_p);
+		if (d < distance) {
+			minNode = e;
+			find = true;
+			distance = d;
+		}
+	}
+	if (find) tmp = minNode;
+	return find;
+}

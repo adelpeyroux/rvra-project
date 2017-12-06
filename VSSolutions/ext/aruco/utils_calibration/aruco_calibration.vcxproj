@@ -56,25 +56,25 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\SourceTree\rvra-project\VSSolutions\ext\aruco\bin\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\SourceTree\rvra-project\VSSolutions\Release\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">aruco_calibration.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">aruco_calibration</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\SourceTree\rvra-project\VSSolutions\ext\aruco\bin\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\SourceTree\rvra-project\VSSolutions\Release\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">aruco_calibration.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">aruco_calibration</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\SourceTree\rvra-project\VSSolutions\ext\aruco\bin\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\SourceTree\rvra-project\VSSolutions\Release\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">aruco_calibration.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">aruco_calibration</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\SourceTree\rvra-project\VSSolutions\ext\aruco\bin\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\SourceTree\rvra-project\VSSolutions\Release\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">aruco_calibration.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">aruco_calibration</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
@@ -111,13 +111,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\bin\Debug\aruco201.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_dnn331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_ml331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_objdetect331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_shape331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_stitching331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_superres331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_videostab331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_calib3d331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_features2d331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_flann331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_highgui331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_photo331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_video331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_videoio331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_imgcodecs331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_imgproc331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_core331d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\..\..\Release\Debug\aruco201.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_dnn331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_ml331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_objdetect331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_shape331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_stitching331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_superres331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_videostab331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_calib3d331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_features2d331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_flann331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_highgui331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_photo331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_video331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_videoio331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_imgcodecs331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_imgproc331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_core331d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/Debug/aruco_calibration.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/Debug/aruco_calibration.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/Release/Debug/aruco_calibration.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/Release/Debug/aruco_calibration.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -154,13 +154,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\bin\Release\aruco201.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_dnn331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_ml331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_objdetect331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_shape331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_stitching331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_superres331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videostab331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_calib3d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_features2d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_flann331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_highgui331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_photo331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_video331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videoio331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgcodecs331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgproc331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_core331.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\..\..\Release\Release\aruco201.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_dnn331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_ml331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_objdetect331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_shape331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_stitching331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_superres331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videostab331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_calib3d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_features2d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_flann331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_highgui331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_photo331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_video331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videoio331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgcodecs331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgproc331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_core331.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/Release/aruco_calibration.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/Release/aruco_calibration.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/Release/Release/aruco_calibration.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/Release/Release/aruco_calibration.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -197,13 +197,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\bin\MinSizeRel\aruco201.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_dnn331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_ml331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_objdetect331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_shape331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_stitching331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_superres331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videostab331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_calib3d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_features2d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_flann331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_highgui331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_photo331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_video331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videoio331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgcodecs331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgproc331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_core331.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\..\..\Release\MinSizeRel\aruco201.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_dnn331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_ml331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_objdetect331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_shape331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_stitching331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_superres331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videostab331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_calib3d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_features2d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_flann331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_highgui331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_photo331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_video331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videoio331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgcodecs331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgproc331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_core331.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/MinSizeRel/aruco_calibration.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/MinSizeRel/aruco_calibration.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/Release/MinSizeRel/aruco_calibration.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/Release/MinSizeRel/aruco_calibration.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -240,13 +240,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\bin\RelWithDebInfo\aruco201.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_dnn331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_ml331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_objdetect331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_shape331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_stitching331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_superres331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videostab331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_calib3d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_features2d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_flann331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_highgui331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_photo331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_video331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videoio331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgcodecs331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgproc331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_core331.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\..\..\Release\RelWithDebInfo\aruco201.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_dnn331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_ml331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_objdetect331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_shape331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_stitching331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_superres331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videostab331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_calib3d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_features2d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_flann331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_highgui331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_photo331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_video331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videoio331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgcodecs331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgproc331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_core331.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/RelWithDebInfo/aruco_calibration.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/RelWithDebInfo/aruco_calibration.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/Release/RelWithDebInfo/aruco_calibration.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/Release/RelWithDebInfo/aruco_calibration.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>

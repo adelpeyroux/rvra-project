@@ -95,7 +95,7 @@ CMAKE_EXE_LINKER_FLAGS_RELEASE:STRING=/INCREMENTAL:NO
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=/debug /INCREMENTAL
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=D:/SourceTree/rvra-project/VSSolutions/Project
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files/Project
 
 //Path to a program.
 CMAKE_LINKER:FILEPATH=D:/Programmes/Microsoft Visual Studio 15.0/VC/Tools/MSVC/14.11.25503/bin/HostX86/x64/link.exe
@@ -185,25 +185,25 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=OFF
 DXSDK_DSOUND_LIBRARY:FILEPATH=C:/Program Files (x86)/Windows Kits/10/Lib/10.0.15063.0/um/x64/dsound.lib
 
 //Path to a file.
-DXSDK_INCLUDE_DIR:PATH=DXSDK_INCLUDE_DIR-NOTFOUND
+DXSDK_INCLUDE_DIR:PATH=D:/Programmes/Microsoft DirectX SDK/Include
 
 //Path to a file.
-DXSDK_LIBRARY_DIR:PATH=DXSDK_LIBRARY_DIR-NOTFOUND
+DXSDK_LIBRARY_DIR:PATH=D:/Programmes/Microsoft DirectX SDK/Lib/x64
 
 //Path to a file.
-DXSDK_ROOT_DIR:PATH=DXSDK_ROOT_DIR-NOTFOUND
+DXSDK_ROOT_DIR:PATH=D:/Programmes/Microsoft DirectX SDK
 
 //Directory for binaries
-EXECUTABLE_OUTPUT_PATH:PATH=D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin
+EXECUTABLE_OUTPUT_PATH:PATH=D:/SourceTree/rvra-project/VSSolutions/Release
 
 //Path to a library.
-GLUT_glut_LIBRARY:FILEPATH=GLUT_glut_LIBRARY-NOTFOUND
+GLUT_glut_LIBRARY:FILEPATH=D:\Programmes\Libs\glut-3.7\bin
 
 //Set to ON to build/install Documentation
 INSTALL_DOC:BOOL=OFF
 
 //Directory for dlls
-LIBRARY_OUTPUT_PATH:PATH=D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin
+LIBRARY_OUTPUT_PATH:PATH=D:/SourceTree/rvra-project/VSSolutions/Release
 
 //The directory containing a CMake configuration file for OpenCV.
 OpenCV_DIR:PATH=D:/Programmes/Libs/OpenCV/build
@@ -221,7 +221,7 @@ PA_CONFIG_LIB_OUTPUT_PATH:BOOL=OFF
 PA_ENABLE_DEBUG_OUTPUT:BOOL=OFF
 
 //Enable Portaudio Unicode build
-PA_UNICODE_BUILD:BOOL=OFF
+PA_UNICODE_BUILD:BOOL=ON
 
 //Enable support for ASIO
 PA_USE_ASIO:BOOL=OFF
@@ -248,7 +248,7 @@ Project_BINARY_DIR:STATIC=D:/SourceTree/rvra-project/VSSolutions
 Project_SOURCE_DIR:STATIC=D:/SourceTree/rvra-project
 
 //Directory for dlls and binaries
-RUNTIME_OUTPUT_PATH:PATH=D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin
+RUNTIME_OUTPUT_PATH:PATH=D:/SourceTree/rvra-project/VSSolutions/Release
 
 //Set Double/float precision for posetracker
 USE_DOUBLE_PRECISION_PNP:BOOL=ON
@@ -417,6 +417,8 @@ DXSDK_INCLUDE_DIR-ADVANCED:INTERNAL=1
 DXSDK_LIBRARY_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: DXSDK_ROOT_DIR
 DXSDK_ROOT_DIR-ADVANCED:INTERNAL=1
+//Details about finding DXSDK
+FIND_PACKAGE_MESSAGE_DETAILS_DXSDK:INTERNAL=[D:/Programmes/Microsoft DirectX SDK][D:/Programmes/Microsoft DirectX SDK/Include][v()]
 //Details about finding OpenCV
 FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[D:/Programmes/Libs/OpenCV/build][v3.3.1()]
 //Result of TRY_COMPILE

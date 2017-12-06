@@ -1,6 +1,6 @@
 # pkg-config file for the library
 
-prefix=D:/SourceTree/rvra-project/VSSolutions/Project
+prefix=C:/Program Files/Project
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include

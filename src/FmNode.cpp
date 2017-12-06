@@ -1,19 +1,26 @@
 #include "FmNode.hpp"
 #include "MiscConsts.hpp"
 
+//****************************************
+//***** Constructeurs / Destructeurs *****
+//****************************************
 FmNode::FmNode(int id, double freq, double time)
-    : AudioNode(id, time), _freq(freq), _initTime(time)
+	: AudioNode(id, time), _freq(freq), _initTime(time), _phi0(PHI[id])
 {
-    _osc.phaseReset(PHI[_id]);
+	_osc.phaseReset(PHI[_id]);
 }
 
-double FmNode::play(AudioParams input, double time) {
-    double inVal = 0.;
-    double c = 0.;
-    GetSignalsAndNumerics(input, inVal, c);
+//****************
+//***** Play *****
+//****************
+double FmNode::Play(AudioParams input, double time)
+{
+	double inVal = 0.;
+	double c = 0.;
+	GetSignalsAndNumerics(input, inVal, c);
 
-    double value = _osc.sinewave(_freq + (inVal * c));
+	const double value = _osc.sinewave(_freq + inVal * c);
 
-    incr_phi(_id, _freq);
-    return value;
+	IncrPhi(_id, _freq);
+	return value;
 }

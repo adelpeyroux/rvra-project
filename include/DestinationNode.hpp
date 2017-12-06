@@ -1,17 +1,14 @@
-#ifndef DESTINATIONNODE_HPP
-#define DESTINATIONNODE_HPP
-
-#include <stdlib.h>
+#pragma once
 
 #include "AudioNode.hpp"
 
 class DestinationNode : public AudioNode
 {
 public:
-    DestinationNode(int id, double time);
-    virtual ~DestinationNode() = default;
+	//***** Constructeurs / Destructeurs *****
+	DestinationNode(int id, double time);
+	virtual ~DestinationNode() = default;
 
-    double play (AudioParams input, double time);
+	//***** Play *****
+	double Play(AudioParams input, double time) override;
 };
-
-#endif // DESTINATIONNODE_HPP

@@ -164,9 +164,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{126DCE62-5252-345A-8E38-7B9988A04B2F}</Project>
       <Name>ZERO_CHECK</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\SourceTree\rvra-project\VSSolutions\Interface_Test.vcxproj">
-      <Project>{D37DB98F-2899-38B4-B53C-572896FA129A}</Project>
-      <Name>Interface_Test</Name>
+    <ProjectReference Include="D:\SourceTree\rvra-project\VSSolutions\ReactCamera.vcxproj">
+      <Project>{F4A00D1F-EE59-3FD7-8173-9853FC4B941D}</Project>
+      <Name>ReactCamera</Name>
     </ProjectReference>
     <ProjectReference Include="D:\SourceTree\rvra-project\VSSolutions\ext\aruco\src\aruco.vcxproj">
       <Project>{86EC4A9E-EB84-36B2-A9B9-4F97C3F4EEFB}</Project>
@@ -216,17 +216,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{1F41B7B4-C285-33E7-A317-5AC7E9572EB7}</Project>
       <Name>aruco_tracker</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\SourceTree\rvra-project\VSSolutions\detect.vcxproj">
-      <Project>{B1C413FE-0215-3F5B-A6C2-BB5C8678D9A6}</Project>
-      <Name>detect</Name>
-    </ProjectReference>
     <ProjectReference Include="D:\SourceTree\rvra-project\VSSolutions\ext\Maximilian\maximilian.vcxproj">
       <Project>{0C3594B5-9F5E-34DF-B20E-0A3F07AF7096}</Project>
       <Name>maximilian</Name>
-    </ProjectReference>
-    <ProjectReference Include="D:\SourceTree\rvra-project\VSSolutions\ext\Maximilian\maximilian-exec.vcxproj">
-      <Project>{E98C3247-98D2-35E3-9B2F-0FC8066657B2}</Project>
-      <Name>maximilian-exec</Name>
     </ProjectReference>
     <ProjectReference Include="D:\SourceTree\rvra-project\VSSolutions\ext\Maximilian\ext\portaudio\portaudio.vcxproj">
       <Project>{F4B90ED5-9F80-3597-8A93-695805D251ED}</Project>

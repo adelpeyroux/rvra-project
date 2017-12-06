@@ -1,65 +1,63 @@
 #pragma once
+#include <vector>
 
-#include <stdlib.h>
-
-#include "opencv2/opencv.hpp"
-
-class AudioParam {
+class AudioParam
+{
 public :
-    int type;
-    float value;
+	int type;
+	double value;
 
-    AudioParam( int type, double value) :
-        type(type), value(value)
-    {}
+	//***** Constructeurs / Destructeurs *****
+	AudioParam(int type, double value)
+		: type(type), value(value) {}
+	virtual ~AudioParam() = default;
 };
 
-class AudioParams {
+class AudioParams
+{
+private:
+	std::vector<AudioParam> _params;
+
 public :
-    AudioParams () {
-        _params = std::vector<AudioParam>();
-    }
+	//***** Constructeurs / Destructeurs *****
+	AudioParams() { _params = std::vector<AudioParam>(); }
+	virtual ~AudioParams() = default;
 
-    void AddParam (int type, double value) {
-        _params.push_back(AudioParam(type, value));
-    }
+	//***** Adds *****
+	void AddParam(int type, double value) { _params.push_back(AudioParam(type, value)); }
+	void AddParam(AudioParam p) { _params.push_back(p); }
+	void AddParams(const AudioParams& params)
+	{
+		_params.insert(_params.end(), params._params.begin(), params._params.end());
+	}
 
-    void AddParam(AudioParam p) {
-        _params.push_back(p);
-    }
+	//***** Getters / Setters *****
+	std::vector<float> GetValues(int type)
+	{
+		std::vector<float> result = std::vector<float>();
+		for (AudioParam p : _params) {
+			if (p.type == type) {
+				result.push_back(p.value);
+			}
+		}
+		return result;
+	}
 
-    void AddParams (const AudioParams & params) {
-        _params.insert(_params.end(), params._params.begin(), params._params.end());
-    }
-
-    std::vector<float> GetValues (int type) {
-        std::vector<float> result = std::vector<float>();
-        for (AudioParam p : _params) {
-            if (p.type == type) {
-                result.push_back(p.value);
-            }
-        }
-        return result;
-    }
-
-    std::vector< AudioParam > GetParams() {
-        return _params;
-    }
-
-private :
-
-    std::vector<AudioParam> _params;
+	std::vector<AudioParam> GetParams() const { return _params; }
 };
 
 
 class AudioNode
-{    
+{
 protected:
-    double _phi;
-    int _id;
+	int _id;
+	double _phi;
 public:
-    AudioNode(int id, double time);
-    virtual double play (AudioParams input, double time) = 0;
-    virtual ~AudioNode() = default;
-};
+	//***** Constructeurs / Destructeurs *****
+	AudioNode(int id, double time)
+		: _id(id), _phi(0) {}
+	virtual ~AudioNode() = default;
 
+	//***** Play *****
+	virtual double Play(AudioParams input, double time) = 0;
+};

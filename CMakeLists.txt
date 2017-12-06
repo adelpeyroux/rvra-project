@@ -17,50 +17,36 @@ INCLUDE_DIRECTORIES(ext/Maximilian)
 
 INCLUDE_DIRECTORIES(include)
 
-SET(TARGET "detect")
+SET(TARGET "ReactCamera")
 
 SET(SRC
 		include/AudioGraph.hpp
 		include/MarkerGraph.hpp
-                include/Nodes.hpp
+		include/Nodes.hpp
 		include/AudioNode.hpp
 		include/OscNode.hpp
 		include/DestinationNode.hpp
 		include/xMarker.hpp
 		include/Interfaces.hpp
 		include/MiscConsts.hpp
-                include/AmNode.hpp
-                include/NoiseNode.hpp
-                include/NumericalNode.hpp
-                include/FmNode.hpp
+		include/AmNode.hpp
+		include/NoiseNode.hpp
+		include/NumericalNode.hpp
+		include/FmNode.hpp
 
-                src/main.cpp
-		src/AudioGraph.cpp
+		src/main.cpp
 		src/MarkerGraph.cpp
-		src/AudioNode.cpp
 		src/DestinationNode.cpp
 		src/OscNode.cpp
 		src/xMarker.cpp
-                src/Interfaces.cpp
-                src/AmNode.cpp
-                src/FmNode.cpp
-                src/NoiseNode.cpp
-                src/NumericalNode.cpp
-                )
-
-SET(SRC_INTERFACE_TEST
-		include/Interfaces.hpp
-		include/MiscConsts.hpp
-
 		src/Interfaces.cpp
-		src/Interfaces_Tests.cpp)
+		src/AmNode.cpp
+		src/FmNode.cpp
+		src/NoiseNode.cpp
+		src/NumericalNode.cpp
+	)
 
 ADD_DEFINITIONS(-Wall -g -pg)
 
-
 ADD_EXECUTABLE(${TARGET} ${SRC})
 TARGET_LINK_LIBRARIES(${TARGET} aruco maximilian)
-
-
-#ADD_EXECUTABLE(Interface_Test ${SRC_INTERFACE_TEST})
-#TARGET_LINK_LIBRARIES(Interface_Test aruco ${OpenCV_LIBS})

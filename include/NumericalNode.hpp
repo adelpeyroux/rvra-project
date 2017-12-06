@@ -1,18 +1,17 @@
-#ifndef NUMERICALNODE_H
-#define NUMERICALNODE_H
+#pragma once
 
 #include "AudioNode.hpp"
 
 class NumericalNode : public AudioNode
 {
 private:
-    double _value;
+	double _value;
 
 public:
-    NumericalNode(int id, double value, double time);
-    virtual ~NumericalNode() = default;
+	//***** Constructeurs / Destructeurs *****
+	NumericalNode(int id, double value, double time);
+	virtual ~NumericalNode() = default;
 
-    double play (AudioParams input, double time);
+	//***** Play *****
+	double Play(AudioParams input, double time) override;
 };
-
-#endif // NUMERICALNODE_H
