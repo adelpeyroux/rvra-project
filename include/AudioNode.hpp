@@ -46,8 +46,6 @@ public :
         return _params;
     }
 
-
-
 private :
 
     std::vector<AudioParam> _params;
