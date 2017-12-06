@@ -42,14 +42,13 @@ int routing(const void *inputBuffer,
 		 double streamTime, RtAudioStreamStatus status, void *userData ) {
 #endif
 	
-    unsigned int i, j;
+    unsigned int i;
 	
 #ifdef MAXIMILIAN_PORTAUDIO
     float *buffer = (float *) outputBuffer;
 #elif defined(MAXIMILIAN_RT_AUDIO)
     double *buffer = (double *) outputBuffer;
 #endif
-    double *lastValues = (double *) userData;
     double currentTime = (double) timeInfo->currentTime;
     if ( status )
       std::cout << "Stream underflow detected!" << std::endl;

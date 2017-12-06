@@ -55,6 +55,9 @@ Thumbs.db
 *.out
 *.VC.db
 **/Release/**
+
+*.user.*
+*.user
 **/Debug/**
 
 **/datas/*

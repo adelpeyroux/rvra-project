@@ -38,7 +38,7 @@ private :
 
             AudioParams inputParams = AudioParams();
             if (_inputs.size() > 0) {
-                for (int i = 0; i < _inputs.size(); ++i) {
+                for (uint i = 0; i < _inputs.size(); ++i) {
                     AudioParam p = _inputs[i].play_rec(sample, time);
                     inputParams.AddParam(p);
                 }

@@ -34,7 +34,7 @@ SET(SRC
                 include/NumericalNode.hpp
                 include/FmNode.hpp
 
-		src/detect_markers.cpp
+                src/main.cpp
 		src/AudioGraph.cpp
 		src/MarkerGraph.cpp
 		src/AudioNode.cpp
@@ -45,7 +45,8 @@ SET(SRC
                 src/AmNode.cpp
                 src/FmNode.cpp
                 src/NoiseNode.cpp
-                src/NumericalNode.cpp)
+                src/NumericalNode.cpp
+                )
 
 SET(SRC_INTERFACE_TEST
 		include/Interfaces.hpp

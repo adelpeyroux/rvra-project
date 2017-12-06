@@ -221,5 +221,58 @@ int sgn(T val)
 }
 
 
+static int time_residuel = 15;
+static std::vector<std::pair<aruco::Marker, int>> old;
+static void updateInfo(std::vector<aruco::Marker> &markers){
+    // cas init
+    if (old.size() == 0){
+        for (aruco::Marker m : markers) {
+           old.push_back(std::pair<aruco::Marker, int>(m, 15));
+        }
+        return;
+    }
+
+    //cas normal
+    for (aruco::Marker m : markers) {
+        bool already = false;
+
+        for (uint i = 0; i < old.size(); ++i) {
+            if (m.id == old[i].first.id){
+                old[i].second = time_residuel;
+                old[i].first = m;
+                already = true;
+                break;
+            }
+        }
+        if (!already){
+            old.push_back(std::pair<aruco::Marker, int>(m, time_residuel));
+        }
+    }
+
+    std::vector<std::pair<aruco::Marker, int>> new_old;
+
+    for (uint i = 0; i < old.size(); ++i) {
+        bool already = false;
+        for (aruco::Marker m : markers) {
+            if (m.id == old[i].first.id){
+                already = true;
+                old[i].first = m;
+                new_old.push_back(old[i]);
+
+                break;
+            }
+        }
+        if (!already){
+            old[i].second --;
+            if (old[i].second > 0){
+                markers.push_back(old[i].first);
+                new_old.push_back(old[i]);
+            }
+        }
+    }
+    old = new_old;
+}
+
+
 
 #endif // __MISC_CONSTS_HPP__

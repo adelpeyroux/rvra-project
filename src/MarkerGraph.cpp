@@ -43,7 +43,7 @@ MarkerGraph::MarkerGraph(std::vector<aruco::Marker> &markers, cv::Size s, double
 void MarkerGraph::delete_rec(Node& current){
     if (current.get_audio_node() != nullptr){
         if (current.get_input().size() > 0) {
-            for (int i = 0; i < current.get_input().size(); ++i) {
+            for (uint i = 0; i < current.get_input().size(); ++i) {
                 delete_rec(current.get_input()[i]);
             }
         }

@@ -78,7 +78,7 @@ void Interfaces::drawSegmentation(Mat& Im) const
 
 void Interfaces::drawLinks(Mat& Im, const vector<xMarker>& Mi, const vector<pair<int, int>>& Edges) const
 {
-	for (int i = 0; i < Edges.size(); ++i) {
+    for (uint i = 0; i < Edges.size(); ++i) {
         Point P1 = Edges[i].first == -1 ? _Center : Mi[Edges[i].first].GetCenter(),
             P2 = Edges[i].second == -1 ? _Center : Mi[Edges[i].second].GetCenter();
         line(Im, P1, P2, _Color, 2);
@@ -87,7 +87,7 @@ void Interfaces::drawLinks(Mat& Im, const vector<xMarker>& Mi, const vector<pair
 
 void Interfaces::drawMarkers(Mat& Im, const vector<xMarker>& Mis) const
 {
-	for (int i = 0; i < Mis.size(); ++i) drawMarker(Im, Mis[i]);
+    for (uint i = 0; i < Mis.size(); ++i) drawMarker(Im, Mis[i]);
 }
 
 void Interfaces::drawMarker(Mat& Im, const xMarker& Mi) const
