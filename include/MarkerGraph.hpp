@@ -76,9 +76,9 @@ public:
 
 	//***** Adds / Clear *****
 	void AddEdge(int from, int to);
-	void AddMarker(aruco::Marker& marker);
+	void AddMarker(xMarker& marker);
 	void AddEdges(vector<pair<int, int>>& edges);
-	void AddMarkers(vector<aruco::Marker>& markers);
+	void AddMarkers(vector<xMarker>& markers);
 	void Clear();
 
 	//***** Getter *****
