@@ -33,6 +33,7 @@ SET(SRC
                 include/NoiseNode.hpp
                 include/NumericalNode.hpp
                 include/FmNode.hpp
+                include/SampleNode.hpp
 
 		src/detect_markers.cpp
 		src/AudioGraph.cpp
@@ -45,7 +46,8 @@ SET(SRC
                 src/AmNode.cpp
                 src/FmNode.cpp
                 src/NoiseNode.cpp
-                src/NumericalNode.cpp)
+                src/NumericalNode.cpp
+                src/SampleNode.cpp)
 
 SET(SRC_INTERFACE_TEST
 		include/Interfaces.hpp
@@ -55,7 +57,7 @@ SET(SRC_INTERFACE_TEST
 		src/Interfaces_Tests.cpp)
 
 ADD_DEFINITIONS(-Wall -g -pg)
-
+add_definitions(-DDATA_DIR="${PROJECT_SOURCE_DIR}/data")
 
 ADD_EXECUTABLE(${TARGET} ${SRC})
 TARGET_LINK_LIBRARIES(${TARGET} aruco maximilian)

@@ -140,6 +140,7 @@ void detect_markers() {
  ************************************/
 int main(int argc, char **argv) {
     init_phi();
+    init_pos();
 
     try {
         CmdLineParser cml(argc,argv);

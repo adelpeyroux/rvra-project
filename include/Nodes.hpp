@@ -11,5 +11,6 @@
 #include "FmNode.hpp"
 #include "NumericalNode.hpp"
 #include "NoiseNode.hpp"
+#include "SampleNode.hpp"
 
 #endif // NODES_HPP

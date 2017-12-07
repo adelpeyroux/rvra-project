@@ -62,7 +62,7 @@ static cv::Scalar BGR2RGB(const cv::Scalar &color)
 #define NB_MARKERS 1024
 static float MarkerSize;
 static aruco::CameraParameters CameraParams;
-static double PHI[NB_MARKERS];
+
 
 enum MARKER_TYPE {
 	// Oscillateurs
@@ -72,6 +72,7 @@ enum MARKER_TYPE {
     TYPE_SOURCE_TRIANGLE = 3,
     TYPE_SOURCE_NOISE = 4,
     TYPE_SOURCE_NUMERICAL = 5,
+    TYPE_SOURCE_SAMPLE = 6,
 
     // Effets
     TYPE_EFFECT_AM = 10,
@@ -91,7 +92,7 @@ static MARKER_TYPE Id2Type(int id)
     switch (id) {
     case 1 ... 200:		return TYPE_SOURCE_SINUS;
     case 201 ... 300:	return TYPE_SOURCE_NOISE;
-    case 301 ... 500:	return TYPE_SOURCE_SAW;
+    case 301 ... 500:	return TYPE_SOURCE_SAMPLE;
     case 501 ... 550:	return TYPE_EFFECT_AM;
     case 551 ... 553:	return TYPE_EFFECT_FM;
     case 555 ... 600:	return TYPE_EFFECT_ADD;
@@ -104,6 +105,7 @@ static cv::Scalar Type2Color(MARKER_TYPE T)
 {
 	switch (T) {
         case TYPE_SOURCE_SINUS:
+        case TYPE_SOURCE_SAMPLE:
         case TYPE_SOURCE_SAW:
         case TYPE_SOURCE_SQUARE:
         case TYPE_SOURCE_TRIANGLE:	return COLORS[3];
@@ -121,6 +123,7 @@ static string Type2Letter(MARKER_TYPE T)
 {
 	switch (T) {
         case TYPE_SOURCE_SINUS:		return "Si";
+        case TYPE_SOURCE_SAMPLE:	return "Fi";
         case TYPE_SOURCE_SAW:		return "Sa";
         case TYPE_SOURCE_SQUARE:	return "Sq";
         case TYPE_SOURCE_TRIANGLE:	return "T";
@@ -152,8 +155,9 @@ static std::shared_ptr<AudioNode> getAudioNode(MARKER_TYPE type, float param, do
         return std::shared_ptr<AudioNode>(new NoiseNode(id, fabs(param * 32 / 180.), time));
     case TYPE_SOURCE_NUMERICAL :
         return std::shared_ptr<AudioNode>(new NumericalNode(id, fabs(param * 32 / 180.), time));
+    case TYPE_SOURCE_SAMPLE :
+        return std::shared_ptr<AudioNode>(new SampleNode(id, fabs(param * 220 / 180.), DATA_DIR"/snare.wav", time));
     case TYPE_EFFECT_ADD :
-        return std::shared_ptr<AudioNode>(new DestinationNode(id, time));
     case TYPE_FILTER_COLOR:
     case TYPE_END :
         return std::shared_ptr<AudioNode>(new DestinationNode(id, time));
@@ -171,6 +175,8 @@ static bool isSource(MARKER_TYPE m)
 //***************************
 //********** Audio **********
 //***************************
+static double PHI[NB_MARKERS];
+
 static void init_phi()
 {
 	for (double &i : PHI)
@@ -184,6 +190,24 @@ static void incr_phi(int id, double freq) {
         PHI[id] -= 1.;
     }
 }
+
+static double POS[NB_MARKERS];
+
+static void init_pos()
+{
+    for (double &i : POS)
+        i = 0.0;
+}
+
+static void incr_pos(int id, long length) {
+    POS[id] += 1. / double(length);
+}
+
+static void reset_pos(int id) {
+    POS[id] = 0.0;
+}
+
+static int PREV[NB_MARKERS];
 
 static void GetSignalsAndNumerics (AudioParams params, double & signal, double & num) {
     double inVal = 0.;
