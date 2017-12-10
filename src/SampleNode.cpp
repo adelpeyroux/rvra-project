@@ -2,9 +2,12 @@
 #include "MiscConsts.hpp"
 
 SampleNode::SampleNode(int id, double freq, std::string sample, double time)
-    : AudioNode(id, time), _freq(freq)
+    : AudioNode(id, time), _freq(freq / 60.)
 {
-    _phasor.phaseReset(PHI[id]);
+
+    _period = round((1. / _freq) / (1. / maxiSettings::sampleRate));
+    std::cout << _period << std::endl;
+
     _sample.load(sample);
 
     _sample.setPosition(POS[id]);
@@ -12,15 +15,13 @@ SampleNode::SampleNode(int id, double freq, std::string sample, double time)
 
 double SampleNode::Play (AudioParams input, double time) {
 
-    int trigger = (int)_phasor.phasor(_freq / 60.);
-
-    double value = 0.;
-    if (trigger != PREV[_id] && trigger == 1) {
-        _sample.trigger();
+    PERIODS[_id] ++;
+    if (PERIODS[_id] >= _period) {
         reset_pos(_id);
+        _sample.trigger();
+        PERIODS[_id] = 0;
     }
 
-    PREV[_id] = trigger;
 
     IncrPhi(_id, _freq);
     incr_pos(_id, _sample.length);

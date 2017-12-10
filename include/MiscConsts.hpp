@@ -210,6 +210,14 @@ static void reset_pos(int id) {
     POS[id] = 0.0;
 }
 
+static int PERIODS[1024];
+
+static void init_periods()
+{
+    for (int &i : PERIODS)
+        i = 0;
+}
+
 static int PREV[NB_MARKERS];
 
 static void GetSignalsAndNumerics (AudioParams params, double & signal, double & num) {

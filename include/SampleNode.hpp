@@ -14,7 +14,7 @@ public:
 
     double Play (AudioParams input, double time);
 private:
-    maxiOsc _phasor;
+    int _period;
     maxiSample _sample;
 
     double _freq;

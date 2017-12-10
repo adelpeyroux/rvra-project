@@ -73,6 +73,7 @@ public:
 int main(int argc, char** argv)
 {
 	Init_Phi();
+    init_periods();
 
 	try {
 		const CmdLineParser cml(argc, argv);
