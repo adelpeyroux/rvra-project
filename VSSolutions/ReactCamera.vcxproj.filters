@@ -1,16 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\SourceTree\rvra-project\src\detect_markers.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\SourceTree\rvra-project\src\AudioGraph.cpp">
+    <ClCompile Include="D:\SourceTree\rvra-project\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="D:\SourceTree\rvra-project\src\MarkerGraph.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\SourceTree\rvra-project\src\AudioNode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="D:\SourceTree\rvra-project\src\DestinationNode.cpp">
@@ -25,12 +19,27 @@
     <ClCompile Include="D:\SourceTree\rvra-project\src\Interfaces.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\SourceTree\rvra-project\src\AmNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\SourceTree\rvra-project\src\FmNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\SourceTree\rvra-project\src\NoiseNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\SourceTree\rvra-project\src\NumericalNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="D:\SourceTree\rvra-project\include\AudioGraph.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\SourceTree\rvra-project\include\MarkerGraph.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\SourceTree\rvra-project\include\Nodes.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\SourceTree\rvra-project\include\AudioNode.hpp">
@@ -49,6 +58,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\SourceTree\rvra-project\include\MiscConsts.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\SourceTree\rvra-project\include\AmNode.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\SourceTree\rvra-project\include\NoiseNode.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\SourceTree\rvra-project\include\NumericalNode.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\SourceTree\rvra-project\include\FmNode.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,5 +1,4 @@
-#ifndef AMNODE_HPP
-#define AMNODE_HPP
+#pragma once
 
 #include "AudioNode.hpp"
 #include "maximilian.h"
@@ -7,16 +6,16 @@
 class AmNode : public AudioNode
 {
 private :
-    maxiOsc _osc;
-    double _freq;
-    double _initTime;
-    double _phi0;
+	maxiOsc _osc;
+	double _freq;
+	double _initTime;
+	double _phi0;
 
 public:
-    AmNode(int id, double freq, double time);
-    virtual ~AmNode() = default;
+	//***** Constructeurs / Destructeurs *****
+	AmNode(int id, double freq, double time);
+	virtual ~AmNode() = default;
 
-    double play (AudioParams input, double time);
+	//***** Play *****
+	double Play(AudioParams input, double time) override;
 };
-
-#endif // AMNODE_HPP

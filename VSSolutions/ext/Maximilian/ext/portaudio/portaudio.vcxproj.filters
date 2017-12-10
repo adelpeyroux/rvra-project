@@ -142,18 +142,6 @@
     <Filter Include="os\win">
       <UniqueIdentifier>{52321D02-77D2-3B0E-8F62-33E5585A449C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="hostapi\skeleton">
-      <UniqueIdentifier>{E5DA3207-8552-3106-B9EF-2D591183DEA7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="hostapi\wmme">
-      <UniqueIdentifier>{D9B48C13-F06A-345C-BAA6-7DBF03A41CDE}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="hostapi\wasapi">
-      <UniqueIdentifier>{9B818253-41F6-336D-AB5C-516AA0156792}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="hostapi\wdmks">
-      <UniqueIdentifier>{E838F2E1-0AB5-3CB5-BFED-4B274E2DF9BA}</UniqueIdentifier>
-    </Filter>
     <Filter Include="common">
       <UniqueIdentifier>{F1CC0515-7271-3376-8261-2FDFC4BE6C86}</UniqueIdentifier>
     </Filter>
@@ -168,6 +156,18 @@
     </Filter>
     <Filter Include="include">
       <UniqueIdentifier>{30EC79B8-0DF4-3858-B335-691BF83F0763}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hostapi\skeleton">
+      <UniqueIdentifier>{E5DA3207-8552-3106-B9EF-2D591183DEA7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hostapi\wmme">
+      <UniqueIdentifier>{D9B48C13-F06A-345C-BAA6-7DBF03A41CDE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hostapi\wasapi">
+      <UniqueIdentifier>{9B818253-41F6-336D-AB5C-516AA0156792}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hostapi\wdmks">
+      <UniqueIdentifier>{E838F2E1-0AB5-3CB5-BFED-4B274E2DF9BA}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -1,39 +1,37 @@
 #pragma once
 
-#include <stdlib.h>
-
 #include "AudioNode.hpp"
 #include "MarkerGraph.hpp"
 
 class AudioGraph
 {
 private:
-    class Node {
-    public :
-        Node(){}
+	class Node
+	{
+	private:
+		vector<Node> _inputs, _outputs;
+		AudioNode* _audio;
 
-        Node (AudioNode* audio) : _audio(audio)
-        {
-            _outputs = std::vector<Node>();
-            _inputs = std::vector<Node>();
-        }
+	public :
+		//***** Constructeurs / Destructeurs *****
+		Node() : _audio(nullptr) {}
 
-    private :
-        std::vector<Node> _outputs;
-        std::vector<Node> _inputs;
+		explicit Node(AudioNode* audio) : _audio(audio)
+		{
+			_outputs = std::vector<Node>();
+			_inputs = std::vector<Node>();
+		}
+		virtual ~Node() = default;
+	};
 
-        AudioNode* _audio;
-
-
-    };
-
-    Node root;
+	Node root;
 
 public:
-    AudioGraph();
+	//***** Constructeurs / Destructeurs *****
+	AudioGraph() {}
+	virtual ~AudioGraph() = default;
 
-    double * play();
-
-    void update(const MarkerGraph & graph);
+	//***** Misc *****
+	double* Play();
+	void Update(const MarkerGraph& graph);
 };
-

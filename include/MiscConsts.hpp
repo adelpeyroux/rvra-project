@@ -1,10 +1,10 @@
-#ifndef __MISC_CONSTS_HPP__
-#define __MISC_CONSTS_HPP__
+#pragma once
 
 #include <opencv2/core/core.hpp>
 #include "aruco.h"
 
 #include "Nodes.hpp"
+#include <vector>
 #include <memory>
 
 //***********************************
@@ -20,16 +20,17 @@
 //******************************
 //********** Couleurs **********
 //******************************
-const std::vector<cv::Scalar> COLORS = {
-		cv::Scalar(0, 0, 0), cv::Scalar(125, 125, 125), cv::Scalar(255, 255, 255),	// Noir		Gris		Blanc
-		cv::Scalar(255, 0, 0), cv::Scalar(0, 255, 0), cv::Scalar(0, 0, 255),		// Rouge	Vert		Bleu
-		cv::Scalar(0, 255, 255), cv::Scalar(255, 0, 255), cv::Scalar(255, 255, 0),	// Cyan		Magenta		Jaune
-		cv::Scalar(255, 125, 0), cv::Scalar(0, 255, 125), cv::Scalar(125, 0, 255),	// Orange	Turquoise	Indigo
-		cv::Scalar(255, 0, 125), cv::Scalar(125, 255, 0), cv::Scalar(0, 125, 255),	// Fushia	Lime		Azur
-		cv::Scalar(125, 0, 0), cv::Scalar(0, 125, 0), cv::Scalar(0, 0, 125)			// Blood	Grass		Deep
+const vector<cv::Scalar> COLORS = {
+	cv::Scalar(0, 0, 0), cv::Scalar(125, 125, 125), cv::Scalar(255, 255, 255),	// Noir		Gris		Blanc
+	cv::Scalar(255, 0, 0), cv::Scalar(0, 255, 0), cv::Scalar(0, 0, 255),		// Rouge	Vert		Bleu
+	cv::Scalar(0, 255, 255), cv::Scalar(255, 0, 255), cv::Scalar(255, 255, 0),	// Cyan		Magenta		Jaune
+	cv::Scalar(255, 125, 0), cv::Scalar(0, 255, 125), cv::Scalar(125, 0, 255),	// Orange	Turquoise	Indigo
+	cv::Scalar(255, 0, 125), cv::Scalar(125, 255, 0), cv::Scalar(0, 125, 255),	// Fushia	Lime		Azur
+	cv::Scalar(125, 0, 0), cv::Scalar(0, 125, 0), cv::Scalar(0, 0, 125)			// Blood	Grass		Deep
 };
 
-enum MY_COLORS {
+enum MY_COLORS
+{
 	MY_COLOR_BLACK = 0,
 	MY_COLOR_GRAY = 1,
 	MY_COLOR_WHITE = 2,
@@ -50,7 +51,7 @@ enum MY_COLORS {
 	MY_COLOR_DEEP = 17,
 };
 
-static cv::Scalar BGR2RGB(const cv::Scalar &color)
+static cv::Scalar BGR2RGB(const cv::Scalar& color)
 {
 	return cv::Scalar(color[3], color[2], color[1]);
 }
@@ -64,8 +65,10 @@ static float MarkerSize;
 static aruco::CameraParameters CameraParams;
 
 
-enum MARKER_TYPE {
-	// Oscillateurs
+enum MARKER_TYPE
+{
+	NO_TYPE = -1,
+    // Oscillateurs
     TYPE_SOURCE_SINUS = 0,
     TYPE_SOURCE_SAW = 1,
     TYPE_SOURCE_SQUARE = 2,
@@ -79,6 +82,7 @@ enum MARKER_TYPE {
     TYPE_EFFECT_FM = 11,
     TYPE_EFFECT_ADD = 12,
 
+
 	// Filtres
 	TYPE_FILTER_COLOR = 20,
 
@@ -87,23 +91,21 @@ enum MARKER_TYPE {
 };
 
 
-static MARKER_TYPE Id2Type(int id)
+static MARKER_TYPE ID2TYPE(int id)
 {
-    switch (id) {
-    case 1 ... 200:		return TYPE_SOURCE_SINUS;
-    case 201 ... 300:	return TYPE_SOURCE_NOISE;
-    case 301 ... 500:	return TYPE_SOURCE_SAMPLE;
-    case 501 ... 550:	return TYPE_EFFECT_AM;
-    case 551 ... 553:	return TYPE_EFFECT_FM;
-    case 555 ... 600:	return TYPE_EFFECT_ADD;
-    case 601 ... 999:
-    default:	return TYPE_SOURCE_SINUS;
-    }
+	if (001 <= id && id <= 200) return TYPE_SOURCE_SINUS;
+	if (201 <= id && id <= 300) return TYPE_SOURCE_NOISE;
+    if (301 <= id && id <= 500) return TYPE_SOURCE_SAMPLE;
+	if (501 <= id && id <= 550) return TYPE_EFFECT_AM;
+	if (551 <= id && id <= 554) return TYPE_EFFECT_FM;
+	if (555 <= id && id <= 600) return TYPE_EFFECT_ADD;
+	return TYPE_SOURCE_SINUS;
+
 }
 
-static cv::Scalar Type2Color(MARKER_TYPE T)
+static cv::Scalar TYPE2COLOR(MARKER_TYPE T)
 {
-	switch (T) {
+    switch (T) {
         case TYPE_SOURCE_SINUS:
         case TYPE_SOURCE_SAMPLE:
         case TYPE_SOURCE_SAW:
@@ -116,12 +118,13 @@ static cv::Scalar Type2Color(MARKER_TYPE T)
 		case TYPE_EFFECT_ADD:		return COLORS[8];
 		case TYPE_FILTER_COLOR:		return COLORS[9];
 		default:					return COLORS[2];
+
 	}
 }
 
-static string Type2Letter(MARKER_TYPE T)
+static string TYPE2LETTER(MARKER_TYPE T)
 {
-	switch (T) {
+    switch (T) {
         case TYPE_SOURCE_SINUS:		return "Si";
         case TYPE_SOURCE_SAMPLE:	return "Fi";
         case TYPE_SOURCE_SAW:		return "Sa";
@@ -137,7 +140,7 @@ static string Type2Letter(MARKER_TYPE T)
 	}
 }
 
-static std::shared_ptr<AudioNode> getAudioNode(MARKER_TYPE type, float param, double time, int id) {
+static std::shared_ptr<AudioNode> GetAudioNode(MARKER_TYPE type, float param, double time, int id) {
     switch (type) {
     case TYPE_EFFECT_AM :
         return std::shared_ptr<AudioNode>(new AmNode(id, fabs(param * 880 / 180), time));
@@ -166,7 +169,7 @@ static std::shared_ptr<AudioNode> getAudioNode(MARKER_TYPE type, float param, do
     }
 }
 
-static bool isSource(MARKER_TYPE m)
+static bool IsSource(MARKER_TYPE m)
 {
 	return m < 10;
 }
@@ -175,20 +178,20 @@ static bool isSource(MARKER_TYPE m)
 //***************************
 //********** Audio **********
 //***************************
+
 static double PHI[NB_MARKERS];
 
-static void init_phi()
+static void Init_Phi()
 {
-	for (double &i : PHI)
-		i = 0.0;
+	for (double& i : PHI) i = 0.0;
 }
 
-static void incr_phi(int id, double freq) {
-    PHI[id] += freq / double(maxiSettings::sampleRate);
-    if (PHI[id] >= 1.)
-    {
-        PHI[id] -= 1.;
-    }
+static void IncrPhi(int id, double freq)
+{
+	PHI[id] += freq / double(maxiSettings::sampleRate);
+	if (PHI[id] >= 1.0) {
+		PHI[id] -= 1.0;
+	}
 }
 
 static double POS[NB_MARKERS];
@@ -225,11 +228,9 @@ static void GetSignalsAndNumerics (AudioParams params, double & signal, double &
         }
     }
 
-    if (nbVal > 0)
-        inVal /= nbVal;
+    if (nbVal > 0) inVal /= nbVal;
 
-    if (nbC > 0)
-        c /= nbC;
+    if (nbC > 0) c /= nbC;
 
     signal = inVal;
     num = c;
@@ -238,12 +239,63 @@ static void GetSignalsAndNumerics (AudioParams params, double & signal, double &
 //**************************
 //********** Misc **********
 //**************************
-template<typename T>
-int sgn(T val)
+template <typename T>
+int SIGN(T val)
 {
 	return (T(0) < val) - (val < T(0));
 }
 
 
+#define TIME_RESIDUEL 15
+static vector<pair<aruco::Marker, int>> OLD;
 
-#endif // __MISC_CONSTS_HPP__
+static void UpdateInfo(vector<aruco::Marker>& markers)
+{
+    // cas init
+    if (OLD.size() == 0) {
+        for (aruco::Marker &m : markers) {
+            OLD.push_back(std::pair<aruco::Marker, int>(m, 15));
+        }
+        return;
+    }
+
+    //cas normal
+    for (aruco::Marker m : markers) {
+        bool already = false;
+
+        for (uint i = 0; i < OLD.size(); ++i) {
+            if (m.id == OLD[i].first.id) {
+                OLD[i].second = TIME_RESIDUEL;
+                OLD[i].first = m;
+                already = true;
+                break;
+            }
+        }
+        if (!already) {
+            OLD.push_back(std::pair<aruco::Marker, int>(m, TIME_RESIDUEL));
+        }
+    }
+
+    vector<pair<aruco::Marker, int>> new_old;
+
+    for (uint i = 0; i < OLD.size(); ++i) {
+        bool already = false;
+        for (const aruco::Marker& m : markers) {
+            if (m.id == OLD[i].first.id) {
+                already = true;
+                OLD[i].first = m;
+                new_old.push_back(OLD[i]);
+
+                break;
+            }
+        }
+        if (!already) {
+            OLD[i].second --;
+            if (OLD[i].second > 0) {
+                markers.push_back(OLD[i].first);
+                new_old.push_back(OLD[i]);
+            }
+        }
+    }
+    OLD = new_old;
+}

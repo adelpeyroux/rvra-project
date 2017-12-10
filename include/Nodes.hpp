@@ -1,7 +1,5 @@
-#ifndef NODES_HPP
-#define NODES_HPP
+#pragma once
 
-#include "MiscConsts.hpp"
 
 #include "AudioNode.hpp"
 
@@ -12,5 +10,3 @@
 #include "NumericalNode.hpp"
 #include "NoiseNode.hpp"
 #include "SampleNode.hpp"
-
-#endif // NODES_HPP

@@ -264,18 +264,7 @@ ENDIF	()
 # DIRS
 #------------------------------------------------
 ADD_SUBDIRECTORY(src)
-IF(BUILD_UTILS)
-  ADD_SUBDIRECTORY(utils)
-  ADD_SUBDIRECTORY(utils_markermap)
-  ADD_SUBDIRECTORY(utils_calibration)
-#  ADD_SUBDIRECTORY(utils_svm)
-ENDIF()
-IF(GL_FOUND AND BUILD_GLSAMPLES)
-  ADD_SUBDIRECTORY(utils_gl)
-ENDIF()
-IF(BUILD_TESTS)
-  ADD_SUBDIRECTORY(tests)
-ENDIF()
+
 
 
 

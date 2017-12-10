@@ -455,7 +455,7 @@ double maxiEnvelope::ramps(std::vector<double> rampsArray){
             if (period>=1) {
                 phase=endVal;
                 startVal=phase;
-                if (valindex+2<rampsArray.size()){
+                if (valindex+2<(int)rampsArray.size()){
                     valindex+=2;
                     endVal=rampsArray[valindex+1];
                     period=0;
@@ -468,7 +468,7 @@ double maxiEnvelope::ramps(std::vector<double> rampsArray){
             if (period>=1) {
                 phase=endVal;
                 startVal=phase;
-                if (valindex+2<rampsArray.size()){
+                if (valindex+2<(int)rampsArray.size()){
                     valindex+=2;
                     endVal=rampsArray[valindex+1];
                     period=0;
@@ -481,7 +481,7 @@ double maxiEnvelope::ramps(std::vector<double> rampsArray){
             if ( phase >= endVal ) {
                 phase=endVal;
                 startVal=phase;
-                if (valindex+2<rampsArray.size()){
+                if (valindex+2<(int)rampsArray.size()){
                     valindex+=2;
                     endVal=rampsArray[valindex+1];
 
@@ -495,7 +495,7 @@ double maxiEnvelope::ramps(std::vector<double> rampsArray){
             if ( phase <= endVal ) {
                 phase=endVal;
                 startVal=phase;
-                if (valindex+2<rampsArray.size()){
+                if (valindex+2<(int)rampsArray.size()){
                     valindex+=2;
                     endVal=rampsArray[valindex+1];
 
@@ -2202,11 +2202,11 @@ void maxiSampler::trigger() {
 ///
 ///*************************************************************
 maxiRecorder::maxiRecorder() :
-bufferSize(maxiSettings::sampleRate * 2),
+threadRunning(false),
 bufferQueueSize(3),
+bufferSize(maxiSettings::sampleRate * 2),
 bufferIndex(0),
-recordedAmountFrames(0),
-threadRunning(false)
+recordedAmountFrames(0)
 {
 
 }
@@ -2233,7 +2233,7 @@ void maxiRecorder::freeResources()
 {
     if (savedBuffers.size() > 0)
     {
-        for (int i = 0; i < savedBuffers.size(); ++i)
+        for (uint i = 0; i < savedBuffers.size(); ++i)
         {
             delete[] savedBuffers.front();
             savedBuffers.pop();
@@ -2286,7 +2286,7 @@ void* maxiRecorder::update(void* _context)
 	while (_this->doRecord)
 	{
 		usleep((useconds_t)(10000. / bufferSize / maxiSettings::sampleRate));
-		while (_this->bufferQueueSize > _this->bufferQueue.size())
+        while (_this->bufferQueueSize > (int)_this->bufferQueue.size())
 		{
 			_this->enqueueBuffer();
 		}
@@ -2389,7 +2389,7 @@ void maxiRecorder::saveToWav()
 
     pcmDataInt.resize(pcmData.size());
 
-    for (int i = 0; i < pcmData.size(); ++i)
+    for (uint i = 0; i < pcmData.size(); ++i)
         pcmDataInt[i] = (short) (pcmData[i] * 3276.7);
 
     int sampleRate = maxiSettings::sampleRate;

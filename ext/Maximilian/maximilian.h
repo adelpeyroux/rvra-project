@@ -33,8 +33,8 @@
 #ifndef MAXIMILIAN_H
 #define MAXIMILIAN_H
 
-//#define MAXIMILIAN_PORTAUDIO
-#define MAXIMILIAN_RT_AUDIO
+#define MAXIMILIAN_PORTAUDIO
+//#define MAXIMILIAN_RT_AUDIO
 
 #include <iostream>
 #include <fstream>
@@ -133,7 +133,7 @@ public:
     double adsr(double attack=0.1, double decay=0.1, double sustain=0.1, double release=0.1);
 	void trigger(int index,double amp);
     void trigger(bool noteOn=false);
-	int valindex;
+    int valindex;
 	double amplitude;
 	
 };
@@ -265,7 +265,7 @@ public:
 
 	}
 	
-    maxiSample():temp(NULL),position(0), recordPosition(0), myChannels(1), mySampleRate(maxiSettings::sampleRate) {};
+    maxiSample():position(0), recordPosition(0), myChannels(1), mySampleRate(maxiSettings::sampleRate), temp(NULL) {};
     
     maxiSample& operator=(const maxiSample &source) {
         if (this == &source)

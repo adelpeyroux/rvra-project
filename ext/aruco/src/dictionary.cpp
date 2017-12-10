@@ -350,6 +350,7 @@ std::string Dictionary::getTypeString(DICT_TYPES t)  throw(cv::Exception){
     case CUSTOM:return "CUSTOM";break;
 
    };
+    return "";
 }
 
 Dictionary::DICT_TYPES Dictionary::getTypeFromString(std::string str)   throw(cv::Exception){
@@ -496,8 +497,8 @@ uint64_t Dictionary::computeDictionaryDistance(const Dictionary &dict){
     //now, compute minimum distance
      std::map<uint64_t,std::set<uint64_t> >errors;
     uint64_t mind=std::numeric_limits<uint64_t>::max();
-    for(int i=0;i<all_rotations.size();i++){
-        for(int j=0;j<all_rotations.size();j++){
+    for(uint i=0;i<all_rotations.size();i++){
+        for(uint j=0;j<all_rotations.size();j++){
             if (i!=j){
 
                 auto d=bitset<64>(all_rotations[i]^all_rotations[j]).count();

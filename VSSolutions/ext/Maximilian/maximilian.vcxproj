@@ -56,25 +56,25 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\SourceTree\rvra-project\VSSolutions\ext\aruco\bin\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\SourceTree\rvra-project\VSSolutions\Release\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">maximilian.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">maximilian</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\SourceTree\rvra-project\VSSolutions\ext\aruco\bin\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\SourceTree\rvra-project\VSSolutions\Release\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">maximilian.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">maximilian</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\SourceTree\rvra-project\VSSolutions\ext\aruco\bin\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\SourceTree\rvra-project\VSSolutions\Release\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">maximilian.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">maximilian</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.dll</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\SourceTree\rvra-project\VSSolutions\ext\aruco\bin\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\SourceTree\rvra-project\VSSolutions\Release\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">maximilian.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">maximilian</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.dll</TargetExt>
@@ -95,11 +95,11 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>EnableAllWarnings</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;__LINUX_ALSA__;CMAKE_INTDIR="Debug";maximilian_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;CMAKE_INTDIR="Debug";maximilian_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;__LINUX_ALSA__;CMAKE_INTDIR=\"Debug\";maximilian_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\";maximilian_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>D:\Programmes\Libs\OpenCV\build;D:\Programmes\Libs\OpenCV\sources\include;D:\Programmes\Libs\OpenCV\sources\include\opencv;D:\Programmes\Libs\OpenCV\sources\modules\core\include;D:\Programmes\Libs\OpenCV\sources\modules\flann\include;D:\Programmes\Libs\OpenCV\sources\modules\imgproc\include;D:\Programmes\Libs\OpenCV\sources\modules\ml\include;D:\Programmes\Libs\OpenCV\sources\modules\objdetect\include;D:\Programmes\Libs\OpenCV\sources\modules\photo\include;D:\Programmes\Libs\OpenCV\sources\modules\video\include;D:\Programmes\Libs\OpenCV\sources\modules\dnn\include;D:\Programmes\Libs\OpenCV\sources\modules\imgcodecs\include;D:\Programmes\Libs\OpenCV\sources\modules\shape\include;D:\Programmes\Libs\OpenCV\sources\modules\videoio\include;D:\Programmes\Libs\OpenCV\sources\modules\highgui\include;D:\Programmes\Libs\OpenCV\sources\modules\superres\include;D:\Programmes\Libs\OpenCV\sources\modules\ts\include;D:\Programmes\Libs\OpenCV\sources\modules\features2d\include;D:\Programmes\Libs\OpenCV\sources\modules\calib3d\include;D:\Programmes\Libs\OpenCV\sources\modules\stitching\include;D:\Programmes\Libs\OpenCV\sources\modules\videostab\include;D:\SourceTree\rvra-project\ext\aruco\src;D:\SourceTree\rvra-project\ext\Maximilian\ext\portaudio\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
@@ -111,13 +111,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>-lsndfile -lpthread -lasound;..\aruco\bin\Debug\portaudio_x64.lib;winmm.lib;ole32.lib;uuid.lib;setupapi.lib;ole32.lib;uuid.lib;setupapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>-lsndfile -lpthread -lasound;..\..\Release\Debug\portaudio_x64.lib;winmm.lib;ole32.lib;uuid.lib;setupapi.lib;ole32.lib;uuid.lib;setupapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/Debug/maximilian.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/Debug/maximilian.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/Release/Debug/maximilian.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/Release/Debug/maximilian.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -137,12 +137,12 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>EnableAllWarnings</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;__LINUX_ALSA__;CMAKE_INTDIR="Release";maximilian_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release";maximilian_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat></DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;__LINUX_ALSA__;CMAKE_INTDIR=\"Release\";maximilian_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\";maximilian_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>D:\Programmes\Libs\OpenCV\build;D:\Programmes\Libs\OpenCV\sources\include;D:\Programmes\Libs\OpenCV\sources\include\opencv;D:\Programmes\Libs\OpenCV\sources\modules\core\include;D:\Programmes\Libs\OpenCV\sources\modules\flann\include;D:\Programmes\Libs\OpenCV\sources\modules\imgproc\include;D:\Programmes\Libs\OpenCV\sources\modules\ml\include;D:\Programmes\Libs\OpenCV\sources\modules\objdetect\include;D:\Programmes\Libs\OpenCV\sources\modules\photo\include;D:\Programmes\Libs\OpenCV\sources\modules\video\include;D:\Programmes\Libs\OpenCV\sources\modules\dnn\include;D:\Programmes\Libs\OpenCV\sources\modules\imgcodecs\include;D:\Programmes\Libs\OpenCV\sources\modules\shape\include;D:\Programmes\Libs\OpenCV\sources\modules\videoio\include;D:\Programmes\Libs\OpenCV\sources\modules\highgui\include;D:\Programmes\Libs\OpenCV\sources\modules\superres\include;D:\Programmes\Libs\OpenCV\sources\modules\ts\include;D:\Programmes\Libs\OpenCV\sources\modules\features2d\include;D:\Programmes\Libs\OpenCV\sources\modules\calib3d\include;D:\Programmes\Libs\OpenCV\sources\modules\stitching\include;D:\Programmes\Libs\OpenCV\sources\modules\videostab\include;D:\SourceTree\rvra-project\ext\aruco\src;D:\SourceTree\rvra-project\ext\Maximilian\ext\portaudio\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
@@ -154,13 +154,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>-lsndfile -lpthread -lasound;..\aruco\bin\Release\portaudio_x64.lib;winmm.lib;ole32.lib;uuid.lib;setupapi.lib;ole32.lib;uuid.lib;setupapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>-lsndfile -lpthread -lasound;..\..\Release\Release\portaudio_x64.lib;winmm.lib;ole32.lib;uuid.lib;setupapi.lib;ole32.lib;uuid.lib;setupapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/Release/maximilian.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/Release/maximilian.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/Release/Release/maximilian.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/Release/Release/maximilian.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -180,12 +180,12 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>EnableAllWarnings</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;__LINUX_ALSA__;CMAKE_INTDIR="MinSizeRel";maximilian_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel";maximilian_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat></DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;__LINUX_ALSA__;CMAKE_INTDIR=\"MinSizeRel\";maximilian_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";maximilian_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>D:\Programmes\Libs\OpenCV\build;D:\Programmes\Libs\OpenCV\sources\include;D:\Programmes\Libs\OpenCV\sources\include\opencv;D:\Programmes\Libs\OpenCV\sources\modules\core\include;D:\Programmes\Libs\OpenCV\sources\modules\flann\include;D:\Programmes\Libs\OpenCV\sources\modules\imgproc\include;D:\Programmes\Libs\OpenCV\sources\modules\ml\include;D:\Programmes\Libs\OpenCV\sources\modules\objdetect\include;D:\Programmes\Libs\OpenCV\sources\modules\photo\include;D:\Programmes\Libs\OpenCV\sources\modules\video\include;D:\Programmes\Libs\OpenCV\sources\modules\dnn\include;D:\Programmes\Libs\OpenCV\sources\modules\imgcodecs\include;D:\Programmes\Libs\OpenCV\sources\modules\shape\include;D:\Programmes\Libs\OpenCV\sources\modules\videoio\include;D:\Programmes\Libs\OpenCV\sources\modules\highgui\include;D:\Programmes\Libs\OpenCV\sources\modules\superres\include;D:\Programmes\Libs\OpenCV\sources\modules\ts\include;D:\Programmes\Libs\OpenCV\sources\modules\features2d\include;D:\Programmes\Libs\OpenCV\sources\modules\calib3d\include;D:\Programmes\Libs\OpenCV\sources\modules\stitching\include;D:\Programmes\Libs\OpenCV\sources\modules\videostab\include;D:\SourceTree\rvra-project\ext\aruco\src;D:\SourceTree\rvra-project\ext\Maximilian\ext\portaudio\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
@@ -197,13 +197,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>-lsndfile -lpthread -lasound;..\aruco\bin\MinSizeRel\portaudio_x64.lib;winmm.lib;ole32.lib;uuid.lib;setupapi.lib;ole32.lib;uuid.lib;setupapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>-lsndfile -lpthread -lasound;..\..\Release\MinSizeRel\portaudio_x64.lib;winmm.lib;ole32.lib;uuid.lib;setupapi.lib;ole32.lib;uuid.lib;setupapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/MinSizeRel/maximilian.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/MinSizeRel/maximilian.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/Release/MinSizeRel/maximilian.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/Release/MinSizeRel/maximilian.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -224,11 +224,11 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>EnableAllWarnings</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;__LINUX_ALSA__;CMAKE_INTDIR="RelWithDebInfo";maximilian_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo";maximilian_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;__LINUX_ALSA__;CMAKE_INTDIR=\"RelWithDebInfo\";maximilian_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";maximilian_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>D:\Programmes\Libs\OpenCV\build;D:\Programmes\Libs\OpenCV\sources\include;D:\Programmes\Libs\OpenCV\sources\include\opencv;D:\Programmes\Libs\OpenCV\sources\modules\core\include;D:\Programmes\Libs\OpenCV\sources\modules\flann\include;D:\Programmes\Libs\OpenCV\sources\modules\imgproc\include;D:\Programmes\Libs\OpenCV\sources\modules\ml\include;D:\Programmes\Libs\OpenCV\sources\modules\objdetect\include;D:\Programmes\Libs\OpenCV\sources\modules\photo\include;D:\Programmes\Libs\OpenCV\sources\modules\video\include;D:\Programmes\Libs\OpenCV\sources\modules\dnn\include;D:\Programmes\Libs\OpenCV\sources\modules\imgcodecs\include;D:\Programmes\Libs\OpenCV\sources\modules\shape\include;D:\Programmes\Libs\OpenCV\sources\modules\videoio\include;D:\Programmes\Libs\OpenCV\sources\modules\highgui\include;D:\Programmes\Libs\OpenCV\sources\modules\superres\include;D:\Programmes\Libs\OpenCV\sources\modules\ts\include;D:\Programmes\Libs\OpenCV\sources\modules\features2d\include;D:\Programmes\Libs\OpenCV\sources\modules\calib3d\include;D:\Programmes\Libs\OpenCV\sources\modules\stitching\include;D:\Programmes\Libs\OpenCV\sources\modules\videostab\include;D:\SourceTree\rvra-project\ext\aruco\src;D:\SourceTree\rvra-project\ext\Maximilian\ext\portaudio\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
@@ -240,13 +240,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>-lsndfile -lpthread -lasound;..\aruco\bin\RelWithDebInfo\portaudio_x64.lib;winmm.lib;ole32.lib;uuid.lib;setupapi.lib;ole32.lib;uuid.lib;setupapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>-lsndfile -lpthread -lasound;..\..\Release\RelWithDebInfo\portaudio_x64.lib;winmm.lib;ole32.lib;uuid.lib;setupapi.lib;ole32.lib;uuid.lib;setupapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/RelWithDebInfo/maximilian.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/RelWithDebInfo/maximilian.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/Release/RelWithDebInfo/maximilian.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/Release/RelWithDebInfo/maximilian.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>

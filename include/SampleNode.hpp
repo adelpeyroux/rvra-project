@@ -12,7 +12,7 @@ class SampleNode : public AudioNode
 public:
     SampleNode(int id, double freq, std::string sample, double time);
 
-    double play (AudioParams input, double time);
+    double Play (AudioParams input, double time);
 private:
     maxiOsc _phasor;
     maxiSample _sample;

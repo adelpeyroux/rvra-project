@@ -19,11 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{B1C413FE-0215-3F5B-A6C2-BB5C8678D9A6}</ProjectGuid>
+    <ProjectGuid>{F4A00D1F-EE59-3FD7-8173-9853FC4B941D}</ProjectGuid>
     <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
-    <ProjectName>detect</ProjectName>
+    <ProjectName>ReactCamera</ProjectName>
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -56,27 +56,27 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\SourceTree\rvra-project\VSSolutions\ext\aruco\bin\Debug\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">detect.dir\Debug\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">detect</TargetName>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\SourceTree\rvra-project\VSSolutions\Release\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ReactCamera.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ReactCamera</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\SourceTree\rvra-project\VSSolutions\ext\aruco\bin\Release\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">detect.dir\Release\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">detect</TargetName>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\SourceTree\rvra-project\VSSolutions\Release\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ReactCamera.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ReactCamera</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\SourceTree\rvra-project\VSSolutions\ext\aruco\bin\MinSizeRel\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">detect.dir\MinSizeRel\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">detect</TargetName>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\SourceTree\rvra-project\VSSolutions\Release\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">ReactCamera.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">ReactCamera</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\SourceTree\rvra-project\VSSolutions\ext\aruco\bin\RelWithDebInfo\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">detect.dir\RelWithDebInfo\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">detect</TargetName>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\SourceTree\rvra-project\VSSolutions\Release\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">ReactCamera.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">ReactCamera</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
@@ -84,6 +84,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>D:\Programmes\Libs\OpenCV\build;D:\Programmes\Libs\OpenCV\sources\include;D:\Programmes\Libs\OpenCV\sources\include\opencv;D:\Programmes\Libs\OpenCV\sources\modules\core\include;D:\Programmes\Libs\OpenCV\sources\modules\flann\include;D:\Programmes\Libs\OpenCV\sources\modules\imgproc\include;D:\Programmes\Libs\OpenCV\sources\modules\ml\include;D:\Programmes\Libs\OpenCV\sources\modules\objdetect\include;D:\Programmes\Libs\OpenCV\sources\modules\photo\include;D:\Programmes\Libs\OpenCV\sources\modules\video\include;D:\Programmes\Libs\OpenCV\sources\modules\dnn\include;D:\Programmes\Libs\OpenCV\sources\modules\imgcodecs\include;D:\Programmes\Libs\OpenCV\sources\modules\shape\include;D:\Programmes\Libs\OpenCV\sources\modules\videoio\include;D:\Programmes\Libs\OpenCV\sources\modules\highgui\include;D:\Programmes\Libs\OpenCV\sources\modules\superres\include;D:\Programmes\Libs\OpenCV\sources\modules\ts\include;D:\Programmes\Libs\OpenCV\sources\modules\features2d\include;D:\Programmes\Libs\OpenCV\sources\modules\calib3d\include;D:\Programmes\Libs\OpenCV\sources\modules\stitching\include;D:\Programmes\Libs\OpenCV\sources\modules\videostab\include;D:\SourceTree\rvra-project\ext\aruco\src;D:\SourceTree\rvra-project\ext\Maximilian;D:\SourceTree\rvra-project\include;D:\SourceTree\rvra-project\ext\Maximilian\ext\portaudio\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -g -pg</AdditionalOptions>
       <AssemblerListingLocation>Debug/</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsCpp</CompileAs>
@@ -111,13 +112,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>ext\aruco\bin\Debug\aruco201.lib;ext\aruco\bin\Debug\maximilian.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_dnn331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_ml331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_objdetect331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_shape331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_stitching331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_superres331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_videostab331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_calib3d331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_features2d331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_flann331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_highgui331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_photo331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_video331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_videoio331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_imgcodecs331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_imgproc331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_core331d.lib;-lsndfile -lpthread -lasound;ext\aruco\bin\Debug\portaudio_x64.lib;winmm.lib;ole32.lib;uuid.lib;setupapi.lib;ole32.lib;uuid.lib;setupapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>Release\Debug\aruco201.lib;Release\Debug\maximilian.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_dnn331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_ml331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_objdetect331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_shape331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_stitching331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_superres331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_videostab331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_calib3d331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_features2d331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_flann331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_highgui331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_photo331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_video331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_videoio331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_imgcodecs331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_imgproc331d.lib;D:\Programmes\Libs\OpenCV\build\lib\Debug\opencv_core331d.lib;-lsndfile -lpthread -lasound;Release\Debug\portaudio_x64.lib;winmm.lib;ole32.lib;uuid.lib;setupapi.lib;ole32.lib;uuid.lib;setupapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/Debug/detect.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/Debug/detect.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/Release/Debug/ReactCamera.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/Release/Debug/ReactCamera.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -128,6 +129,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>D:\Programmes\Libs\OpenCV\build;D:\Programmes\Libs\OpenCV\sources\include;D:\Programmes\Libs\OpenCV\sources\include\opencv;D:\Programmes\Libs\OpenCV\sources\modules\core\include;D:\Programmes\Libs\OpenCV\sources\modules\flann\include;D:\Programmes\Libs\OpenCV\sources\modules\imgproc\include;D:\Programmes\Libs\OpenCV\sources\modules\ml\include;D:\Programmes\Libs\OpenCV\sources\modules\objdetect\include;D:\Programmes\Libs\OpenCV\sources\modules\photo\include;D:\Programmes\Libs\OpenCV\sources\modules\video\include;D:\Programmes\Libs\OpenCV\sources\modules\dnn\include;D:\Programmes\Libs\OpenCV\sources\modules\imgcodecs\include;D:\Programmes\Libs\OpenCV\sources\modules\shape\include;D:\Programmes\Libs\OpenCV\sources\modules\videoio\include;D:\Programmes\Libs\OpenCV\sources\modules\highgui\include;D:\Programmes\Libs\OpenCV\sources\modules\superres\include;D:\Programmes\Libs\OpenCV\sources\modules\ts\include;D:\Programmes\Libs\OpenCV\sources\modules\features2d\include;D:\Programmes\Libs\OpenCV\sources\modules\calib3d\include;D:\Programmes\Libs\OpenCV\sources\modules\stitching\include;D:\Programmes\Libs\OpenCV\sources\modules\videostab\include;D:\SourceTree\rvra-project\ext\aruco\src;D:\SourceTree\rvra-project\ext\Maximilian;D:\SourceTree\rvra-project\include;D:\SourceTree\rvra-project\ext\Maximilian\ext\portaudio\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -g -pg</AdditionalOptions>
       <AssemblerListingLocation>Release/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -154,13 +156,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>ext\aruco\bin\Release\aruco201.lib;ext\aruco\bin\Release\maximilian.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_dnn331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_ml331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_objdetect331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_shape331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_stitching331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_superres331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videostab331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_calib3d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_features2d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_flann331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_highgui331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_photo331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_video331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videoio331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgcodecs331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgproc331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_core331.lib;-lsndfile -lpthread -lasound;ext\aruco\bin\Release\portaudio_x64.lib;winmm.lib;ole32.lib;uuid.lib;setupapi.lib;ole32.lib;uuid.lib;setupapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>Release\Release\aruco201.lib;Release\Release\maximilian.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_dnn331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_ml331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_objdetect331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_shape331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_stitching331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_superres331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videostab331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_calib3d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_features2d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_flann331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_highgui331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_photo331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_video331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videoio331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgcodecs331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgproc331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_core331.lib;-lsndfile -lpthread -lasound;Release\Release\portaudio_x64.lib;winmm.lib;ole32.lib;uuid.lib;setupapi.lib;ole32.lib;uuid.lib;setupapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/Release/detect.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/Release/detect.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/Release/Release/ReactCamera.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/Release/Release/ReactCamera.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -171,6 +173,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>D:\Programmes\Libs\OpenCV\build;D:\Programmes\Libs\OpenCV\sources\include;D:\Programmes\Libs\OpenCV\sources\include\opencv;D:\Programmes\Libs\OpenCV\sources\modules\core\include;D:\Programmes\Libs\OpenCV\sources\modules\flann\include;D:\Programmes\Libs\OpenCV\sources\modules\imgproc\include;D:\Programmes\Libs\OpenCV\sources\modules\ml\include;D:\Programmes\Libs\OpenCV\sources\modules\objdetect\include;D:\Programmes\Libs\OpenCV\sources\modules\photo\include;D:\Programmes\Libs\OpenCV\sources\modules\video\include;D:\Programmes\Libs\OpenCV\sources\modules\dnn\include;D:\Programmes\Libs\OpenCV\sources\modules\imgcodecs\include;D:\Programmes\Libs\OpenCV\sources\modules\shape\include;D:\Programmes\Libs\OpenCV\sources\modules\videoio\include;D:\Programmes\Libs\OpenCV\sources\modules\highgui\include;D:\Programmes\Libs\OpenCV\sources\modules\superres\include;D:\Programmes\Libs\OpenCV\sources\modules\ts\include;D:\Programmes\Libs\OpenCV\sources\modules\features2d\include;D:\Programmes\Libs\OpenCV\sources\modules\calib3d\include;D:\Programmes\Libs\OpenCV\sources\modules\stitching\include;D:\Programmes\Libs\OpenCV\sources\modules\videostab\include;D:\SourceTree\rvra-project\ext\aruco\src;D:\SourceTree\rvra-project\ext\Maximilian;D:\SourceTree\rvra-project\include;D:\SourceTree\rvra-project\ext\Maximilian\ext\portaudio\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -g -pg</AdditionalOptions>
       <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -197,13 +200,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>ext\aruco\bin\MinSizeRel\aruco201.lib;ext\aruco\bin\MinSizeRel\maximilian.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_dnn331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_ml331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_objdetect331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_shape331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_stitching331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_superres331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videostab331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_calib3d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_features2d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_flann331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_highgui331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_photo331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_video331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videoio331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgcodecs331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgproc331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_core331.lib;-lsndfile -lpthread -lasound;ext\aruco\bin\MinSizeRel\portaudio_x64.lib;winmm.lib;ole32.lib;uuid.lib;setupapi.lib;ole32.lib;uuid.lib;setupapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>Release\MinSizeRel\aruco201.lib;Release\MinSizeRel\maximilian.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_dnn331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_ml331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_objdetect331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_shape331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_stitching331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_superres331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videostab331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_calib3d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_features2d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_flann331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_highgui331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_photo331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_video331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videoio331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgcodecs331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgproc331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_core331.lib;-lsndfile -lpthread -lasound;Release\MinSizeRel\portaudio_x64.lib;winmm.lib;ole32.lib;uuid.lib;setupapi.lib;ole32.lib;uuid.lib;setupapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/MinSizeRel/detect.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/MinSizeRel/detect.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/Release/MinSizeRel/ReactCamera.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/Release/MinSizeRel/ReactCamera.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -214,6 +217,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>D:\Programmes\Libs\OpenCV\build;D:\Programmes\Libs\OpenCV\sources\include;D:\Programmes\Libs\OpenCV\sources\include\opencv;D:\Programmes\Libs\OpenCV\sources\modules\core\include;D:\Programmes\Libs\OpenCV\sources\modules\flann\include;D:\Programmes\Libs\OpenCV\sources\modules\imgproc\include;D:\Programmes\Libs\OpenCV\sources\modules\ml\include;D:\Programmes\Libs\OpenCV\sources\modules\objdetect\include;D:\Programmes\Libs\OpenCV\sources\modules\photo\include;D:\Programmes\Libs\OpenCV\sources\modules\video\include;D:\Programmes\Libs\OpenCV\sources\modules\dnn\include;D:\Programmes\Libs\OpenCV\sources\modules\imgcodecs\include;D:\Programmes\Libs\OpenCV\sources\modules\shape\include;D:\Programmes\Libs\OpenCV\sources\modules\videoio\include;D:\Programmes\Libs\OpenCV\sources\modules\highgui\include;D:\Programmes\Libs\OpenCV\sources\modules\superres\include;D:\Programmes\Libs\OpenCV\sources\modules\ts\include;D:\Programmes\Libs\OpenCV\sources\modules\features2d\include;D:\Programmes\Libs\OpenCV\sources\modules\calib3d\include;D:\Programmes\Libs\OpenCV\sources\modules\stitching\include;D:\Programmes\Libs\OpenCV\sources\modules\videostab\include;D:\SourceTree\rvra-project\ext\aruco\src;D:\SourceTree\rvra-project\ext\Maximilian;D:\SourceTree\rvra-project\include;D:\SourceTree\rvra-project\ext\Maximilian\ext\portaudio\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) -g -pg</AdditionalOptions>
       <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -240,13 +244,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>ext\aruco\bin\RelWithDebInfo\aruco201.lib;ext\aruco\bin\RelWithDebInfo\maximilian.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_dnn331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_ml331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_objdetect331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_shape331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_stitching331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_superres331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videostab331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_calib3d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_features2d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_flann331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_highgui331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_photo331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_video331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videoio331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgcodecs331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgproc331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_core331.lib;-lsndfile -lpthread -lasound;ext\aruco\bin\RelWithDebInfo\portaudio_x64.lib;winmm.lib;ole32.lib;uuid.lib;setupapi.lib;ole32.lib;uuid.lib;setupapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>Release\RelWithDebInfo\aruco201.lib;Release\RelWithDebInfo\maximilian.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_dnn331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_ml331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_objdetect331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_shape331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_stitching331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_superres331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videostab331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_calib3d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_features2d331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_flann331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_highgui331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_photo331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_video331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_videoio331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgcodecs331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_imgproc331.lib;D:\Programmes\Libs\OpenCV\build\lib\Release\opencv_core331.lib;-lsndfile -lpthread -lasound;Release\RelWithDebInfo\portaudio_x64.lib;winmm.lib;ole32.lib;uuid.lib;setupapi.lib;ole32.lib;uuid.lib;setupapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/RelWithDebInfo/detect.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/ext/aruco/bin/RelWithDebInfo/detect.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/SourceTree/rvra-project/VSSolutions/Release/RelWithDebInfo/ReactCamera.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/SourceTree/rvra-project/VSSolutions/Release/RelWithDebInfo/ReactCamera.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -313,20 +317,27 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClInclude Include="D:\SourceTree\rvra-project\include\AudioGraph.hpp" />
     <ClInclude Include="D:\SourceTree\rvra-project\include\MarkerGraph.hpp" />
+    <ClInclude Include="D:\SourceTree\rvra-project\include\Nodes.hpp" />
     <ClInclude Include="D:\SourceTree\rvra-project\include\AudioNode.hpp" />
     <ClInclude Include="D:\SourceTree\rvra-project\include\OscNode.hpp" />
     <ClInclude Include="D:\SourceTree\rvra-project\include\DestinationNode.hpp" />
     <ClInclude Include="D:\SourceTree\rvra-project\include\xMarker.hpp" />
     <ClInclude Include="D:\SourceTree\rvra-project\include\Interfaces.hpp" />
     <ClInclude Include="D:\SourceTree\rvra-project\include\MiscConsts.hpp" />
-    <ClCompile Include="D:\SourceTree\rvra-project\src\detect_markers.cpp"  />
-    <ClCompile Include="D:\SourceTree\rvra-project\src\AudioGraph.cpp"  />
+    <ClInclude Include="D:\SourceTree\rvra-project\include\AmNode.hpp" />
+    <ClInclude Include="D:\SourceTree\rvra-project\include\NoiseNode.hpp" />
+    <ClInclude Include="D:\SourceTree\rvra-project\include\NumericalNode.hpp" />
+    <ClInclude Include="D:\SourceTree\rvra-project\include\FmNode.hpp" />
+    <ClCompile Include="D:\SourceTree\rvra-project\src\main.cpp"  />
     <ClCompile Include="D:\SourceTree\rvra-project\src\MarkerGraph.cpp"  />
-    <ClCompile Include="D:\SourceTree\rvra-project\src\AudioNode.cpp"  />
     <ClCompile Include="D:\SourceTree\rvra-project\src\DestinationNode.cpp"  />
     <ClCompile Include="D:\SourceTree\rvra-project\src\OscNode.cpp"  />
     <ClCompile Include="D:\SourceTree\rvra-project\src\xMarker.cpp"  />
     <ClCompile Include="D:\SourceTree\rvra-project\src\Interfaces.cpp"  />
+    <ClCompile Include="D:\SourceTree\rvra-project\src\AmNode.cpp"  />
+    <ClCompile Include="D:\SourceTree\rvra-project\src\FmNode.cpp"  />
+    <ClCompile Include="D:\SourceTree\rvra-project\src\NoiseNode.cpp"  />
+    <ClCompile Include="D:\SourceTree\rvra-project\src\NumericalNode.cpp"  />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="D:\SourceTree\rvra-project\VSSolutions\ZERO_CHECK.vcxproj">

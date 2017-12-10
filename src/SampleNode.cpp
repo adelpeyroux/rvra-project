@@ -10,7 +10,7 @@ SampleNode::SampleNode(int id, double freq, std::string sample, double time)
     _sample.setPosition(POS[id]);
 }
 
-double SampleNode::play (AudioParams input, double time) {
+double SampleNode::Play (AudioParams input, double time) {
 
     int trigger = (int)_phasor.phasor(_freq / 60.);
 
@@ -22,7 +22,7 @@ double SampleNode::play (AudioParams input, double time) {
 
     PREV[_id] = trigger;
 
-    incr_phi(_id, _freq);
+    IncrPhi(_id, _freq);
     incr_pos(_id, _sample.length);
 
     return _sample.playOnce();

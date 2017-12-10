@@ -19,11 +19,11 @@
 #      - aruco_VERSION_PATCH : Patch version part of VERSION. Example: "0"
 #
 # ===================================================================================
-INCLUDE_DIRECTORIES("D:/SourceTree/rvra-project/VSSolutions/Project/include")
-SET(aruco_INCLUDE_DIRS "D:/SourceTree/rvra-project/VSSolutions/Project/include")
+INCLUDE_DIRECTORIES("C:/Program Files/Project/include")
+SET(aruco_INCLUDE_DIRS "C:/Program Files/Project/include")
 
-LINK_DIRECTORIES("D:/SourceTree/rvra-project/VSSolutions/Project/lib")
-SET(aruco_LIB_DIR "D:/SourceTree/rvra-project/VSSolutions/Project/lib")
+LINK_DIRECTORIES("C:/Program Files/Project/lib")
+SET(aruco_LIB_DIR "C:/Program Files/Project/lib")
 
 SET(aruco_LIBS opencv_calib3d;opencv_core;opencv_dnn;opencv_features2d;opencv_flann;opencv_highgui;opencv_imgcodecs;opencv_imgproc;opencv_ml;opencv_objdetect;opencv_photo;opencv_shape;opencv_stitching;opencv_superres;opencv_video;opencv_videoio;opencv_videostab;opencv_calib3d;opencv_core;opencv_dnn;opencv_features2d;opencv_flann;opencv_highgui;opencv_imgcodecs;opencv_imgproc;opencv_ml;opencv_objdetect;opencv_photo;opencv_shape;opencv_stitching;opencv_superres;opencv_video;opencv_videoio;opencv_videostab aruco201)
 
