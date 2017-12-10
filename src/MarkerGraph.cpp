@@ -70,11 +70,20 @@ void MarkerGraph::AddEdge(int from, int to)
 	_edges.push_back(pair<int, int>(from, to));
 }
 
-void MarkerGraph::AddMarker(aruco::Marker& marker)
+void MarkerGraph::AddMarker(xMarker& marker)
 {
-	_markers.push_back(xMarker(marker));
+	_markers.push_back(marker);
 }
 
+void MarkerGraph::AddEdges(vector<pair<int, int>>& edges)
+{
+	_edges.insert(_edges.end(), edges.begin(), edges.end());
+}
+
+void MarkerGraph::AddMarkers(vector<xMarker>& markers)
+{
+	_markers.insert(_markers.end(), markers.begin(), markers.end());
+}
 
 void MarkerGraph::Clear()
 {
