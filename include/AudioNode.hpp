@@ -24,7 +24,7 @@ public :
 	virtual ~AudioParams() = default;
 
 	//***** Adds *****
-	void AddParam(int type, double value) { _params.push_back(AudioParam(type, value)); }
+    void AddParam(int type, double value) { _params.push_back(AudioParam(type, value)); }
 	void AddParam(AudioParam p) { _params.push_back(p); }
 	void AddParams(const AudioParams& params)
 	{

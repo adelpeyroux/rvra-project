@@ -16,10 +16,10 @@ FmNode::FmNode(int id, double freq, double time)
 double FmNode::Play(AudioParams input, double time)
 {
 	double inVal = 0.;
-	double c = 0.;
+    double c = 0.;
 	GetSignalsAndNumerics(input, inVal, c);
 
-	const double value = _osc.sinewave(_freq + inVal * c);
+    const double value = _osc.sinewave(_freq + 100 * inVal);
 
 	IncrPhi(_id, _freq);
 	return value;

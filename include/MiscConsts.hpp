@@ -207,7 +207,7 @@ static std::shared_ptr<AudioNode> GetAudioNode(MARKER_TYPE type, float param, do
     case TYPE_SOURCE_NOISE :
         return std::shared_ptr<AudioNode>(new NoiseNode(id, fabs(param * 32 / 180.), time));
     case TYPE_SOURCE_NUMERICAL :
-        return std::shared_ptr<AudioNode>(new NumericalNode(id, fabs(param * 32 / 180.), time));
+        return std::shared_ptr<AudioNode>(new NumericalNode(id, fabs(param / 180.), time));
     case TYPE_SOURCE_SAMPLE0 :
         return std::shared_ptr<AudioNode>(new SampleNode(id, fabs(param * 220 / 180.), DATA_DIR"/bd_909dwsd.wav", time));
     case TYPE_SOURCE_SAMPLE1 :
@@ -283,7 +283,7 @@ static void GetSignalsAndNumerics (AudioParams params, double & signal, double &
     int nbC = 0;
 
     for (auto pair : params.GetParams()) {
-        if (pair.type != TYPE_SOURCE_NUMERICAL) {
+        if (pair.type != (int)TYPE_SOURCE_NUMERICAL) {
             inVal += pair.value;
             nbVal ++;
         } else {
@@ -292,9 +292,9 @@ static void GetSignalsAndNumerics (AudioParams params, double & signal, double &
         }
     }
 
-    if (nbVal > 0) inVal /= nbVal;
+    if (nbVal > 0) inVal /= (double)nbVal;
 
-    if (nbC > 0) c /= nbC;
+    if (nbC > 0) c /= (double)nbC;
 
     signal = inVal;
     num = c;
