@@ -75,7 +75,10 @@ enum MARKER_TYPE
     TYPE_SOURCE_TRIANGLE = 3,
     TYPE_SOURCE_NOISE = 4,
     TYPE_SOURCE_NUMERICAL = 5,
-    TYPE_SOURCE_SAMPLE = 6,
+    TYPE_SOURCE_SAMPLE0 = 6,
+    TYPE_SOURCE_SAMPLE1 = 7,
+    TYPE_SOURCE_SAMPLE2 = 8,
+    TYPE_SOURCE_SAMPLE3 = 9,
 
     // Effets
     TYPE_EFFECT_AM = 10,
@@ -93,6 +96,7 @@ enum MARKER_TYPE
 
 static MARKER_TYPE ID2TYPE(int id)
 {
+    /*
 	if (001 <= id && id <= 200) return TYPE_SOURCE_SINUS;
 	if (201 <= id && id <= 300) return TYPE_SOURCE_NOISE;
     if (301 <= id && id <= 500) return TYPE_SOURCE_SAMPLE;
@@ -100,6 +104,46 @@ static MARKER_TYPE ID2TYPE(int id)
 	if (551 <= id && id <= 554) return TYPE_EFFECT_FM;
 	if (555 <= id && id <= 600) return TYPE_EFFECT_ADD;
 	return TYPE_SOURCE_SINUS;
+    */
+
+    switch (id) {
+    case 31:
+    case 105:
+    case 107:
+        return TYPE_SOURCE_SINUS;
+    case 179:
+        return TYPE_SOURCE_SAW;
+    case 232:
+        return TYPE_SOURCE_SQUARE;
+    case 258:
+        return TYPE_SOURCE_TRIANGLE;
+    case 388:
+    case 459:
+        return TYPE_SOURCE_NOISE;
+    case 466:
+    case 494:
+        return TYPE_SOURCE_NUMERICAL;
+    case 504:
+    case 520:
+        return TYPE_EFFECT_AM;
+    case 552:
+    case 553:
+        return TYPE_EFFECT_FM;
+    case 555:
+    case 592:
+        return TYPE_EFFECT_ADD;
+    case 619:
+        return TYPE_SOURCE_SAMPLE0;
+    case 824:
+        return TYPE_SOURCE_SAMPLE1;
+    case 827:
+        return TYPE_SOURCE_SAMPLE2;
+    case 942:
+        return TYPE_SOURCE_SAMPLE3;
+    default:
+        return TYPE_SOURCE_SINUS;
+        break;
+    }
 
 }
 
@@ -107,7 +151,10 @@ static cv::Scalar TYPE2COLOR(MARKER_TYPE T)
 {
     switch (T) {
         case TYPE_SOURCE_SINUS:
-        case TYPE_SOURCE_SAMPLE:
+        case TYPE_SOURCE_SAMPLE0:
+        case TYPE_SOURCE_SAMPLE1:
+        case TYPE_SOURCE_SAMPLE2:
+        case TYPE_SOURCE_SAMPLE3:
         case TYPE_SOURCE_SAW:
         case TYPE_SOURCE_SQUARE:
         case TYPE_SOURCE_TRIANGLE:	return COLORS[3];
@@ -126,7 +173,10 @@ static string TYPE2LETTER(MARKER_TYPE T)
 {
     switch (T) {
         case TYPE_SOURCE_SINUS:		return "Si";
-        case TYPE_SOURCE_SAMPLE:	return "Fi";
+        case TYPE_SOURCE_SAMPLE0:   return "F0";
+        case TYPE_SOURCE_SAMPLE1:   return "F1";
+        case TYPE_SOURCE_SAMPLE2:   return "F2";
+        case TYPE_SOURCE_SAMPLE3:   return "F3";
         case TYPE_SOURCE_SAW:		return "Sa";
         case TYPE_SOURCE_SQUARE:	return "Sq";
         case TYPE_SOURCE_TRIANGLE:	return "T";
@@ -158,8 +208,14 @@ static std::shared_ptr<AudioNode> GetAudioNode(MARKER_TYPE type, float param, do
         return std::shared_ptr<AudioNode>(new NoiseNode(id, fabs(param * 32 / 180.), time));
     case TYPE_SOURCE_NUMERICAL :
         return std::shared_ptr<AudioNode>(new NumericalNode(id, fabs(param * 32 / 180.), time));
-    case TYPE_SOURCE_SAMPLE :
-        return std::shared_ptr<AudioNode>(new SampleNode(id, fabs(param * 220 / 180.), DATA_DIR"/snare.wav", time));
+    case TYPE_SOURCE_SAMPLE0 :
+        return std::shared_ptr<AudioNode>(new SampleNode(id, fabs(param * 220 / 180.), DATA_DIR"/bd_909dwsd.wav", time));
+    case TYPE_SOURCE_SAMPLE1 :
+        return std::shared_ptr<AudioNode>(new SampleNode(id, fabs(param * 220 / 180.), DATA_DIR"/hat_vintagespread.wav", time));
+    case TYPE_SOURCE_SAMPLE2 :
+        return std::shared_ptr<AudioNode>(new SampleNode(id, fabs(param * 220 / 180.), DATA_DIR"/snr_analogging.wav", time));
+    case TYPE_SOURCE_SAMPLE3 :
+        return std::shared_ptr<AudioNode>(new SampleNode(id, fabs(param * 220 / 180.), DATA_DIR"/tom_madisonave.wav", time));
     case TYPE_EFFECT_ADD :
     case TYPE_FILTER_COLOR:
     case TYPE_END :
